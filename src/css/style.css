@@ -1,11 +1,15 @@
 @import 'reset';
 @import 'vars';
-
 html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
 
-*, *:before, *:after { /* stylelint-disable-line */
+*, *:before, *:after {
+  /* stylelint-disable-line */
   box-sizing: inherit;
+}
+
+.hide {
+  display: none;
 }

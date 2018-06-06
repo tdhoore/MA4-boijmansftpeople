@@ -5,14 +5,14 @@ export default class CustomSelect extends CustomDropDown {
     selector: ``,
     customClass: ``,
     customOpenClass: ``,
-    customSelectedClass: ``,
+    customSelectedClass: ``
   }) {
     super({selector: param.selector, customClass: param.customClass, customOpenClass: param.customOpenClass, customSelectedClass: param.customSelectedClass});
 
     this.clickFakeSelectListener = e => this.handleClickFakeSelect(e);
 
     this.selectedOption = `Default`;
-    this.searchSuggestionObj;
+    this.searchSuggestionObj = false;
   }
 
   init(searchSuggestionObj) {
@@ -82,6 +82,8 @@ export default class CustomSelect extends CustomDropDown {
       //set the selected option in the select options
       this.addOrRemoveSelected(options[index].value === $selectedOption.dataset.value, options[index]);
 
+      console.log(options[index].value === $selectedOption.dataset.value);
+
       if ($customOption === $selectedOption) {
         //set the class for the custom option
         $customOption.classList.add(this.customSelectedClass);
@@ -107,8 +109,8 @@ export default class CustomSelect extends CustomDropDown {
   }
 
   addOptionToSelectedTags() {
-    this.searchSuggestionObj.addToSelectedTags({type: `date`, value: this.selectedOption});
-    console.log(this.searchSuggestionObj.selectedTags);
+    //this.searchSuggestionObj.addToSelectedTags({type: `date`, value: this.selectedOption});
+    //console.log(this.searchSuggestionObj.selectedTags);
   }
 
   getSelectedOption() {

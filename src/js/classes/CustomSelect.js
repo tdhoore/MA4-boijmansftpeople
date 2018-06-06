@@ -12,16 +12,13 @@ export default class CustomSelect extends CustomDropDown {
     this.clickFakeSelectListener = e => this.handleClickFakeSelect(e);
 
     this.selectedOption = `Default`;
-    this.searchSuggestionObj = false;
   }
 
-  init(searchSuggestionObj) {
+  init() {
     this.inputs.forEach($select => {
       $select.classList.add(`hide`);
       this.createCustomDropDown($select);
     });
-
-    this.searchSuggestionObj = searchSuggestionObj;
   }
 
   getOptions($select) {
@@ -82,8 +79,6 @@ export default class CustomSelect extends CustomDropDown {
       //set the selected option in the select options
       this.addOrRemoveSelected(options[index].value === $selectedOption.dataset.value, options[index]);
 
-      console.log(options[index].value === $selectedOption.dataset.value);
-
       if ($customOption === $selectedOption) {
         //set the class for the custom option
         $customOption.classList.add(this.customSelectedClass);
@@ -92,8 +87,6 @@ export default class CustomSelect extends CustomDropDown {
         this.setContentToContent($fakeSelect, $customOption);
 
         this.selectedOption = $customOption.textContent;
-
-        this.addOptionToSelectedTags();
       } else {
         $customOption.classList.remove(this.customSelectedClass);
       }
@@ -106,11 +99,6 @@ export default class CustomSelect extends CustomDropDown {
     } else {
       $option.removeAttribute(`selected`);
     }
-  }
-
-  addOptionToSelectedTags() {
-    //this.searchSuggestionObj.addToSelectedTags({type: `date`, value: this.selectedOption});
-    //console.log(this.searchSuggestionObj.selectedTags);
   }
 
   getSelectedOption() {

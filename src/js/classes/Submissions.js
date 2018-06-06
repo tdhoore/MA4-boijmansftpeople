@@ -28,12 +28,11 @@ class Submissions {
   }) {
     this.selector = content.selector;
     this.customClass = content.customClass;
+    this.amount = 3;
   }
 
   init() {
-    ReactDOM.render(<div>
-      <SubmissionsOTW data={test} customClass={this.customClass}/>
-    </div>, document.querySelector(this.selector));
+    ReactDOM.render(<SubmissionsOTW data={test} customClass={this.customClass} amount={this.amount}/>, document.querySelector(this.selector));
   }
 }
 

@@ -7,7 +7,7 @@ class SubmissionsOTW extends Component {
     this.data = this.props.data;
     this.customClass = this.props.customClass;
 
-    this.amount = 3;
+    this.amount = this.props.amount;
     this.count = 0;
 
     this.handleClickNext = e => this.getSubmissions(e, `next`);

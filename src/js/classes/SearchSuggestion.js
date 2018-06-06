@@ -5,14 +5,14 @@ export default class SearchSuggestion extends CustomDropDown {
     selector: ``,
     customClass: ``,
     customOpenClass: ``,
-    customSelectedClass: ``,
+    customSelectedClass: ``
   }) {
     super({selector: param.selector, customClass: param.customClass, customOpenClass: param.customOpenClass, customSelectedClass: param.customSelectedClass});
 
     //listeners
     this.inputListener = e => this.handleInput(e);
     this.ajaxResult = r => this.handleAjaxResult(r);
-    this.removeTagHandler = e => this.handleRemoveTag(e);
+    this.selectOption = e => this.handleSelectOption(e);
 
     //tags list
     this.selectedTags = [];
@@ -35,8 +35,6 @@ export default class SearchSuggestion extends CustomDropDown {
     } else {
       this.wipeElement(this.getCustomSuggestion($input));
     }
-
-    this.removeAllTagsByName($input.name);
   }
 
   handleClickOption(e) {
@@ -52,26 +50,7 @@ export default class SearchSuggestion extends CustomDropDown {
   }
 
   addToSelectedTags(optionData) {
-    if (optionData.value === `city` || optionData.value === `postal`) {
-      this.removeAllTagsOfType([`city`, `postal`]);
-    } else {
-      this.removeAllTagsOfType([optionData.type]);
-    }
     this.selectedTags.push(optionData);
-  }
-
-  removeAllTagsByName(name) {
-    if (name === `search`) {
-      this.removeAllTagsOfType([`tag`, `title`]);
-    } else if (name === `location`) {
-      this.removeAllTagsOfType([`postal`, `city`]);
-    }
-  }
-
-  removeAllTagsOfType(types) {
-    types.forEach(type => {
-      this.selectedTags = this.selectedTags.filter(tag => tag.type !== type);
-    });
   }
 
   addOptionToSelectedTags($option) {
@@ -99,13 +78,15 @@ export default class SearchSuggestion extends CustomDropDown {
     $a.dataset.type = data.type;
 
     //add listener
-    $a.addEventListener(`click`, this.removeTagHandler);
+    $a.addEventListener(`click`, this.selectOption);
 
     //add to list item
     $li.append($a);
 
     return $li;
   }
+
+  handleSelectOption(e) {}
 
   handleRemoveTag(e) {
     e.preventDefault();
@@ -135,17 +116,30 @@ export default class SearchSuggestion extends CustomDropDown {
     formData.append(`usedFilters`, JSON.stringify(this.selectedTags));
     formData.append($input.name, $input.value);
 
-    fetch(this.getFilterUrl($input), {
+    /*fetch(this.getFilterUrl($input), {
       headers: new Headers({Accept: `application/json`}),
       credentials: `same-origin`,
       method: `POST`,
       body: formData,
-    }).then(r => r.json()).then(this.ajaxResult);
+    }).then(r => r.json()).then(this.ajaxResult);*/
+
+    //test
+    this.handleAjaxResult({
+      inputName: `search`,
+      options: [
+        {
+          type: `test`,
+          value: `tester`
+        }, {
+          type: `test`,
+          value: `tester`
+        }
+      ]
+    });
   }
 
   handleAjaxResult(results) {
     const $input = document.querySelector(`input[name="${results.inputName}"]`);
-
     const $customSuggestion = this.getCustomSuggestion($input);
 
     if (!$customSuggestion) {
@@ -158,8 +152,7 @@ export default class SearchSuggestion extends CustomDropDown {
 
   createOptions(inputName, options) {
     const results = [];
-    Object.keys(options).forEach(key => {
-      const option = options[key];
+    options.forEach(option => {
       const $li = document.createElement(`li`);
       const $a = this.createEmptyLink(``);
 

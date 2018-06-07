@@ -28,6 +28,7 @@
     <meta name="keywords" content="Boijmans for the People" />
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <title>BFTP</title>
+    <?php echo $css; ?>
 
 </head>
 
@@ -45,6 +46,7 @@
 
   <footer class="">
   </footer>
+  <?php echo $js; ?>
 </body>
 
 </html>

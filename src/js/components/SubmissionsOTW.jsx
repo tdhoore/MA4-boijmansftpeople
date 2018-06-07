@@ -23,7 +23,7 @@ class SubmissionsOTW extends Component {
   }
 
   getSubmissions(e, type) {
-    let min = this.count;
+    /*let min = this.count;
     let max = this.count;
 
     //select witch ones
@@ -31,7 +31,7 @@ class SubmissionsOTW extends Component {
       max += this.amount;
     } else {
       min -= this.amount;
-    }
+    }*/
 
     //fetch(``).then()
 

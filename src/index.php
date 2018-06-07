@@ -5,29 +5,17 @@ error_reporting(E_ALL);
 
 $routes = array(
   'home' => array(
-    'controller' => 'Art',
+    'controller' => 'Pages',
     'action' => 'index'
   ),
   'party' => array(
-    'controller' => 'Art',
+    'controller' => 'Pages',
     'action' => 'party'
   ),
   'subs' => array(
-    'controller' => 'Art',
+    'controller' => 'Pages',
     'action' => 'subs'
-  ),
-  // 'add-to-cart' => array(
-  //     'controller' => 'Art',
-  //     'action' => 'add_product'
-  // ),
-  // 'handleCart' => array(
-  //     'controller' => 'Art',
-  //     'action' => 'handleCart'
-  // ),
-  // 'handlePersonalData' => array(
-  //     'controller' => 'Art',
-  //     'action' => 'handlePersonalData'
-  // )
+  )
 );
 
 if(empty($_GET['page'])) {

@@ -12,7 +12,7 @@
             urls: ['assets/fonts/futura/futura.css', 'assets/fonts/proxima/proxima.css']
           }
         };
-     
+
         (function(d) {
            var wf = d.createElement('script'), s = d.scripts[0];
            wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
@@ -37,22 +37,9 @@
       <h1>HELLLOOOOOOOOOOOOOOOO</h1>
     </header>
 
-  <main class="">
-    <?php
-      if(!empty($_SESSION['error'])): ?>
-      <div class="error box error-box meldingbox">
-        <?php echo $_SESSION['error'];?>
-      </div>
-    <?php endif;?>
+  <main>
 
-    <?php
-      if(!empty($_SESSION['info'])): ?>
-      <div class="info box info-box meldingbox">
-        <?php echo $_SESSION['info'];?>
-      </div>
-    <?php endif;?>
-
-<?php echo $content;?>
+    <?php echo $content;?>
 
   </main>
 

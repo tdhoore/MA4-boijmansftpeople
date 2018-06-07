@@ -1,9 +1,12 @@
 <?php
+require_once __DIR__ . '/Controller.php';
+require_once __DIR__ . '/../dao/UserDAO.php';
+require_once __DIR__ . '/../dao/PopupDAO.php';
+require_once __DIR__ . '/../dao/ThemaDAO.php';
+//require_once WWW_ROOT . 'controller' . DS . 'Controller.php';
+//require_once WWW_ROOT . 'dao' . DS . 'UserDAO.php';
 
-require_once WWW_ROOT . 'controller' . DS . 'Controller.php';
-require_once WWW_ROOT . 'dao' . DS . 'UserDAO.php';
-
-class ArtController extends Controller {
+class PagesController extends Controller {
 
   private $userDAO;
   private $popupDAO;
@@ -24,7 +27,7 @@ class ArtController extends Controller {
     $themas = $this->themaDAO->selectAll();
     $this->set('themas', $themas);
   }
-  
+
   public function party() {
     $this->set('currentPage', 'party');
 

@@ -56,14 +56,16 @@ class Controller {
   private function createViewVarWithContent() {
     extract($this->viewVars, EXTR_OVERWRITE);
     ob_start();
-    require WWW_ROOT . 'view' . DS . strtolower($this->route['controller']) . DS . $this->route['action'] . '.php';
+    require __DIR__ . '/../view/' . strtolower($this->route['controller']) . '/' . $this->route['action'] . '.php';
+    //require WWW_ROOT . 'view' . DS . strtolower($this->route['controller']) . DS . $this->route['action'] . '.php';
     $content = ob_get_clean();
     $this->set('content', $content);
   }
 
   private function renderInLayout() {
     extract($this->viewVars, EXTR_OVERWRITE);
-    include WWW_ROOT . 'view' . DS . 'layout.php';
+    include __DIR__ . '/../view/layout.php';
+    //include WWW_ROOT . 'view' . DS . 'layout.php';
   }
 
   private function cleanupSessionMessages() {

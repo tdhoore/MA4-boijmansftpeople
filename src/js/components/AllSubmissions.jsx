@@ -24,8 +24,8 @@ class AllSubmissions extends Component {
   render() {
     return (<div>
       {
-        this.submissions.map(submission => {
-          return <Submission data={submission} customClass="test"/>
+        this.submissions.map((submission, index) => {
+          return <Submission key={`submission_${index}`} data={submission} customClass="test"/>
         })
       }
     </div>);

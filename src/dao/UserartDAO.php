@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/DAO.php';
-class UserDAO extends DAO {
+class UserartDAO extends DAO {
 
   /*
 
@@ -85,8 +85,25 @@ class UserDAO extends DAO {
   }
 
   public function selectAll() {
-    $sql = "SELECT * FROM `userArt`";
+    $sql = "SELECT * FROM `userArt` ORDER BY `timeStamp`";
     $stmt = $this->pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  public function selectSOFTW($startDate, $endDate) {
+    $sql = "SELECT * FROM `userArt` WHERE :startDate <= `timeStamp` AND :endDate >= `timeStamp` ORDER BY `timeStamp`";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':startDate', $startDate);
+    $stmt->bindValue(':endDate', $endDate);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  public function selectByFilter($filter) {
+    $sql = "SELECT * FROM `userArt` WHERE :filter ORDER BY `timeStamp`";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':filter', $filter);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }

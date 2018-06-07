@@ -4,7 +4,8 @@ import AllSubmissions from '../components/AllSubmissions.jsx';
 
 export default class InfiniteScroll {
   constructor(vars = {
-    selector: ``
+    selector: ``,
+    customClass: ``
   }) {
     this.selector = vars.selector;
     this.container = document.querySelector(this.selector);
@@ -19,7 +20,7 @@ export default class InfiniteScroll {
     const artist = elem.querySelector(`p`).textContent;
     const imgUrl = elem.querySelector(`img`).getAttribute(`src`);
 
-    return {title: title, artist: artist, imgUrl: imgUrl};
+    return {title: title, artist: artist, url: imgUrl};
 
   }
 

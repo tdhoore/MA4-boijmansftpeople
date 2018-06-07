@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-//import Submission from '../components/Submission.jsx';
+import Submission from '../components/Submission.jsx';
 
 class AllSubmissions extends Component {
   constructor(props) {
@@ -25,13 +25,7 @@ class AllSubmissions extends Component {
     return (<div>
       {
         this.submissions.map(submission => {
-          return (<article>
-            <header>
-              <h3>{submission.title}</h3>
-              <p>{submission.artist}</p>
-            </header>
-            <img src={submission.imgUrl} alt={submission.title}/>
-          </article>)
+          return <Submission data={submission} customClass="test"/>
         })
       }
     </div>);

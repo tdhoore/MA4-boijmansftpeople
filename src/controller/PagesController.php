@@ -19,7 +19,7 @@ class PagesController extends Controller {
   }
 
   public function index() {
-  if(!$this->isAjax) {
+  if($this->isAjax) {
       //is ajaxRequest
       $this->handleAjaxRequest();
 
@@ -106,12 +106,12 @@ class PagesController extends Controller {
         $artTitle = $this->userartDAO->getHintsByWorkName($_POST['search'] . '%');
 
         //add artists + tag
-        $artistName.foreach ($name as $value) {
+        foreach ($artistName as $value) {
           array_push($tempResults, ['tag' => 'artistName', 'data' => $value]);
         }
 
         //add works + tag
-        $artTitle.foreach ($name as $value) {
+        foreach ($artTitle as $value) {
           array_push($tempResults, ['tag' => 'artistName', 'data' => $value]);
         }
 
@@ -147,7 +147,7 @@ class PagesController extends Controller {
       //there is a theme
       $themeSql = '';
 
-      $data['theme'].foreach($theme as $value) {
+      foreach($data['theme'] as $value) {
         if($themeSql === '') {
           $themeSql = '(' . $value . '== `themeId`';
         } else {
@@ -168,7 +168,7 @@ class PagesController extends Controller {
     }
 
     //create sql code
-    $conditions.foreach ($condition as $value) {
+    foreach ($conditions as $value) {
       if($sql === '') {
         $sql = $value;
       } else {

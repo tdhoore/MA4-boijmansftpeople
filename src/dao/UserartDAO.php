@@ -108,6 +108,22 @@ class UserartDAO extends DAO {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  public function getHintsByArtistName($title) {
+    $sql = "SELECT * FROM `userArt` WHERE `artistName` LIKE :title";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':title', $title);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  public function getHintsByWorkName($title) {
+    $sql = "SELECT * FROM `userArt` WHERE `artTitle` LIKE :title";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':title', $title);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
   /*
 
   private function _getEventIdsFromResult(&$result) {

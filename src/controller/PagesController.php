@@ -95,11 +95,27 @@ class PagesController extends Controller {
         //$_POST['date']
         //$_POST['theme']
         //$_POST['remix']
-
         $result = $this->getFilterdResults($_POST);
 
       } else if ($_POST['action'] === 'searchHint') {
         //get search hints
+        //$_POST['search']
+        $tempResults = [];
+
+        $artistName = $this->userartDAO->getHintsByArtistName($_POST['search'] . '%');
+        $artTitle = $this->userartDAO->getHintsByWorkName($_POST['search'] . '%');
+
+        //add artists + tag
+        $artistName.foreach ($name as $value) {
+          array_push($tempResults, ['tag' => 'artistName', 'data' => $value]);
+        }
+
+        //add works + tag
+        $artTitle.foreach ($name as $value) {
+          array_push($tempResults, ['tag' => 'artistName', 'data' => $value]);
+        }
+
+        $result = $tempResults;
 
       }
     }
@@ -115,23 +131,23 @@ class PagesController extends Controller {
     $conditions = [];
     $sql = '';
 
-    if(!empty($_POST['search'])){
+    if(!empty($data['search'])){
       //there is a search
-      array_push($conditions, $_POST['search'] . '%');
+      array_push($conditions, $data['search'] . '%');
 
     }
 
-    if(!empty($_POST['date'])) {
+    if(!empty($data['date'])) {
       //there is a date
-      array_push($conditions, $_POST['date'] . ' >= `timeStamp`');
+      array_push($conditions, $data['date'] . ' >= `timeStamp`');
 
     }
 
-    if(!empty($_POST['theme'])) {
+    if(!empty($data['theme'])) {
       //there is a theme
       $themeSql = '';
 
-      $_POST['theme'].foreach($theme as $value) {
+      $data['theme'].foreach($theme as $value) {
         if($themeSql === '') {
           $themeSql = '(' . $value . '== `themeId`';
         } else {
@@ -144,9 +160,9 @@ class PagesController extends Controller {
       array_push($conditions, $themeSql);
     }
 
-    if(isset($_POST['remix'])) {
+    if(isset($data['remix'])) {
       //remix is set
-      if($_POST['remix']) {
+      if($data['remix']) {
         array_push($conditions, '1 == reboundId');
       }
     }

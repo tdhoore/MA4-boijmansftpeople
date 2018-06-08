@@ -109,7 +109,7 @@ class UserartDAO extends DAO {
   }
 
   public function getHintsByArtistName($title) {
-    $sql = "SELECT * FROM `userArt` WHERE `artistName` LIKE :title";
+    $sql = "SELECT `artistName` FROM `userArt` WHERE `artistName` LIKE :title";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':title', $title);
     $stmt->execute();
@@ -117,7 +117,7 @@ class UserartDAO extends DAO {
   }
 
   public function getHintsByWorkName($title) {
-    $sql = "SELECT * FROM `userArt` WHERE `artTitle` LIKE :title";
+    $sql = "SELECT `artTitle` FROM `userArt` WHERE `artTitle` LIKE :title";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':title', $title);
     $stmt->execute();

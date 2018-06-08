@@ -107,12 +107,12 @@ class PagesController extends Controller {
 
         //add artists + tag
         foreach ($artistName as $value) {
-          array_push($tempResults, ['tag' => 'artistName', 'data' => $value]);
+          array_push($tempResults, ['tag' => 'artistName', 'value' => $value['artistName']]);
         }
 
         //add works + tag
         foreach ($artTitle as $value) {
-          array_push($tempResults, ['tag' => 'artistName', 'data' => $value]);
+          array_push($tempResults, ['tag' => 'title', 'value' => $value['artTitle']]);
         }
 
         $result = $tempResults;
@@ -121,8 +121,7 @@ class PagesController extends Controller {
     }
 
     //echo result
-    //echo json_encode();
-    var_dump($result);
+    echo json_encode($result);
     exit();
   }
 

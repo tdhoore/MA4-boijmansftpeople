@@ -28,7 +28,37 @@
   <input type="submit" name="submit" value="search" class="btn" />
 </form>
 
-<div class="submissions"></div>
+<div class="submissionsHolder">
+  <div class="submissions">
+    <article class="" data-id="1">
+      <header>
+        <h3>titel1</h3>
+        <p>
+          <span>BY</span>
+          <span>artist1</span></p>
+      </header>
+      <img src="url" alt="url"/>
+    </article>
+    <article class="" data-id="2">
+      <header>
+        <h3>titel2</h3>
+        <p>
+          <span>BY</span>
+          <span>artist2</span></p>
+      </header>
+      <img src="url" alt="url"/>
+    </article>
+    <article class="" data-id="3">
+      <header>
+        <h3>titel3</h3>
+        <p>
+          <span>BY</span>
+          <span>artist3</span></p>
+      </header>
+      <img src="url" alt="url"/>
+    </article>
+  </div>
+</div>
 
 <div class="infinite">
   <article>

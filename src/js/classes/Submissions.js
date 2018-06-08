@@ -2,25 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import SubmissionsOTW from '../components/SubmissionsOTW.jsx';
 
-const test = [
-  {
-    id: 1,
-    title: `werkNaam`,
-    artist: `naam`,
-    image: `url`
-  }, {
-    id: 2,
-    title: `werkNaam2`,
-    artist: `naam2`,
-    image: `url`
-  }, {
-    id: 3,
-    title: `werkNaam3`,
-    artist: `naam3`,
-    image: `url`
-  }
-];
-
 class Submissions {
   constructor(content = {
     selector: ``,
@@ -28,11 +9,36 @@ class Submissions {
   }) {
     this.selector = content.selector;
     this.customClass = content.customClass;
-    this.amount = 3;
+    this.holder = document.querySelector(this.selector)
+    this.amount = 0;
   }
 
+  currentContentToReact() {
+    const articles = [...this.holder.querySelectorAll(`article`)];
+    let result = [];
+
+    //set amount
+    this.amount = articles.length;
+
+    articles.forEach(article => {
+      const data = {
+        id: parseInt(article.dataset.id, 10),
+        title: article.querySelector(`h3`).textContent,
+        artist: article.querySelector(`p span:last-of-type`).textContent,
+        image: article.querySelector(`img`).src
+      }
+
+      result.push(data);
+    });
+
+    return result;
+  }
+
+  addListenersToButtons() {}
+
   init() {
-    ReactDOM.render(<SubmissionsOTW data={test} customClass={this.customClass} amount={this.amount}/>, document.querySelector(this.selector));
+    this.currentContentToReact();
+    ReactDOM.render(<SubmissionsOTW data={this.currentContentToReact()} customClass={this.customClass} amount={this.amount}/>, this.holder);
   }
 }
 

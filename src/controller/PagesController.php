@@ -68,26 +68,49 @@ class PagesController extends Controller {
         $friday = date( 'Y-m-d H:i:s', strtotime('sunday this week'));
 
         $tempResults = $this->userartDAO->selectSOFTW($monday, $friday);
-        $resultAmount = count($tempResults);
+        $tempId = [];
 
+        $resultAmount = count($tempResults);
+        $resultAmount = 20;
         //set the amount we need
         $result = [];
+        $resetCounter = false;
 
         for($i = 0; $i < $_POST['amount']; $i++){
+          //$id = $_POST['currentCount'] + $i;
+          $id = $i + ($_POST['count'] * $_POST['amount']);
 
-          $id = $_POST['currentCount'] + $i;
-
-          if($id > $resultAmount && $_POST['direction']){
-            //check if id is bigger and counting up
-            $id = $i;
-
-          } else if($id < 0 && !$_POST['direction']) {
-            //check if id is smaller and counting down
-            $id = $resultAmount - $i;
+          //$_POST['count']
+          if($id < 0){
+            //is negative
+            $id = ($resultAmount + $id) + 1;
           }
 
-          array_push($result, $tempResults[$id]);
+          if($_POST['count'] > 0) {
+            if($id > $resultAmount) {
+              $id = $id - ($resultAmount) - 1;
+            }
+
+            if($id >= $resultAmount) {
+              $resetCounter = true;
+            }
+          } else {
+            if($id < 0) {
+              $id = $id - ($resultAmount) - 1;
+            }
+
+            if($id <= 0) {
+              $resetCounter = true;
+            }
+          }
+
+
+          array_push($tempId, $id);
         }
+
+        $result['counter'] = $_POST['count'];
+        $result['ids'] = $tempId;
+        $result['resetCounter'] = $resetCounter;
 
       } else if ($_POST['action'] === 'submissions') {
         //get submissions with the filter
@@ -107,7 +130,7 @@ class PagesController extends Controller {
 
         //add artists + tag
         foreach ($artistName as $value) {
-          array_push($tempResults, ['tag' => 'artistName', 'value' => $value['artistName']]);
+          array_push($tempResults, ['tag' => 'artist', 'value' => $value['artistName']]);
         }
 
         //add works + tag

@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "development": "NODE_ENV=development  webpack-dev-server --open",
+    "development": "NODE_ENV=development  webpack-dev-server",
     "production": "rm -rf dist/ && npm run copydist && NODE_ENV=production webpack -p",
     "copydist": "ditto ./src/assets/ ./dist/assets/"
   },

@@ -68,49 +68,41 @@ class PagesController extends Controller {
         $friday = date( 'Y-m-d H:i:s', strtotime('sunday this week'));
 
         $tempResults = $this->userartDAO->selectSOFTW($monday, $friday);
-        $tempId = [];
-
         $resultAmount = count($tempResults);
-        $resultAmount = 20;
-        //set the amount we need
-        $result = [];
-        $resetCounter = false;
+        $resultAmount = 21;
+        $ids = [];
+        //$_POST['amount']
+        //$_POST['lastId']
+        //$_POST['dir']
 
-        for($i = 0; $i < $_POST['amount']; $i++){
-          //$id = $_POST['currentCount'] + $i;
-          $id = $i + ($_POST['count'] * $_POST['amount']);
-
-          //$_POST['count']
-          if($id < 0){
-            //is negative
-            $id = ($resultAmount + $id) + 1;
-          }
-
-          if($_POST['count'] > 0) {
-            if($id > $resultAmount) {
-              $id = $id - ($resultAmount) - 1;
-            }
-
-            if($id >= $resultAmount) {
-              $resetCounter = true;
-            }
+        for($i = 0; $i < $_POST['amount']; $i++) {
+          if($_POST['dir']) {
+            //is next
+            $id = $_POST['lastId'] + 1 + $i;
           } else {
-            if($id < 0) {
-              $id = $id - ($resultAmount) - 1;
-            }
-
-            if($id <= 0) {
-              $resetCounter = true;
-            }
+            //is prev
+            $id = $_POST['lastId'] - $_POST['amount'] - $i;
           }
 
+          if($id < 0) {
+            //is negative
+            $id = $resultAmount + $id + 1;
+          }
 
-          array_push($tempId, $id);
+          if($id > $resultAmount) {
+            //is to big
+            $id -= $resultAmount + 1;
+          }
+
+          array_push($ids, $id);
         }
 
-        $result['counter'] = $_POST['count'];
-        $result['ids'] = $tempId;
-        $result['resetCounter'] = $resetCounter;
+        if(!$_POST['dir']) {
+          //reverse if backwards
+          $ids = array_reverse($ids);
+        }
+
+        $result['ids'] = $ids;
 
       } else if ($_POST['action'] === 'submissions') {
         //get submissions with the filter

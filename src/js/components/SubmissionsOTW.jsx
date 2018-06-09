@@ -9,7 +9,8 @@ class SubmissionsOTW extends Component {
     this.url = `index.php`;
 
     this.amount = this.props.amount;
-    this.count = 0;
+    this.lastId = this.amount - 1;
+    this.dir = true;
 
     this.handleClickBtn = e => this.getSubmissions(e);
 
@@ -28,55 +29,18 @@ class SubmissionsOTW extends Component {
 
     //select witch ones
     if (dir === `next`) {
-      this.count++;
+      this.dir = true;
     } else {
-      this.count--;
+      this.dir = false;
     }
-
-    /*if (dir === `next`) {
-      if (this.min === 0) {
-        this.min++;
-      }
-
-      this.min += this.amount;
-      this.max += this.amount;
-    } else {
-      this.min -= this.amount;
-      this.max -= this.amount;
-
-      if (this.max === 0) {
-        this.max--;
-      }
-    }
-
-    //set range
-    for (let i = 0; i < this.amount; i++) {
-      let count = 0;
-
-      if (dir === `next`) {
-        count = this.min + i;
-
-        if (this.hasZero(this.range) || count === 0) {
-          count++;
-        }
-      } else {
-        count = this.max - i;
-
-        if (this.hasZero(this.range) || count === 0) {
-          count--;
-        }
-      }
-
-      this.range.push(count);
-    }
-
-    console.log(this.range);
-
-    this.range = [];*/
 
     formData.append(`action`, `HOTW`);
     formData.append(`amount`, this.amount);
-    formData.append(`count`, this.count);
+    formData.append(`lastId`, this.lastId);
+    formData.append(
+      `dir`, this.dir
+      ? 1
+      : 0);
 
     fetch(this.url, {
       headers: new Headers({Accept: `application/json`}),
@@ -96,25 +60,12 @@ class SubmissionsOTW extends Component {
 
   }
 
-  hasZero(range) {
-    let hasZero = false;
-    range.forEach(r => {
-      if (r === 0) {
-        hasZero = true;
-      }
-    });
-
-    return hasZero;
-  }
-
   handleResponce(responce) {
     // empty range
 
     console.log(responce.ids);
 
-    if (responce.resetCounter) {
-      this.count = 0;
-    }
+    this.lastId = responce.ids[responce.ids.length - 1];
 
     //this.onChangeChannel(`submissionData`, responce)
   }

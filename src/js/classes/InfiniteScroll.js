@@ -20,7 +20,7 @@ export default class InfiniteScroll {
     const artist = elem.querySelector(`p`).textContent;
     const imgUrl = elem.querySelector(`img`).getAttribute(`src`);
 
-    return {title: title, artist: artist, url: imgUrl};
+    return {artTitle: title, artistName: artist, image: imgUrl};
 
   }
 

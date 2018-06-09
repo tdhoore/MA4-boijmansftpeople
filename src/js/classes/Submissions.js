@@ -23,8 +23,8 @@ class Submissions {
     articles.forEach(article => {
       const data = {
         id: parseInt(article.dataset.id, 10),
-        title: article.querySelector(`h3`).textContent,
-        artist: article.querySelector(`p span:last-of-type`).textContent,
+        artTitle: article.querySelector(`h3`).textContent,
+        artistName: article.querySelector(`p span:last-of-type`).textContent,
         image: article.querySelector(`img`).src
       }
 

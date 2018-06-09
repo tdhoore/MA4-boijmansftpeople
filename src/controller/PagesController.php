@@ -47,10 +47,6 @@ class PagesController extends Controller {
 
     $popups = $this->popupDAO->selectAll();
     $this->set('popups', $popups);
-
-    //$users = $this->userDAO->selectAll();
-    //$this->set('users', $users);
-
   }
 
   private function handleAjaxRequest() {
@@ -68,42 +64,39 @@ class PagesController extends Controller {
         $friday = date( 'Y-m-d H:i:s', strtotime('sunday this week'));
 
         $tempResults = $this->userartDAO->selectSOFTW($monday, $friday);
-        $resultAmount = count($tempResults);
-        $resultAmount = 21;
-        $ids = [];
-        //$_POST['amount']
-        //$_POST['lastId']
-        //$_POST['dir']
+        $resultAmount = count($tempResults) - 1;
+        $results = [];
 
-        for($i = 0; $i < $_POST['amount']; $i++) {
-          if($_POST['dir']) {
-            //is next
-            $id = $_POST['lastId'] + 1 + $i;
-          } else {
-            //is prev
-            $id = $_POST['lastId'] - $_POST['amount'] - $i;
+        if($resultAmount + 1 > $_POST['amount']) {
+          for($i = 0; $i < $_POST['amount']; $i++) {
+            if($_POST['dir']) {
+              //is next
+              $id = $_POST['lastId'] + 1 + $i;
+            } else {
+              //is prev
+              $id = $_POST['lastId'] - $_POST['amount'] - $i;
+            }
+
+            while ($id > $resultAmount) {
+              //is to big
+              $id -= $resultAmount + 1;
+            }
+
+            while ($id < 0) {
+              //is negative
+              $id = ($resultAmount + 1) + $id;
+            }
+
+            array_push($results, $tempResults[$id]);
           }
 
-          if($id < 0) {
-            //is negative
-            $id = $resultAmount + $id + 1;
+          if(!$_POST['dir']) {
+            //reverse if backwards
+            $results = array_reverse($results);
           }
 
-          if($id > $resultAmount) {
-            //is to big
-            $id -= $resultAmount + 1;
-          }
-
-          array_push($ids, $id);
+          $result = $results;
         }
-
-        if(!$_POST['dir']) {
-          //reverse if backwards
-          $ids = array_reverse($ids);
-        }
-
-        $result['ids'] = $ids;
-
       } else if ($_POST['action'] === 'submissions') {
         //get submissions with the filter
         //$_POST['search']

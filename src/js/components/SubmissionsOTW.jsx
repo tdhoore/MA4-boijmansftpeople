@@ -49,25 +49,17 @@ class SubmissionsOTW extends Component {
       body: formData
     }).then(r => r.json()).then(r => this.handleResponce(r));
 
-    /*this.handleResponce([
-      {
-        id: 1,
-        title: `werkNaam`,
-        artist: `naam`,
-        image: `url`
-      }
-    ]);*/
-
   }
 
   handleResponce(responce) {
-    // empty range
+    if (responce) {
+      //set lastId
+      this.lastId = responce[responce.length - 1].id - 1;
 
-    console.log(responce.ids);
+      this.onChangeChannel(`submissionData`, responce);
+    }
 
-    this.lastId = responce.ids[responce.ids.length - 1];
-
-    //this.onChangeChannel(`submissionData`, responce)
+    console.log(responce);
   }
 
   render() {

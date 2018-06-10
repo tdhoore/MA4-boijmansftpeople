@@ -43,12 +43,10 @@ export default class SearchSuggestion extends CustomDropDown {
     const $input = $option.parentElement.parentElement.parentElement.querySelector(`input`);
 
     $input.value = $option.querySelector(`span:last-of-type`).textContent;
-    this.addToSelectedTags(this.getOptionData($option));
 
     //preform reset
     this.wipeElement($option.parentElement.parentElement);
   }
-
 
   getOptionData($option) {
     return {type: $option.children[0].textContent, value: $option.children[1].textContent};
@@ -84,12 +82,11 @@ export default class SearchSuggestion extends CustomDropDown {
       headers: new Headers({Accept: `application/json`}),
       credentials: `same-origin`,
       method: `POST`,
-      body: formData,
+      body: formData
     }).then(r => r.json()).then(this.ajaxResult);
   }
 
   handleAjaxResult(results) {
-    console.log(results);
     const $input = document.querySelector(`input[name="search"]`);
     const $customSuggestion = this.getCustomSuggestion($input);
 

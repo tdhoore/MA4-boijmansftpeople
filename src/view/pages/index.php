@@ -1,4 +1,4 @@
-<form class="activiteitenFilter" action="index.php" method="post" autocomplete="off">
+<form class="submissionFilter" action="index.php" method="post" autocomplete="off">
   <input type="hidden" name="action" value="filter" />
   <label for="search">
     <span>Ik zoek</span>
@@ -7,21 +7,23 @@
     </span>
   </label>
   <div class="locAndDate">
-    <label for="location">
-      <span>in</span>
-      <span class="textInput">
-      <input type="text" name="location" id="location" placeholder="Stad of postcode" class="suggestion" value=""/>
-    </span>
-    </label>
-    <label for="date">
-      <span>op</span>
-      <select class="" name="date" id="date">
+    <label for="month">
+      <span>month</span>
+      <select class="" name="month" id="month">
         <option value="0">Alles</option>
-        <option value="09-09-2018">09/09</option>
-        <option value="16-09-2018">16/09</option>
-        <option value="17-09-2018">17/09</option>
-        <option value="18-09-2018">18/09</option>
-        <option value="22-09-2018">22/09</option>
+        <option value="1">January</option>
+        <option value="2">February</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">Juli</option>
+      </select>
+    </label>
+    <label for="year">
+      <span>year</span>
+      <select class="" name="year" id="year">
+        <option value="2018">2018</option>
       </select>
     </label>
   </div>
@@ -61,7 +63,7 @@
 </div>
 
 <div class="infinite">
-  <article>
+  <!--<article>
     <header>
       <h3>test</h3>
       <p>tester</p>
@@ -403,5 +405,5 @@
       <p>tester</p>
     </header>
     <img src="" alt="" />
-  </article>
-</div>
+  </article>-->
+  </div>

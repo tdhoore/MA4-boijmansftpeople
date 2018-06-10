@@ -9,7 +9,7 @@ const filter = new SearchSuggestion({selector: `.suggestion`, customClass: `filt
 
 const submissions = new Submissions({selector: `.submissions`});
 
-const infiniteScroll = new InfiniteScroll({selector: `.infinite`, customClass: ``});
+const infiniteScroll = new InfiniteScroll({selector: `.infinite`, customClass: ``, filterSelector: `.submissionFilter`});
 
 const init = () => {
   filter.init();

@@ -48,7 +48,6 @@ class SubmissionsOTW extends Component {
       method: `POST`,
       body: formData
     }).then(r => r.json()).then(r => this.handleResponce(r));
-
   }
 
   handleResponce(responce) {
@@ -58,8 +57,6 @@ class SubmissionsOTW extends Component {
 
       this.onChangeChannel(`submissionData`, responce);
     }
-
-    console.log(responce);
   }
 
   render() {

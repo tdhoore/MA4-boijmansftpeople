@@ -34,8 +34,6 @@ class Submissions {
     return result;
   }
 
-  addListenersToButtons() {}
-
   init() {
     this.currentContentToReact();
     ReactDOM.render(<SubmissionsOTW data={this.currentContentToReact()} customClass={this.customClass} amount={this.amount}/>, this.holder);

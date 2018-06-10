@@ -6,7 +6,8 @@ export default class InfiniteScroll {
   constructor(vars = {
     selector: ``,
     customClass: ``,
-    filterSelector: ``
+    filterSelector: ``,
+    emmitter: false
   }) {
     this.selector = vars.selector;
     this.container = document.querySelector(this.selector);
@@ -15,6 +16,7 @@ export default class InfiniteScroll {
     this.submissions = [];
 
     this.filter = document.querySelector(vars.filterSelector);
+    this.emmitter = vars.emmitter;
   }
 
   existingElementsToObj(elem) {
@@ -34,7 +36,7 @@ export default class InfiniteScroll {
       return result;
     });
 
-    ReactDOM.render(<AllSubmissions submissions={this.submissions} container={this.container} filter={this.filter}/>, this.container);
+    ReactDOM.render(<AllSubmissions submissions={this.submissions} container={this.container} filter={this.filter} emmitter={this.emmitter}/>, this.container);
   }
 
 }

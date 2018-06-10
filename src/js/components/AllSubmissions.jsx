@@ -22,6 +22,22 @@ class AllSubmissions extends Component {
 
     this.scrollFunc = e => this.handleScroll(e);
     window.addEventListener(`scroll`, this.scrollFunc);
+
+    this.emmitter = this.props.emmitter;
+    this.emmitter.on(`changeFilter`, () => {
+      this.resetSubmissions();
+    });
+  }
+
+  resetSubmissions() {
+    //set start to 0
+    this.limitStart = 0;
+
+    //get new submission
+    this.getNewSubmissions();
+
+    //reset the trigger
+    this.canTrigger = true;
   }
 
   onChangeChannel = (channel, value) => {

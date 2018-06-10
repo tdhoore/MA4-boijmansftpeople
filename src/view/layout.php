@@ -35,7 +35,15 @@
 <body>
 
     <header class="">
-      <h1>HELLLOOOOOOOOOOOOOOOO</h1>
+      <nav>
+        <ul>
+          <li><img src="" alt="logo"></li>
+          <li><img src="" alt="ism museum BVB"></li>
+          <li>Submissions</li>
+          <li>Arty Parties</li>
+          <li><a>Submit your work</a></li>
+       </ul>
+      </nav>
     </header>
 
   <main>
@@ -45,6 +53,17 @@
   </main>
 
   <footer class="">
+      <address>
+      Museumpark 18-20
+      3015 CX Rotterdam
+      010 44 19 400
+      info@boijmans.nl
+      </address>
+      <img src="" alt="Museum Boijmans Van Beuningen">
+      <div>
+      <a href="https://www.boijmans.nl/">https://www.boijmans.nl/</a>
+      <a href="http://collectie.boijmans.nl/nl">http://collectie.boijmans.nl/nl</a>
+      </div>
   </footer>
   <?php echo $js; ?>
 </body>

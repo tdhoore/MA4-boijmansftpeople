@@ -33,6 +33,9 @@ class AllSubmissions extends Component {
     //set start to 0
     this.limitStart = 0;
 
+    //empty current submissions
+    this.onChangeChannel(`submissions`, []);
+
     //get new submission
     this.getNewSubmissions();
 

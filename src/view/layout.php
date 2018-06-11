@@ -39,14 +39,17 @@
       <img class="bvb" src="#" alt="i.s.m. museum BVB">
       <nav>
         <ul class="nav-list">
-          <li class="nav-li">
-            <p>Submissions</p>
-            <div class="subs-btn"></div>
+          <li class="">
+            <a href="index.php?page=subs" class="nav-li">
+              <p>Submissions</p>
+              <div class="subs-btn <?php if($currentPage == 'subs') echo 'menuitem--active';?>"></div>
+            </a>
           </li>
           <li class="b"></li>
-          <li class="nav-li">
-            <p>Arty Parties</p>
-            <div class="party-btn"></div>
+          <li class="">
+            <a href="index.php?page=party" class="nav-li">
+              <p>Arty Parties</p>
+              <div class="party-btn"></div></a>
           </li>
           <li class="submit-btn"><a>Submit your work</a></li>
        </ul>

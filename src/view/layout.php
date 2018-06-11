@@ -35,7 +35,7 @@
 <body>
 
     <header class="header">
-      <h1 class="logo"></h1>
+      <h1 class="<?php if($currentPage == 'index') echo 'logo';?>"></h1>
       <img class="bvb" src="#" alt="i.s.m. museum BVB">
       <nav>
         <ul class="nav-list">
@@ -45,11 +45,16 @@
               <div class="subs-btn <?php if($currentPage == 'subs') echo 'menuitem--active';?>"></div>
             </a>
           </li>
-          <li class="b"></li>
+          <li class="b">
+            <a href="index.php">
+              <img src="assets/img/logo-b-mobile-nav.svg" alt="bftp logo" width="54" height="54">
+            </a>
+          </li>
           <li class="">
             <a href="index.php?page=party" class="nav-li">
               <p>Arty Parties</p>
-              <div class="party-btn"></div></a>
+              <div class="party-btn"></div>
+            </a>
           </li>
           <li class="submit-btn"><a>Submit your work</a></li>
        </ul>
@@ -69,7 +74,7 @@
       010 44 19 400 <br/>
       info@boijmans.nl
       </address>
-      <img src="" alt="Museum Boijmans Van Beuningen">
+      <img src="assets/img/mbvb-logo-footer.svg" alt="Museum Boijmans Van Beuningen" width="275" height="47">
       <div class="links-footer">
       <a class="a-footer" href="https://www.boijmans.nl/">https://www.boijmans.nl/</a>
       <a class="a-footer" href="http://collectie.boijmans.nl/nl">http://collectie.boijmans.nl/nl</a>

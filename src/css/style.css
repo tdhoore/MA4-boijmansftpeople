@@ -250,3 +250,205 @@ body {
   color: var(--pink);
   font-size: 1.6rem;
 }
+
+/* ARTY PARTIES */
+
+.header-h1 {
+  @apply --repeat-h1;
+}
+
+.header-h1::before {
+  @apply --repeat-h1-before;
+}
+
+.header-h1::after {
+  @apply --repeat-h1-after;
+}
+
+.party-section1 {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 54rem;
+}
+
+.next-party-section {
+  width: 85%;
+  height: 19.3rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.next-party-title {
+  font-size: 2rem;
+  font-weight: thin;
+  font-style: oblique;
+  border-bottom: 1px solid var(--pink);
+  width: 14rem;
+}
+
+.next-party-info, .upcoming-party-article {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  height: 13.2rem;
+}
+
+.next-party-info {
+  width: 100%;
+}
+
+.upcoming-party-article {
+  width: 95%;
+  margin-top: 2.4rem;
+}
+
+.location-name {
+  font-size: 2.4rem;
+  font-family: lemonmilk;
+  font-weight: bold;
+  color: var(--blue);
+}
+
+.location-name::before {
+  content: attr(data-content);
+  position: absolute;
+  margin-left: .2rem;
+  margin-top: .2rem;
+  color: #8485be;
+  z-index: -1;
+}
+
+.location-address {
+  font-size: 2rem;
+  line-height: 3.2rem;
+  color: var(--pink);
+  font-style: oblique;
+}
+
+.next-party-date {
+  background-image: url(../assets/img/party-date-stroke.svg);
+  background-repeat: no-repeat;
+  width: 8.65rem;
+  height: 13.2rem;
+  font-size: 5rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  font-family: lemonmilk;
+  font-weight: thin;
+  color: var(--blue);
+
+  & .next-party-day {
+    padding-left: .4rem;
+  }
+
+  & .next-party-month {
+    text-align: right;
+    padding-right: .4rem;
+  }
+}
+
+.party-tagline {
+  background-color: var(--blue);
+  color: var(--bg-color);
+  text-align: right;
+  font-style: oblique;
+  font-weight: thin;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  & p {
+    width: 85%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  & strong {
+    font-weight: normal;
+  }
+}
+
+.social-link-nav {
+  width: 100%;
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+}
+
+.social-link-ul {
+  display: flex;
+  justify-content: space-between;
+  width: 94%;
+}
+
+/* moet nog in media queries */
+
+.social-link-cta {
+  display: none;
+}
+
+.social-icon {
+  background-image: url(../assets/img/social-icons.svg);
+  background-repeat: no-repeat;
+  background-size: 180%;
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--blue);
+}
+
+.social-link-maps {
+  order: 3;
+}
+
+.social-link-maps .social-a .social-icon {
+  background-position: 0% 125%;
+}
+
+.social-link-fb .social-a .social-icon {
+  background-position: 135% -15%;
+}
+
+.social-link-tt .social-a .social-icon {
+  background-position: -5% -15%;
+}
+
+.party-section2, .party-section3 {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.party-section2-title, .party-section3-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  font-style: oblique;
+  -webkit-text-stroke: .1rem var(--blue);
+  color: var(--bg-color);
+}
+
+.upcoming-location-name {
+  width: 19.5rem;
+  line-height: 2.4rem;
+  font-size: 1.8rem;
+  font-family: lemonmilk;
+  font-weight: bold;
+  color: var(--blue);
+}
+
+.upcoming-address {
+  font-size: 1.8rem;
+  color: var(--pink);
+  font-style: oblique;
+  line-height: 3rem;
+}
+
+.party-section3 {
+  margin-top: 3rem;
+}

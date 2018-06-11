@@ -37,7 +37,7 @@
     <header class="">
       <nav>
         <ul>
-          <li><img src="" alt="logo"></li>
+          <li class="hide logo"></li>
           <li><img src="" alt="ism museum BVB"></li>
           <li>Submissions</li>
           <li>Arty Parties</li>

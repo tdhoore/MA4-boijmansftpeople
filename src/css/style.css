@@ -13,3 +13,13 @@ html {
 .hide {
   display: none;
 }
+
+body {
+  background-color: var(--bg-color);
+}
+
+/* HOME */
+
+.logo {
+  background-image: url(../assets/img/bftp-logo.svg);
+}

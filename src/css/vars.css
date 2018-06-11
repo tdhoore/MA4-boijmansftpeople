@@ -5,4 +5,28 @@
   --pink: #f9537e;
   --darkgrey: #606060;
   --lightgrey: #dadada;
+
+  --button-cut: {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4.6rem;
+    color: var(--bg-color);
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    text-decoration: none;
+  }
+
+  --button-cut-after: {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    right: 0;
+    border-bottom: 2rem solid var(--bg-color);
+    border-left: 2rem solid transparent;
+  }
 }

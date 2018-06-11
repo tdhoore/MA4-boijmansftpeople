@@ -48,6 +48,11 @@ body {
   color: var(--blue);
   font-style: oblique;
   height: 10rem;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .subs-btn {
@@ -57,9 +62,60 @@ body {
   height: 3.4rem;
 }
 
+.nav-li {
+  display: flex;
+  flex-direction: column-reverse;
+  height: 6rem;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .party-btn {
   background-image: url(../assets/img/nav-party-icon.svg);
   background-repeat: no-repeat;
   width: 3.4rem;
   height: 3.4rem;
 }
+
+/* .b {
+  background-image: url(../assets/img/nav-party-icon.svg);
+  background-repeat: no-repeat;
+  width: 5.4rem;
+  height: 5.4rem;
+} */
+
+/* FOOTER */
+
+.footer {
+  width: 100vw;
+  height: 30rem;
+  background-color: var(--blue);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.address-footer {
+  font-weight: 100;
+  font-size: 1.2rem;
+  text-align: center;
+  letter-spacing: .05rem;
+  line-height: 1.5rem;
+}
+
+.links-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.a-footer {
+  font-size: 1.2rem;
+  color: white;
+  letter-spacing: .1rem;
+  line-height: 1.5rem;
+  text-decoration: none;
+}
+
+/* HOME */

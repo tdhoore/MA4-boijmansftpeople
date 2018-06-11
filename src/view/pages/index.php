@@ -1,7 +1,7 @@
 <section>
   <article class="">
-    <h1>Boijmans for the people</h1>
-    <img src="" alt="Artwork of the month">
+    <h1 class="hide">Boijmans for the people</h1>
+    <img src="../assets/img/shirley-temple-small.jpg" alt="Artwork of the month" width="320" height="240">
     <p>
       Your art on our walls / 4 years / <strong>your art on our walls</strong> / 4 years / your art on our walls
       4 years / your art on our walls / 4 years / your art on our walls / 4 years

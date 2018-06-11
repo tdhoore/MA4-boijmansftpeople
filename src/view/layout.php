@@ -39,9 +39,15 @@
       <img class="bvb" src="#" alt="i.s.m. museum BVB">
       <nav>
         <ul class="nav-list">
-          <li class="subs-btn">Submissions</li>
+          <li class="nav-li">
+            <p>Submissions</p>
+            <div class="subs-btn"></div>
+          </li>
           <li class="b"></li>
-          <li class="party-btn">Arty Parties</li>
+          <li class="nav-li">
+            <p>Arty Parties</p>
+            <div class="party-btn"></div>
+          </li>
           <li class="submit-btn"><a>Submit your work</a></li>
        </ul>
       </nav>
@@ -53,17 +59,17 @@
 
   </main>
 
-  <footer class="">
-      <address>
-      Museumpark 18-20
-      3015 CX Rotterdam
-      010 44 19 400
+  <footer class="footer">
+      <address class="address-footer">
+      Museumpark 18-20 <br/>
+      3015 CX Rotterdam <br/>
+      010 44 19 400 <br/>
       info@boijmans.nl
       </address>
       <img src="" alt="Museum Boijmans Van Beuningen">
-      <div>
-      <a href="https://www.boijmans.nl/">https://www.boijmans.nl/</a>
-      <a href="http://collectie.boijmans.nl/nl">http://collectie.boijmans.nl/nl</a>
+      <div class="links-footer">
+      <a class="a-footer" href="https://www.boijmans.nl/">https://www.boijmans.nl/</a>
+      <a class="a-footer" href="http://collectie.boijmans.nl/nl">http://collectie.boijmans.nl/nl</a>
       </div>
   </footer>
   <?php echo $js; ?>

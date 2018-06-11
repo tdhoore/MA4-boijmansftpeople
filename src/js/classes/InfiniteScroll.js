@@ -28,7 +28,6 @@ export default class InfiniteScroll {
   }
 
   init() {
-    console.log(this.container);
     if (this.container) {
       this.currentSubmissions = [...this.container.querySelectorAll(`article`)];
 

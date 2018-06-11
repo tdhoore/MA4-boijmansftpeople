@@ -15,6 +15,10 @@ $routes = array(
   'subs' => array(
     'controller' => 'Pages',
     'action' => 'subs'
+  ),
+  'submit' => array(
+    'controller' => 'Pages',
+    'action' => 'submit'
   )
 );
 

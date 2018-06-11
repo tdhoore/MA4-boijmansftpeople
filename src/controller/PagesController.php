@@ -46,6 +46,10 @@ class PagesController extends Controller {
     $this->set('popups', $popups);
   }
 
+  public function submit() {
+    $this->set('currentPage', 'submit');
+  }
+
   private function handleAjaxRequest() {
     $result = false;
 

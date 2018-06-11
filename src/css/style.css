@@ -170,9 +170,9 @@ body {
 }
 
 .btn-article2 {
-  width: 28rem;
   @apply --button-cut;
   background-color: var(--blue);
+  width: 28rem;
 }
 
 .btn-article2::after {

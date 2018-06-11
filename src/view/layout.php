@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- <script>
+    <script>
         WebFontConfig = {
           custom: {
-            families: ['futura', 'proxima'],
-            urls: ['assets/fonts/futura/futura.css', 'assets/fonts/proxima/proxima.css']
+            families: ['lemonmilk'],
+            urls: ['assets/fonts/lemonmilk/fonts.css']
           }
         };
 
@@ -19,7 +19,7 @@
            wf.async = true;
            s.parentNode.insertBefore(wf, s);
         })(document);
-     </script> -->
+     </script>
 
     <!-- <link rel="icon" href="assets/img/favicon.png"> -->
 

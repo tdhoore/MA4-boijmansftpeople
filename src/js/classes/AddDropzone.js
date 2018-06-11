@@ -1,4 +1,10 @@
-import Dropzone from 'dropzone';
+import * as FilePond from 'filepond';
+import FilePondPluginFileEncode from 'filepond-plugin-file-encode';
+import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
+import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
+import FilePondPluginImageCrop from 'filepond-plugin-image-crop';
+import FilePondPluginImageResize from 'filepond-plugin-image-resize';
+import FilePondPluginImageTransform from 'filepond-plugin-image-transform';
 
 export default class AddDropzone {
   constructor(vars = {
@@ -9,13 +15,12 @@ export default class AddDropzone {
     this.preview = false;
     this.fallback = false;
 
-    this.submit = (e, myDropzone) => this.handleSubmit(e, myDropzone);
+    this.submitForm = e => this.handleSubmit(e);
   }
 
-  handleSubmit(e, myDropzone) {
+  handleSubmit(e) {
     e.preventDefault();
-    e.stopPropagation();
-    myDropzone.processQueue();
+    console.log(`test`);
   }
 
   toggleVisibility($elem) {
@@ -23,28 +28,36 @@ export default class AddDropzone {
   }
 
   init() {
+    console.log();
 
-    //is there a zone
-    if (this.zone) {
-      this.preview = document.querySelector(`.dropzone-previews`);
-      console.log(`test`);
-      this.toggleVisibility(this.preview);
+    FilePond.registerPlugin(
+    // encodes the file as base64 data
+    FilePondPluginFileEncode,
 
-      Dropzone.options.dropzoneJsForm = {
-        //prevents Dropzone from uploading dropped files immediately
-        autoProcessQueue: false,
-        uploadMultiple: true,
-        parallelUploads: 1,
-        maxFiles: 1,
-        addRemoveLinks: true,
-        previewsContainer: `.dropzone-previews`,
+    // validates files based on input type
+    FilePondPluginFileValidateType,
 
-        // The setting up of the dropzone
-        init: () => {
-          const myDropzone = this;
-          this.zone.addEventListeners(`submit`, this.submit(myDropzone));
-        }
-      };
-    }
+    // previews the image
+    FilePondPluginImagePreview,
+
+    // crops the image to a certain aspect ratio
+    FilePondPluginImageCrop,
+
+    // resizes the image to fit a certain size
+    FilePondPluginImageResize,
+
+    // applies crop and resize information on the client
+    FilePondPluginImageTransform);
+
+    // Select the file input and use create() to turn it into a pond
+    // in this example we pass properties along with the create method
+    // we could have also put these on the file input element itself
+    FilePond.create(document.querySelector('.filepond'), {
+      labelIdle: `Drag & Drop your picture or <span class="filepond--label-action">Browse</span>`,
+      imagePreviewHeight: 170,
+      imageCropAspectRatio: '1:1',
+      imageResizeTargetWidth: 200,
+      imageResizeTargetHeight: 200
+    });
   }
 }

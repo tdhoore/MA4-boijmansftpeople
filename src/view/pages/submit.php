@@ -10,6 +10,7 @@
   <article class="">
     <h2>Upload your artwork!</h2>
     <form class="submitForm dropzone" action="index.php?page=submit" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="action" value="submitArt">
       <label for="artistname">
         <span class="titleAccent">Artist name</span>
         <div class="textInput">
@@ -51,12 +52,10 @@
       </label>
 
       <label for="artwork">Drop your art here</label>
-      <div class="dropzone-previews hide"></div>
-      <div class="fallback">
-        <!-- this is the fallback if JS isn't working -->
-        <input name="artwork" type="file" id="artwork" />
-      </div>
-
+      <input type="file"
+       class="filepond"
+       name="filepond"
+       accept="image/png, image/jpeg, image/gif"/>
       <input type="submit" name="submit" value="Submit your work">
     </form>
   </article>

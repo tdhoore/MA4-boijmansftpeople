@@ -2667,10 +2667,6 @@ download@^6.2.2:
     p-event "^1.0.0"
     pify "^3.0.0"
 
-dropzone@^5.4.0:
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/dropzone/-/dropzone-5.4.0.tgz#3290c07f59b189eb5a11e99a58c9b2adae5acfec"
-
 duplexer2@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/duplexer2/-/duplexer2-0.0.2.tgz#c614dcf67e2fb14995a91711e5a617e8a60a31db"
@@ -3430,6 +3426,34 @@ filenamify@^2.0.0:
     filename-reserved-regex "^2.0.0"
     strip-outer "^1.0.0"
     trim-repeated "^1.0.0"
+
+filepond-plugin-file-encode@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/filepond-plugin-file-encode/-/filepond-plugin-file-encode-1.0.4.tgz#954e979d12c1d9a8ea96c990b1f1b1fcc51cd7b4"
+
+filepond-plugin-file-validate-type@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/filepond-plugin-file-validate-type/-/filepond-plugin-file-validate-type-1.1.0.tgz#ee1cef9174f02c360ca8f1f8839389e8cc2640f5"
+
+filepond-plugin-image-crop@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/filepond-plugin-image-crop/-/filepond-plugin-image-crop-1.0.1.tgz#1c3132cc72a2e0b0d3eecb4da63283b1b9f3ca2d"
+
+filepond-plugin-image-preview@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/filepond-plugin-image-preview/-/filepond-plugin-image-preview-1.0.9.tgz#e82032eac45be1c56efbe5bac19d137c5df908f3"
+
+filepond-plugin-image-resize@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/filepond-plugin-image-resize/-/filepond-plugin-image-resize-1.1.0.tgz#680e89b1fea65b9e271d480de53f814554936f07"
+
+filepond-plugin-image-transform@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/filepond-plugin-image-transform/-/filepond-plugin-image-transform-1.1.0.tgz#7e91deb506c3f57ab63e098a8b02a3a6bcd3a3c0"
+
+filepond@^1.7.1:
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/filepond/-/filepond-1.7.1.tgz#d1eece01e42dd2518e10447695de9bcd3379b169"
 
 filesize@3.5.5:
   version "3.5.5"

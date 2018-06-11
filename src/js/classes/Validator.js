@@ -17,7 +17,6 @@ export default class Validator {
   init() {
     //check if there is a form
     if (this.form) {
-
       //get attributes
       this.action = this.form.getAttribute(`action`);
       this.method = this.form.getAttribute(`method`);
@@ -35,10 +34,11 @@ export default class Validator {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
+    //e.preventDefault();
+    console.log(this.form);
     //check if the form is valid
     //and check if agreements are met
-    if (this.form.checkValidity()) {
+    /*if (this.form.checkValidity()) {
       //clear all messages
       this.restInputAllMessages();
 
@@ -47,7 +47,7 @@ export default class Validator {
     } else {
       //check all the inputs for mistakes
       this.checkInputs();
-    }
+    }*/
   }
 
   checkInputs() {

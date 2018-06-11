@@ -29,4 +29,28 @@
     border-bottom: 2rem solid var(--bg-color);
     border-left: 2rem solid transparent;
   }
+
+  /* voor de repeating headers
+  in html moet je de data-content attr vullen met wat ook in de h1 zelf staat
+  font-size zal moeten aangepast worden voor responsive*/
+  --repeat-h1: {
+    font-family: lemonmilk;
+    font-weight: bold;
+    color: var(--pink);
+    -webkit-text-stroke: 1px var(--bg-color);
+    font-size: 3.7rem;
+    display: flex;
+  }
+
+  --repeat-h1-after: {
+    content: attr(data-content);
+    position: absolute;
+    margin-top: 2rem;
+  }
+
+  --repeat-h1-before: {
+    content: attr(data-content);
+    position: absolute;
+    margin-top: 1rem;
+  }
 }

@@ -34,14 +34,15 @@
 
 <body>
 
-    <header class="">
+    <header class="header">
+      <h1 class="logo"></h1>
+      <img class="bvb" src="#" alt="i.s.m. museum BVB">
       <nav>
-        <ul>
-          <li class="hide logo"></li>
-          <li><img src="" alt="i.s.m. museum BVB"></li>
-          <li>Submissions</li>
-          <li>Arty Parties</li>
-          <li><a>Submit your work</a></li>
+        <ul class="nav-list">
+          <li class="subs-btn">Submissions</li>
+          <li class="b"></li>
+          <li class="party-btn">Arty Parties</li>
+          <li class="submit-btn"><a>Submit your work</a></li>
        </ul>
       </nav>
     </header>

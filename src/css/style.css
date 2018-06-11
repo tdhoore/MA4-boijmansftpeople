@@ -4,6 +4,7 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  font-family: helvetica;
 }
 
 *, *:before, *:after {/* stylelint-disable-line */
@@ -16,5 +17,49 @@ html {
 
 body {
   background-color: var(--bg-color);
-  font-family: lemonmilk;
+}
+
+/* HEADER */
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+
+.logo {
+  background-image: url(../assets/img/bftp-logo.svg);
+  background-repeat: no-repeat;
+  width: 22rem;
+  height: 15.1rem;
+}
+
+.bvb {
+  display: none;
+}
+
+.submit-btn {
+  display: none;
+}
+
+.nav-list {
+  color: var(--blue);
+  font-style: oblique;
+  height: 10rem;
+}
+
+.subs-btn {
+  background-image: url(../assets/img/nav-subs-icon.svg);
+  background-repeat: no-repeat;
+  width: 3.4rem;
+  height: 3.4rem;
+}
+
+.party-btn {
+  background-image: url(../assets/img/nav-party-icon.svg);
+  background-repeat: no-repeat;
+  width: 3.4rem;
+  height: 3.4rem;
 }

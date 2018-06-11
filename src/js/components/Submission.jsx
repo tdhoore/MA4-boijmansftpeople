@@ -4,12 +4,12 @@ import PropTypes from "prop-types";
 const Submission = ({data, customClass}) => {
   return (<article className={customClass}>
     <header>
-      <h3>{data.title}</h3>
+      <h3>{data.artTitle}</h3>
       <p>
         <span>BY</span>
-        {data.artist}</p>
+        {data.artistName}</p>
     </header>
-    <img src={data.url} alt={data.title}/>
+    <img src={data.image} alt={data.artTitle}/>
   </article>);
 };
 

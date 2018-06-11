@@ -38,26 +38,27 @@
 </section>
 
 <section class="index-section3">
-  <h2 class="s3-h2">Arty parties</h2>
+  <h2 class="s3-h2"><span class="hide">Arty parties</span></h2>
+
   <article class="">
-    <h3>upcoming Arty Party:</h3>
+    <h3 class="s3a1-h3">upcoming Arty Party:</h3>
     <p>29/06</p>
-    <p>Biergarten</p>
-    <address class="">
+    <p class="s3a1-title">Biergarten</p>
+    <address class="s3a2-address">
       Schiestraat 18 3013BR <br/>
       Rotterdam Netherlands
     </address>
     <a href="#">
-      <img src="#" alt="facebook event">
-      <p>i'm interested</p>
+      <img src="../assets/img/interested-button.svg" alt="facebook event" width="50" height="50">
     </a>
   </article>
+
   <article class="">
     <h3 class="hide">Concept</h3>
     <p>
       Every last friday of the month, we throw an <strong>afterwork party</strong> to close off the theme of the month. We’ll announce <strong>who’s work will be displayed</strong> in Museum Boijmans Van Beuningen when it re-opens, and <strong>announce next month’s theme and painting</strong>. You can sit back and relax, look at everybody’s submission from the last few weeks, or you can do a <strong>collaborative remake</strong> of the new painting.
     </p>
-    <a href="#">More about this</a>
+    <a href="index.php?page=party" class="s3-btn">More about this</a>
   </article>
 </section>
 

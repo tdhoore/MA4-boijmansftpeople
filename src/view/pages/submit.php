@@ -9,7 +9,7 @@
   </article>
   <article class="">
     <h2>Upload your artwork!</h2>
-    <form class="" action="index.php?page=submit" method="post">
+    <form class="submitForm" action="index.php?page=submit" method="post">
       <label for="artistname">
         <span class="titleAccent">Artist name</span>
         <div class="textInput">

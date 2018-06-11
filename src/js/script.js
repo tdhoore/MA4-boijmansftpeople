@@ -2,6 +2,7 @@ import CustomSelect from './classes/CustomSelect';
 import SearchSuggestion from './classes/SearchSuggestion';
 import Submissions from './classes/Submissions';
 import InfiniteScroll from './classes/InfiniteScroll';
+import Validator from './classes/Validator';
 import Emitter from 'event-emitter';
 
 const eventEmitter = Emitter();
@@ -14,6 +15,8 @@ const submissions = new Submissions({selector: `.submissions`});
 
 const infiniteScroll = new InfiniteScroll({selector: `.infinite`, customClass: ``, filterSelector: `.submissionFilter`, emmitter: eventEmitter});
 
+const submitValidator = new Validator({formSelector: `.submitForm`});
+
 const init = () => {
   filter.init();
 
@@ -22,6 +25,24 @@ const init = () => {
   submissions.init();
 
   infiniteScroll.init();
+
+  if (submitValidator.init()) {
+    submitValidator.addValidationToInput(`input[type="email"]`, [
+      {
+        name: `valueMissing`,
+        messages: {
+          error: `Please, enter an email adress`,
+          okey: ``
+        }
+      }, {
+        name: `typeMismatch`,
+        messages: {
+          error: `Please, enter a correct email adress`,
+          okey: `Looks great!`
+        }
+      }
+    ]);
+  }
 }
 
 init();

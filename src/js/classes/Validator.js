@@ -1,11 +1,11 @@
 export default class Validator {
   constructor(param = {
-    form: false,
+    formSelector: ``
   }) {
     //must have items
-    this.form = param.form;
-    this.action = this.form.getAttribute(`action`);
-    this.method = this.form.getAttribute(`method`);
+    this.form = document.querySelector(param.formSelector);
+    this.action = false;
+    this.method = false;
     this.inputs = [];
 
     //listeners
@@ -17,6 +17,11 @@ export default class Validator {
   init() {
     //check if there is a form
     if (this.form) {
+
+      //get attributes
+      this.action = this.form.getAttribute(`action`);
+      this.method = this.form.getAttribute(`method`);
+
       //add event listener
       this.form.addEventListener(`submit`, this.listener);
 
@@ -57,7 +62,7 @@ export default class Validator {
       headers: new Headers({Accept: `application/json`}),
       credentials: `same-origin`,
       method: this.method,
-      body: new FormData(this.form),
+      body: new FormData(this.form)
     }).then(responce => responce.json()).then(this.handleAjaxResult);
   }
 

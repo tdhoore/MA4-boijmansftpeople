@@ -11,7 +11,7 @@ export default class InfiniteScroll {
   }) {
     this.selector = vars.selector;
     this.container = document.querySelector(this.selector);
-    this.currentSubmissions = [...this.container.querySelectorAll(`article`)];
+    this.currentSubmissions = false;
 
     this.submissions = [];
 
@@ -28,15 +28,20 @@ export default class InfiniteScroll {
   }
 
   init() {
-    this.submissions = this.currentSubmissions.map(elem => {
-      let result = this.existingElementsToObj(elem);
+    console.log(this.container);
+    if (this.container) {
+      this.currentSubmissions = [...this.container.querySelectorAll(`article`)];
 
-      elem.outerHTML = ``;
+      this.submissions = this.currentSubmissions.map(elem => {
+        let result = this.existingElementsToObj(elem);
 
-      return result;
-    });
+        elem.outerHTML = ``;
 
-    ReactDOM.render(<AllSubmissions submissions={this.submissions} container={this.container} filter={this.filter} emmitter={this.emmitter}/>, this.container);
+        return result;
+      });
+
+      ReactDOM.render(<AllSubmissions submissions={this.submissions} container={this.container} filter={this.filter} emmitter={this.emmitter}/>, this.container);
+    }
   }
 
 }

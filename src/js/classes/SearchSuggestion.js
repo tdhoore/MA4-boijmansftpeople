@@ -19,13 +19,16 @@ export default class SearchSuggestion extends CustomDropDown {
   }
 
   init() {
-    //add addEventListeners to inputs
-    this.inputs.forEach($input => {
-      $input.addEventListener(`input`, this.inputListener);
-    });
+    if (this.inputs.length > 0) {
 
-    // add listener to window
-    window.addEventListener(`click`, this.clickWindow);
+      //add addEventListeners to inputs
+      this.inputs.forEach($input => {
+        $input.addEventListener(`input`, this.inputListener);
+      });
+
+      // add listener to window
+      window.addEventListener(`click`, this.clickWindow);
+    }
   }
 
   handleInput(e) {

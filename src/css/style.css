@@ -127,15 +127,46 @@ body {
 
 /* HOME */
 
+.index-section1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .index-article1 {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
+}
+
+.shirley {
+  align-self: center;
+  margin-top: 2rem;
+}
+
+.index-tagline {
+  background-image: url(../assets/img/tagline.png);
+  height: 5rem;
+  width: 100vw;
 }
 
 .index-article {
+  display: flex;
   width: 90vw;
-  margin: 0 auto;
+  flex-direction: column;
   margin-top: 3rem;
+}
+
+.index-article2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 50rem;
+  height: 40rem;
+}
+
+.a2-container {
+  width: 45rem;
+  max-height: 35rem;
 }
 
 .h2-article2 {
@@ -144,6 +175,7 @@ body {
   font-family: lemonmilk;
   font-weight: light;
   font-size: 2rem;
+  align-self: flex-start;
 }
 
 .h3-article2 {
@@ -151,6 +183,7 @@ body {
   font-weight: bold;
   color: var(--pink);
   font-size: 3rem;
+  align-self: flex-start;
 }
 
 .div-article2 {
@@ -160,11 +193,13 @@ body {
   justify-content: space-around;
 }
 
-.p-article2 {
-  line-height: 1.8rem;
+.p-article {
+  line-height: 2rem;
+  max-width: 45rem;
+  width: 90vw;
 }
 
-.p-article2 strong {
+.p-article strong {
   font-style: oblique;
   font-weight: 400;
 }
@@ -173,6 +208,7 @@ body {
   @apply --button-cut;
   background-color: var(--blue);
   width: 28rem;
+  align-self: flex-end;
 }
 
 .btn-article2::after {
@@ -183,9 +219,30 @@ body {
   border: .2rem solid var(--blue);
 }
 
+/* MORGENOCHTEND */
+
+.winner-div {
+  width: 100%;
+}
+
+.winner-div::after {
+  content: '';
+  background-image: url(../assets/img/last-winner-typo.svg);
+  background-repeat: no-repeat;
+  width: 12rem;
+  height: 12rem;
+  /* align-self: flex-end;
+  margin-bottom: -5rem; */
+  /* z-index: 1; */
+}
+
+/* --- */
+
 .index-article3 {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  height: 40rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .index-section2 {
@@ -201,6 +258,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
 }
 
 .btn-article4 {
@@ -228,6 +286,8 @@ body {
   @apply --button-cut;
   width: 28rem;
   background-color: var(--pink);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .s3-btn::after {
@@ -244,9 +304,126 @@ body {
   font-weight: bold;
   font-size: 2.2rem;
   color: var(--blue);
+  grid-area: title;
 }
 
 .s3a2-address {
   color: var(--pink);
   font-size: 1.6rem;
+  grid-area: address;
+}
+
+.fb-btn {
+  grid-area: fb;
+}
+
+.index-section3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.s3-div {
+  width: 28rem;
+  height: 10rem;
+
+  display: grid;
+  grid-template-columns: 1fr 5rem;
+  grid-template-rows: 1fr 1fr;
+
+  grid-template-areas: '. fb' 'event fb';
+}
+
+.event-div {
+  grid-area: date;
+  color: var(--blue);
+  font-family: lemonmilk;
+  font-size: 2.5rem;
+  font-weight: light;
+  width: 4.7rem;
+  height: 7.3rem;
+  background-image: url(../assets/img/party-date-stroke.svg);
+  background-repeat: no-repeat;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1.5rem);
+  grid-template-rows: 2.4rem 2rem 2.4rem;
+
+  grid-template-areas: 'dag dag .' '. . .' '. maand maand';
+}
+
+.p-dag {
+  grid-area: dag;
+  padding-top: .5rem;
+}
+
+.p-maand {
+  grid-area: maand;
+}
+
+.div-place {
+  grid-area: place;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 7.3rem;
+}
+
+.event {
+  /* border: .2rem solid var(--blue); */
+  grid-area: event;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.s3-article {
+  margin-bottom: 3rem;
+}
+
+.index-section4 {
+  height: 45rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../assets/img/about-bg.png);
+}
+
+.about-bg {
+  background-color: var(--lightgrey);
+  width: 100vw;
+  max-width: 70rem;
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: about;
+}
+
+.aboutimg {
+  grid-area: aboutimg;
+  margin-bottom: -3rem;
+  z-index: 1;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .index-article2 {
+    border: .2rem solid var(--blue);
+  }
+
+  .btn-article2 {
+    margin-bottom: -10rem;
+    margin-right: -.2rem;
+  }
+
+  .div-article2 {
+    height: 25rem;
+  }
+
+  .index-tagline {
+    background-repeat: repeat;
+    height: 10rem;
+  }
 }

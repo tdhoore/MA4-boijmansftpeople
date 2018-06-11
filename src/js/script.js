@@ -4,6 +4,7 @@ import Submissions from './classes/Submissions';
 import InfiniteScroll from './classes/InfiniteScroll';
 import Validator from './classes/Validator';
 import Emitter from 'event-emitter';
+import AddDropzone from './classes/AddDropzone';
 
 const eventEmitter = Emitter();
 
@@ -17,6 +18,8 @@ const infiniteScroll = new InfiniteScroll({selector: `.infinite`, customClass: `
 
 const submitValidator = new Validator({formSelector: `.submitForm`});
 
+const addDropzone = new AddDropzone({selector: `.submitForm`})
+
 const init = () => {
   filter.init();
 
@@ -26,19 +29,41 @@ const init = () => {
 
   infiniteScroll.init();
 
+  addDropzone.init();
+
   if (submitValidator.init()) {
     submitValidator.addValidationToInput(`input[type="email"]`, [
       {
         name: `valueMissing`,
         messages: {
-          error: `Please, enter an email adress`,
+          error: `No worries, we won’t spam your inbox`,
           okey: ``
         }
       }, {
         name: `typeMismatch`,
         messages: {
-          error: `Please, enter a correct email adress`,
+          error: `Sorry, this isn’t a valid email`,
           okey: `Looks great!`
+        }
+      }
+    ]);
+
+    submitValidator.addValidationToInput(`input[type="text"]`, [
+      {
+        name: `valueMissing`,
+        messages: {
+          error: `Sorry, leaving it anonymous isn’t an option`,
+          okey: `What a beautiful name`
+        }
+      }
+    ]);
+
+    submitValidator.addValidationToInput(`input[type="checkbox"]`, [
+      {
+        name: `valueMissing`,
+        messages: {
+          error: `Please agree`,
+          okey: ``
         }
       }
     ]);

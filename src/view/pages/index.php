@@ -1,8 +1,8 @@
-<section>
-  <article class="">
-    <h1>Boijmans for the people</h1>
-    <img src="" alt="Artwork of the month">
-    <p>
+<section class="index-section1">
+  <article class="index-article1">
+    <h1 class="hide">Boijmans for the people</h1>
+    <img src="../assets/img/shirley-temple-small.jpg" alt="Artwork of the month" width="320" height="240">
+    <p class="test">
       Your art on our walls / 4 years / <strong>your art on our walls</strong> / 4 years / your art on our walls
       4 years / your art on our walls / 4 years / your art on our walls / 4 years
       Your art on our walls / <strong>4 years</strong> / your art on our walls / 4 years / your art on our walls
@@ -10,30 +10,35 @@
     </p>
   </article>
 
-  <article class="">
-    <h2>- theme of the month</h2>
-    <h3>Satire of sexualisation</h3>
-    <p>
-      This month’s work is <strong>“Shirley Temple, The Youngest, Most Sacred Monster of the Cinema in Her Time”</strong>, which was made by <strong>Salvador Dali</strong>, the well known surrealist painter. Shirley Temple was a child actress in the mid-thirties. Dali took her head out of a newspaper and superimposed it to the body of a lioness, made to look like a sphinx. That’s why they sometimes call it “Barcelona Sphinx”. The idea behind this work is described as a satire on the sexualisation of child stars by Hollywood.<br/>
-
-      <strong>Now it’s your turn</strong> to make a satire on sexualisation. You can start by <strong>downloading this painting</strong> to use as a template, or you can look through different submissions and use <strong>someone else’s submission as a template</strong>. Your only restriction is the size of your artwork should be the size of “Barcelona Sphinx” itself.
-    </p>
-    <a href="#">Submit your work</a>
+  <article class="index-article">
+    <h2 class="h2-article2">- theme of the month</h2>
+    <h3 class="h3-article2">Satire of sexualisation</h3>
+    <div class="div-article2">
+      <p class="p-article2">
+        This month’s work is <strong>“Shirley Temple, The Youngest, Most Sacred Monster of the Cinema in Her Time”</strong>, which was made by <strong>Salvador Dali</strong>, the well known surrealist painter. Shirley Temple was a child actress in the mid-thirties. Dali took her head out of a newspaper and superimposed it to the body of a lioness, made to look like a sphinx. That’s why they sometimes call it “Barcelona Sphinx”. The idea behind this work is described as a satire on the sexualisation of child stars by Hollywood.
+      </p>
+      <p class="p-article2">
+        <strong>Now it’s your turn</strong> to make a satire on sexualisation. You can start by <strong>downloading this painting</strong> to use as a template, or you can look through different submissions and use <strong>someone else’s submission as a template</strong>. Your only restriction is the size of your artwork should be the size of “Barcelona Sphinx” itself.
+      </p>
+    </div>
+    <a href="index.php?page=submit" class="btn-article2">Submit your work</a>
   </article>
 
-  <article class="">
+  <article class="index-article index-article3">
     <h2>last month's winner</h2>
-    <img src="" alt="last month's winner">
+    <img src="../assets/img/last-winner-small.jpg" class="last-winner" alt="last month's winner" width="253" height="272">
   </article>
 </section>
 
-<section>
-  <h2>submissions of the week</h2>
-  <a href="#">More submissions</a>
+<section class="index-section2">
+  <article class="s2-article1">
+    <h2 class="h3-article2">submissions of the week</h2>
+    <a href="index.php?page=subs" class="btn-article4">More submissions</a>
+  </article>
 </section>
 
-<section>
-  <h2>Arty parties</h2>
+<section class="index-section3">
+  <h2 class="s3-h2">Arty parties</h2>
   <article class="">
     <h3>upcoming Arty Party:</h3>
     <p>29/06</p>

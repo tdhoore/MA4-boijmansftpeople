@@ -27,7 +27,7 @@
       </label>
 
       <label for="email">
-        <span class="titleAccent">Name your artwork</span>
+        <span class="titleAccent">Enter your email</span>
         <div class="textInput">
           <input type="email" name="email" id="email" placeholder="salvadordali04@gmail.com" required/>
         </div>

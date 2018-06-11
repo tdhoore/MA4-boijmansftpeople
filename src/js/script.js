@@ -31,14 +31,34 @@ const init = () => {
       {
         name: `valueMissing`,
         messages: {
-          error: `Please, enter an email adress`,
+          error: `No worries, we won’t spam your inbox`,
           okey: ``
         }
       }, {
         name: `typeMismatch`,
         messages: {
-          error: `Please, enter a correct email adress`,
+          error: `Sorry, this isn’t a valid email`,
           okey: `Looks great!`
+        }
+      }
+    ]);
+
+    submitValidator.addValidationToInput(`input[type="text"]`, [
+      {
+        name: `valueMissing`,
+        messages: {
+          error: `Sorry, leaving it anonymous isn’t an option`,
+          okey: `What a beautiful name`
+        }
+      }
+    ]);
+
+    submitValidator.addValidationToInput(`input[type="checkbox"]`, [
+      {
+        name: `valueMissing`,
+        messages: {
+          error: `Please agree`,
+          okey: ``
         }
       }
     ]);

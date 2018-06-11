@@ -37,6 +37,7 @@ export default class Validator {
   handleSubmit(e) {
     e.preventDefault();
     //check if the form is valid
+    //and check if agreements are met
     if (this.form.checkValidity()) {
       //clear all messages
       this.restInputAllMessages();

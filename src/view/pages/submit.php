@@ -9,21 +9,46 @@
   </article>
   <article class="">
     <h2>Upload your artwork!</h2>
-    <form class="" action="index.html" method="post">
-      <label for="artistname">Artist name</label>
-      <input type="text" name="artistname" id="artistname" placeholder="Annabellini">
+    <form class="submitForm" action="index.php?page=submit" method="post">
+      <label for="artistname">
+        <span class="titleAccent">Artist name</span>
+        <div class="textInput">
+          <input type="text" name="artistname" id="artistname" placeholder="Annabellini" required/>
+        </div>
+        <span class="validator"></span>
+      </label>
 
-      <label for="title">Name your artwork</label>
-      <input type="text" name="title" id="title" placeholder="Shirley Temple">
+      <label for="title">
+        <span class="titleAccent">Name your artwork</span>
+        <div class="textInput">
+          <input type="text" name="title" id="title" placeholder="Shirley Temple" required/>
+        </div>
+        <span class="validator"></span>
+      </label>
 
-      <label for="email">email address</label>
-      <input type="email" name="email" id="email" placeholder="salvadordali04@gmail.com">
+      <label for="email">
+        <span class="titleAccent">Name your artwork</span>
+        <div class="textInput">
+          <input type="email" name="email" id="email" placeholder="salvadordali04@gmail.com" required/>
+        </div>
+        <span class="validator"></span>
+      </label>
 
-      <label for="tags">Tags (optional)</label>
-      <textarea name="tags" id="tags" rows="8" cols="80"></textarea>
+      <label for="concept">
+        <span class="titleAccent">concept</span>
+        <div class="textInput">
+          <textarea name="concept" id="concept"></textarea>
+        </div>
+        <span class="validator"></span>
+      </label>
 
-      <label for="terms">I agree with the terms and conditions</label>
-      <input type="checkbox" name="terms" id="terms">
+      <label for="terms">
+        <span class="titleAccent">I agree with the terms and conditions</span>
+        <div class="textInput">
+          <input type="checkbox" name="terms" id="terms" required>
+        </div>
+        <span class="validator"></span>
+      </label>
 
       <label for="artwork">Drop your art here</label>
       <input type="file" name="artwork" id="artwork">

@@ -1,7 +1,7 @@
 <section>
   <h1>submissions</h1>
 
-  <form class="activiteitenFilter" action="index.php?page=activiteiten" method="post" autocomplete="off">
+  <form class="submissionFilter" action="index.php" method="post" autocomplete="off">
     <input type="hidden" name="action" value="filter" />
     <label for="search">
       <span>Ik zoek</span>

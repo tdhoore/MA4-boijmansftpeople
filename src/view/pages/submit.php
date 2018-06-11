@@ -51,7 +51,7 @@
       </label>
 
       <label for="artwork">Drop your art here</label>
-      <div class="dropzone-previews"></div>
+      <div class="dropzone-previews hide"></div>
       <div class="fallback">
         <!-- this is the fallback if JS isn't working -->
         <input name="artwork" type="file" id="artwork" />

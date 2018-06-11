@@ -18,7 +18,7 @@ const infiniteScroll = new InfiniteScroll({selector: `.infinite`, customClass: `
 
 const submitValidator = new Validator({formSelector: `.submitForm`});
 
-const addDropzone = new AddDropzone({selector: `.dropZone`})
+const addDropzone = new AddDropzone({selector: `.submitForm`})
 
 const init = () => {
   filter.init();

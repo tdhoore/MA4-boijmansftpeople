@@ -6,6 +6,9 @@ export default class AddDropzone {
   }) {
     this.selector = vars.selector;
     this.zone = document.querySelector(this.selector);
+    this.preview = false;
+    this.fallback = false;
+
     this.submit = (e, myDropzone) => this.handleSubmit(e, myDropzone);
   }
 
@@ -15,11 +18,19 @@ export default class AddDropzone {
     myDropzone.processQueue();
   }
 
+  toggleVisibility($elem) {
+    $elem.classList.toggle(`hide`);
+  }
+
   init() {
+
     //is there a zone
     if (this.zone) {
-      Dropzone.options.dropzoneJsForm = {
+      this.preview = document.querySelector(`.dropzone-previews`);
+      console.log(`test`);
+      this.toggleVisibility(this.preview);
 
+      Dropzone.options.dropzoneJsForm = {
         //prevents Dropzone from uploading dropped files immediately
         autoProcessQueue: false,
         uploadMultiple: true,

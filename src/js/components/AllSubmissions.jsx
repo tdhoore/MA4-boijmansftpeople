@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import Submission from '../components/Submission.jsx';
+import Submission from './Submission.jsx';
+import AddListenersToFilter from '../classes/AddListenersToFilter';
 
 class AllSubmissions extends Component {
   constructor(props) {
@@ -23,10 +24,21 @@ class AllSubmissions extends Component {
     this.scrollFunc = e => this.handleScroll(e);
     window.addEventListener(`scroll`, this.scrollFunc);
 
+    this.changeFunc = e => this.handleChange(e);
+    this.listeners = new AddListenersToFilter({filterElem: this.filter, toAddFunction: this.changeFunc});
+
     this.emmitter = this.props.emmitter;
     this.emmitter.on(`changeFilter`, () => {
       this.resetSubmissions();
     });
+  }
+
+  handleChange(e) {
+    if (e.currentTarget === this.filter) {
+      e.preventDefault();
+    }
+
+    this.resetSubmissions();
   }
 
   resetSubmissions() {

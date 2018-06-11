@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- <script>
+    <script>
         WebFontConfig = {
           custom: {
-            families: ['futura', 'proxima'],
-            urls: ['assets/fonts/futura/futura.css', 'assets/fonts/proxima/proxima.css']
+            families: ['lemonmilk'],
+            urls: ['assets/fonts/lemonmilk/fonts.css']
           }
         };
 
@@ -19,7 +19,7 @@
            wf.async = true;
            s.parentNode.insertBefore(wf, s);
         })(document);
-     </script> -->
+     </script>
 
     <!-- <link rel="icon" href="assets/img/favicon.png"> -->
 
@@ -28,7 +28,7 @@
     <meta name="keywords" content="Boijmans for the People" />
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <title>BFTP</title>
-    <?php echo $css; ?>
+    <?php echo $css;?>
 
 </head>
 
@@ -38,7 +38,7 @@
       <nav>
         <ul>
           <li class="hide logo"></li>
-          <li><img src="" alt="ism museum BVB"></li>
+          <li><img src="" alt="i.s.m. museum BVB"></li>
           <li>Submissions</li>
           <li>Arty Parties</li>
           <li><a>Submit your work</a></li>

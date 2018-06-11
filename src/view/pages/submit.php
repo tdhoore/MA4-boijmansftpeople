@@ -9,7 +9,7 @@
   </article>
   <article class="">
     <h2>Upload your artwork!</h2>
-    <form class="submitForm" action="index.php?page=submit" method="post">
+    <form class="submitForm dropzone" action="index.php?page=submit" method="post" enctype="multipart/form-data">
       <label for="artistname">
         <span class="titleAccent">Artist name</span>
         <div class="textInput">
@@ -27,7 +27,7 @@
       </label>
 
       <label for="email">
-        <span class="titleAccent">Name your artwork</span>
+        <span class="titleAccent">Enter your email</span>
         <div class="textInput">
           <input type="email" name="email" id="email" placeholder="salvadordali04@gmail.com" required/>
         </div>
@@ -51,7 +51,11 @@
       </label>
 
       <label for="artwork">Drop your art here</label>
-      <input type="file" name="artwork" id="artwork">
+      <div class="dropzone-previews hide"></div>
+      <div class="fallback">
+        <!-- this is the fallback if JS isn't working -->
+        <input name="artwork" type="file" id="artwork" />
+      </div>
 
       <input type="submit" name="submit" value="Submit your work">
     </form>

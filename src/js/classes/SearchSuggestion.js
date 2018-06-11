@@ -43,27 +43,9 @@ export default class SearchSuggestion extends CustomDropDown {
     const $input = $option.parentElement.parentElement.parentElement.querySelector(`input`);
 
     $input.value = $option.querySelector(`span:last-of-type`).textContent;
-    this.addToSelectedTags(this.getOptionData($option));
 
     //preform reset
     this.wipeElement($option.parentElement.parentElement);
-  }
-
-  addToSelectedTags(optionData) {
-    this.selectedTags.push(optionData);
-  }
-
-  addOptionToSelectedTags($option) {
-    const optionData = this.getOptionData($option);
-
-    if (this.checkIfTagIsSelected(optionData)) {
-      this.addToSelectedTags(optionData);
-      this.tagsHolder.append(this.createTag(optionData));
-    }
-  }
-
-  checkIfTagIsSelected(optionData) {
-    return this.selectedTags.filter(tag => tag.type === optionData.type).length === 0;
   }
 
   getOptionData($option) {
@@ -86,68 +68,34 @@ export default class SearchSuggestion extends CustomDropDown {
     return $li;
   }
 
-  handleSelectOption(e) {}
-
-  handleRemoveTag(e) {
-    e.preventDefault();
-    const $tagElem = e.currentTarget;
-    const tagData = this.getDataFromTagElem($tagElem);
-    this.removeTag(tagData, $tagElem);
-  }
-
   getDataFromTagElem(tagElem) {
     return {type: tagElem.dataset.type, value: tagElem.textContent};
-  }
-
-  removeTag(tagObj, $elem) {
-    this.selectedTags.forEach((tag, index) => {
-      if (tag.type === tagObj.type && tag.value === tagObj.value) {
-        this.selectedTags.splice(index, 1);
-        $elem.parentElement.outerHTML = ``;
-      }
-    });
   }
 
   getSuggestions($input) {
     const formData = new FormData();
 
-    formData.append(`inputName`, $input.name);
-    formData.append(`action`, `getFilter`);
-    formData.append(`usedFilters`, JSON.stringify(this.selectedTags));
-    formData.append($input.name, $input.value);
+    formData.append(`action`, `searchHint`);
+    formData.append(`search`, $input.value);
 
-    /*fetch(this.getFilterUrl($input), {
+    fetch(this.getFilterUrl($input), {
       headers: new Headers({Accept: `application/json`}),
       credentials: `same-origin`,
       method: `POST`,
-      body: formData,
-    }).then(r => r.json()).then(this.ajaxResult);*/
-
-    //test
-    this.handleAjaxResult({
-      inputName: `search`,
-      options: [
-        {
-          type: `test`,
-          value: `tester`
-        }, {
-          type: `test`,
-          value: `tester`
-        }
-      ]
-    });
+      body: formData
+    }).then(r => r.json()).then(this.ajaxResult);
   }
 
   handleAjaxResult(results) {
-    const $input = document.querySelector(`input[name="${results.inputName}"]`);
+    const $input = document.querySelector(`input[name="search"]`);
     const $customSuggestion = this.getCustomSuggestion($input);
 
     if (!$customSuggestion) {
-      this.createCustomDropDown($input, results.options);
+      this.createCustomDropDown($input, results);
     }
 
     //add the created list
-    this.fillCustomDropDown($input, this.createOptions(results.inputName, results.options));
+    this.fillCustomDropDown($input, this.createOptions(`input[name="search"]`, results));
   }
 
   createOptions(inputName, options) {
@@ -160,7 +108,7 @@ export default class SearchSuggestion extends CustomDropDown {
       $a.dataset.inputName = inputName;
 
       //set content
-      $a.innerHTML = `<span class="titleAccent">${option.type}</span>`;
+      $a.innerHTML = `<span class="titleAccent">${option.tag}</span>`;
       $a.innerHTML += `<span>${option.value}</span>`;
 
       //add listener

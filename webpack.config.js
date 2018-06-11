@@ -81,11 +81,13 @@ const commonConfig = {
       }, {
         test: /\.(jsx?)$/,
         exclude: /node_modules/,
-        use:[{
-          loader: `babel-loader`
-        }, {
-          loader: `eslint-loader`
-        }]
+        use: [
+          {
+            loader: `babel-loader`
+          }, {
+            loader: `eslint-loader`
+          }
+        ]
       }
     ]
   },

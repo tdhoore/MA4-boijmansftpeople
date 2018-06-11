@@ -5,13 +5,16 @@ export default class CustomSelect extends CustomDropDown {
     selector: ``,
     customClass: ``,
     customOpenClass: ``,
-    customSelectedClass: ``
+    customSelectedClass: ``,
+    emmitter: false
   }) {
     super({selector: param.selector, customClass: param.customClass, customOpenClass: param.customOpenClass, customSelectedClass: param.customSelectedClass});
 
     this.clickFakeSelectListener = e => this.handleClickFakeSelect(e);
 
     this.selectedOption = `Default`;
+
+    this.emitter = param.emmitter;
   }
 
   init() {
@@ -67,6 +70,7 @@ export default class CustomSelect extends CustomDropDown {
   handleClickOption(e) {
     e.preventDefault();
     this.setSelectedOption(e.currentTarget);
+    this.emitter.emit(`changeFilter`);
   }
 
   setSelectedOption($selectedOption) {

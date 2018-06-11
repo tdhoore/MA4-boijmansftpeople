@@ -5,14 +5,18 @@ import AllSubmissions from '../components/AllSubmissions.jsx';
 export default class InfiniteScroll {
   constructor(vars = {
     selector: ``,
-    customClass: ``
+    customClass: ``,
+    filterSelector: ``,
+    emmitter: false
   }) {
     this.selector = vars.selector;
     this.container = document.querySelector(this.selector);
     this.currentSubmissions = [...this.container.querySelectorAll(`article`)];
-    this.count = this.currentSubmissions.lenght;
 
     this.submissions = [];
+
+    this.filter = document.querySelector(vars.filterSelector);
+    this.emmitter = vars.emmitter;
   }
 
   existingElementsToObj(elem) {
@@ -20,8 +24,7 @@ export default class InfiniteScroll {
     const artist = elem.querySelector(`p`).textContent;
     const imgUrl = elem.querySelector(`img`).getAttribute(`src`);
 
-    return {title: title, artist: artist, url: imgUrl};
-
+    return {artTitle: title, artistName: artist, image: imgUrl};
   }
 
   init() {
@@ -33,7 +36,7 @@ export default class InfiniteScroll {
       return result;
     });
 
-    ReactDOM.render(<AllSubmissions submissions={this.submissions} container={this.container}/>, this.container);
+    ReactDOM.render(<AllSubmissions submissions={this.submissions} container={this.container} filter={this.filter} emmitter={this.emmitter}/>, this.container);
   }
 
 }

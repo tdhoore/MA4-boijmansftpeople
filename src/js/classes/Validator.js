@@ -15,7 +15,7 @@ export default class Validator {
     this.blurListener = e => this.handleBlurInput(e);
     this.changeListener = e => this.handleChangeInput(e);
 
-    this.addDropzone = new AddDropzone({selector: `.dragAndDrop`});
+    this.addDropzone = false;
   }
 
   init() {
@@ -32,6 +32,7 @@ export default class Validator {
       this.form.setAttribute(`novalidate`, ``);
 
       //setup dropzone
+      this.addDropzone = new AddDropzone({selector: `.dragAndDrop`})
       this.addDropzone.init();
     } else {
       return false;

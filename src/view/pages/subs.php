@@ -31,8 +31,6 @@
     <input type="submit" name="submit" value="search" class="btn" />
   </form>
 
-  <div class="submissions"></div>
-
   <div class="infinite">
     <article>
       <header>

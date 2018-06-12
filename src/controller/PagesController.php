@@ -26,10 +26,8 @@ class PagesController extends Controller {
     } else {
       //render content
       $this->set('currentPage', 'index');
+      $this->set('artSubs', $this->genArtSubs());
     }
-
-    //$themas = $this->themaDAO->selectAll();
-    //$this->set('themas', $themas);
   }
 
   public function party() {
@@ -59,6 +57,31 @@ class PagesController extends Controller {
     }
 
     $this->set('currentPage', 'submit');
+  }
+
+  private function genArtSubs() {
+    $monday = date( 'Y-m-d H:i:s', strtotime('monday this week'));
+    $friday = date( 'Y-m-d H:i:s', strtotime('sunday this week'));
+
+    $subsTable = $this->userartDAO->selectSOFTW($monday, $friday);
+    $subs = [];
+    $limit = 3;
+
+    for($i = 0; $i < $limit; $i++) {
+      $sub = '<article className="submissionItem" data-id="' . $i . '">
+                  <header>
+                    <h3>' . $subsTable[$i]['artTitle'] . '</h3>
+                    <p>
+                      <span>BY</span>
+                      ' . $subsTable[$i]['artistName'] . '</p>
+                  </header>
+                  <img src="' . $subsTable[$i]['image'] . '" alt="' . $subsTable[$i]['artTitle'] . '"/>
+                </article>';
+
+      array_push($subs, $sub);
+    }
+
+    return $subs;
   }
 
   private function handleAjaxRequest() {

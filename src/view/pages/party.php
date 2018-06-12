@@ -6,14 +6,12 @@
       </header>
       <section class="next-party-info">
         <div class="next-party-date">
-          <p class="next-party-day">29</p>
-          <p class="next-party-month">06</p>
+          <p class="next-party-day"><?php echo $popups[0]['day']; ?></p>
+          <p class="next-party-month"><?php echo $popups[0]['month']; ?></p>
         </div>
-        <p class="location-name" data-content="biergarten">Biergarten</p>
+        <p class="location-name" data-content="biergarten"><?php echo $popups[0]['data']['locatieNaam']; ?></p>
         <address class="location-address">
-          Schiestraat 18 <br/>
-          3013BR Rotterdam <br/>
-          Netherlands
+          <?php echo $popups[0]['data']['adress']; ?>
         </address>
       </section>
     </section>
@@ -36,54 +34,21 @@
 <section class="party-sections">
   <section class="party-section2">
     <h2 class="party-section2-title">Upcoming Arty Parties:</h2>
+    <?php foreach ($popups as $key => $value) {
+            if($key > 0) {?>
     <article class="upcoming-party-article">
       <div class="next-party-date">
-        <p class="next-party-day">27</p>
-        <p class="next-party-month">07</p>
+<?php echo $value['day']; ?></p>
+        <p class="next-party-month"><?php echo $value['month']; ?></p>
       </div>
       <p class="upcoming-location-name">
-        working site
-        museum Boijmans
-        van beuningen
+        <?php echo $value['data']['locatieNaam']; ?>
       </p>
       <address class="upcoming-address">
-        Museumpark 18 </br>
-        3015 CX Rotterdam
+        M<?php echo $value['data']['adress']; ?>
       </address>
     </article>
-    <article class="upcoming-party-article">
-      <div class="next-party-date">
-        <p class="next-party-day">31</p>
-        <p class="next-party-month">08</p>
-      </div>
-      <p class="upcoming-location-name">Weena</p>
-      <address class="upcoming-address">
-        Weena 202 <br/>
-        3012 NJ Rotterdam
-      </address>
-    </article>
-    <article class="upcoming-party-article">
-      <div class="next-party-date">
-        <p class="next-party-day">28</p>
-        <p class="next-party-month">09</p>
-      </div>
-      <p class="upcoming-location-name">Ayla</p>
-      <address class="upcoming-address">
-        Kruisplein 153 <br/>
-        3014 DD Rotterdam
-      </address>
-    </article>
-    <article class="upcoming-party-article">
-      <div class="next-party-date">
-        <p class="next-party-day">26</p>
-        <p class="next-party-month">10</p>
-      </div>
-      <p class="upcoming-location-name">Markthal</p>
-      <address class="upcoming-address">
-        Ds. Jan Scharpstraat 298 <br/>
-        3011 GZ Rotterdam
-      </address>
-    </article>
+    <?php } } ?>
   </section>
 
   <section class="party-section3">

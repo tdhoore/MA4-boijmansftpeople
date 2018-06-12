@@ -33,7 +33,7 @@ class PagesController extends Controller {
   public function party() {
     $this->set('currentPage', 'party');
 
-    $popups = $this->popupDAO->selectAll();
+    $popups = $this->genPopups();
     $this->set('popups', $popups);
 }
 
@@ -57,6 +57,23 @@ class PagesController extends Controller {
     }
 
     $this->set('currentPage', 'submit');
+  }
+
+  private function genPopups() {
+    $result = [];
+    $popUps = $this->popupDAO->selectAll();
+
+    foreach ($popUps as $value) {
+      $date = new DateTime($value['openingDate']);
+      $obj['data'] = $value;
+
+      $obj['day'] = $date->format('d');
+      $obj['month'] = $date->format('m');
+
+      array_push($result, $obj);
+    }
+
+    return $result;
   }
 
   private function genArtSubs() {

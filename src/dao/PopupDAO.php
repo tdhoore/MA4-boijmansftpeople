@@ -11,7 +11,7 @@ public function selectByPopupId($id) {
 }
 
 public function selectAll() {
-  $sql = "SELECT * FROM `popups`";
+  $sql = "SELECT * FROM `popups` WHERE '" . date('Y-m-d H:i:s') . "' <= `openingDate` AND '" . date('Y-m-d H:i:s') . "' <= `closingDate`";
   $stmt = $this->pdo->prepare($sql);
   $stmt->execute();
   return $stmt->fetchAll(PDO::FETCH_ASSOC);

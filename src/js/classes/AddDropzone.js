@@ -38,14 +38,49 @@ export default class AddDropzone {
     if (e.type === `drop`) {
       //is drop
       this.droppedFile = e.dataTransfer.files;
-      this.input.setAttribute(`files`, this.droppedFile);
+
+      //display image
+      this.displayImage(this.droppedFile[0]);
     }
 
     return false;
   }
 
+  displayImage(img) {
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      console.log(this.hasImage(this.zone));
+      if (this.hasImage(this.zone)) {
+        this.addImage(this.zone);
+      }
+      this.getImageElem(this.zone).src = reader.result;
+      console.log(this.getImageElem(this.zone));
+    };
+
+    reader.readAsDataURL(img);
+  }
+
   getDroppedFile() {
     return this.droppedFile;
+  }
+
+  hasImage($elem) {
+    return this.getImageElem($elem) === null
+      ? true
+      : false;
+  }
+
+  addImage($elem) {
+    const $img = document.createElement(`img`);
+
+    $img.src = ``;
+
+    $elem.appendChild($img);
+  }
+
+  getImageElem($elem) {
+    return $elem.querySelector(`img`);
   }
 
   init() {

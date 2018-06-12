@@ -62,11 +62,11 @@ export default class CustomDropDown {
   }
 
   toggleOpenDropDown($customDropDown) {
-    $customDropDown.classList.toggle(this.customOpenClass);
+    $customDropDown.parentElement.classList.toggle(this.customOpenClass);
   }
 
   closeDropDown($customDropDown) {
-    $customDropDown.classList.remove(this.customOpenClass);
+    $customDropDown.parentElement.classList.remove(this.customOpenClass);
   }
 
   addElemsToElem(elems, $parent) {

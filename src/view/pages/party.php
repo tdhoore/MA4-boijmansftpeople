@@ -24,7 +24,7 @@
     </div>
     <nav class="social-link-nav">
       <ul class="social-link-ul">
-        <li class="social-link-maps"><a class="social-a" href="#"><div class="social-icon"></div><span class="social-link-cta">Open in Maps</span></a></li>
+        <li class="social-link-maps"><a class="social-a" href="https://www.google.com/maps/search/?api=1&query=<?php echo str_replace('<br/>', '%20', $popups[0]['data']['adress']); ?>" target="_blank"><div class="social-icon"></div><span class="social-link-cta">Open in Maps</span></a></li>
         <li class="social-link-fb"><a class="social-a" href="#"><div class="social-icon"></div><span class="social-link-cta">I'm interested!</span></a></li>
         <li class="social-link-tt"><a class="social-a" href="#"><div class="social-icon"></div><span class="social-link-cta">Tweet it!</span></a></li>
       </ul>
@@ -45,7 +45,7 @@
         <?php echo $value['data']['locatieNaam']; ?>
       </p>
       <address class="upcoming-address">
-        M<?php echo $value['data']['adress']; ?>
+        <?php echo $value['data']['adress']; ?>
       </address>
     </article>
     <?php } } ?>

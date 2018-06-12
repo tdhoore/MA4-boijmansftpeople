@@ -39,6 +39,9 @@ class PagesController extends Controller {
 
   public function subs() {
     $this->set('currentPage', 'subs');
+
+    $userArt = $this->userartDAO->selectAll("LIMIT 12");
+    $this->set('userArt', $userArt);
   }
 
   public function submit() {

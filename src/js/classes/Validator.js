@@ -1,3 +1,5 @@
+import AddDropzone from './AddDropzone';
+
 export default class Validator {
   constructor(param = {
     formSelector: ``
@@ -12,6 +14,8 @@ export default class Validator {
     this.listener = e => this.handleSubmit(e);
     this.blurListener = e => this.handleBlurInput(e);
     this.changeListener = e => this.handleChangeInput(e);
+
+    this.addDropzone = new AddDropzone({selector: `.dragAndDrop`});
   }
 
   init() {
@@ -26,6 +30,9 @@ export default class Validator {
 
       //turn off default validation
       this.form.setAttribute(`novalidate`, ``);
+
+      //setup dropzone
+      this.addDropzone.init();
     } else {
       return false;
     }
@@ -34,11 +41,10 @@ export default class Validator {
   }
 
   handleSubmit(e) {
-    //e.preventDefault();
-    console.log(this.form);
+    e.preventDefault();
     //check if the form is valid
     //and check if agreements are met
-    /*if (this.form.checkValidity()) {
+    if (this.form.checkValidity()) {
       //clear all messages
       this.restInputAllMessages();
 
@@ -47,7 +53,7 @@ export default class Validator {
     } else {
       //check all the inputs for mistakes
       this.checkInputs();
-    }*/
+    }
   }
 
   checkInputs() {
@@ -59,12 +65,27 @@ export default class Validator {
   }
 
   sendData() {
-    return fetch(this.action, {
-      headers: new Headers({Accept: `application/json`}),
-      credentials: `same-origin`,
-      method: this.method,
-      body: new FormData(this.form)
-    }).then(responce => responce.json()).then(this.handleAjaxResult);
+    const formData = new FormData(this.form);
+    let files = this.addDropzone.droppedFile;
+
+    //get the file
+    if (files) {
+      //is drop
+      formData.append(this.addDropzone.input.getAttribute(`name`), files[0]);
+    } else {
+      //check if there is somthing in the input
+      files = this.addDropzone.input.files[0];
+    }
+
+    //if file exists
+    if (files) {
+      return fetch(this.action, {
+        headers: new Headers({Accept: `application/json`}),
+        credentials: `same-origin`,
+        method: this.method,
+        body: formData
+      }).then(responce => responce.text()).then(this.handleAjaxResult);
+    }
   }
 
   handleAjaxResult(result) {
@@ -134,7 +155,7 @@ export default class Validator {
   }
 
   resetMessage($errorElem) {
-    $errorElem.textContent = ``;
+    $errorElem.textContent = ` `;
   }
 
   addValidationToInput(selector, checks = []) {

@@ -51,11 +51,12 @@
         <span class="validator"></span>
       </label>
 
-      <label for="artwork">Drop your art here</label>
-      <input type="file"
-       class="filepond"
-       name="filepond"
-       accept="image/png, image/jpeg, image/gif"/>
+      <div class="dragAndDrop">
+        <label for="artwork">Drop your art here</label>
+        <input type="file"
+         name="artwork"
+         accept="image/png, image/jpeg, image/gif"/>
+       </div>
       <input type="submit" name="submit" value="Submit your work">
     </form>
   </article>

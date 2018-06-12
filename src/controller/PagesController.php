@@ -44,12 +44,21 @@ class PagesController extends Controller {
   }
 
   public function submit() {
-    $this->set('currentPage', 'submit');
-
     if($this->isAjax) {
       //is submit
       $this->handleAjaxRequest();
     }
+
+    if (!empty($_POST)){
+      if($_POST['action'] === 'submitArt') {
+        header('Content-Type: application/json');
+        $result = $this->handleUpload($_POST);
+        echo json_encode($result);
+        exit();
+      }
+    }
+
+    $this->set('currentPage', 'submit');
   }
 
   private function handleAjaxRequest() {
@@ -81,6 +90,7 @@ class PagesController extends Controller {
         //$_POST['search']
         $result = $this->getSearchHint($_POST);
       } else if($_POST['action'] === 'submitArt') {
+        //get post results
         $result = $this->handleUpload($_POST);
       }
     }
@@ -259,13 +269,7 @@ class PagesController extends Controller {
       $data['image'] = $relativeFileName;
 
       //editen
-      $insertedImage = $this->imageDAO->insert($data);
-
-
-      if (!empty($insertedImage)) {
-        $_SESSION['info'] = 'Het bestand werd ge-upload!';
-        return true;
-      }
+      //$insertedImage = $this->imageDAO->insert($data);
     }
 
     if (!empty($errors)) {

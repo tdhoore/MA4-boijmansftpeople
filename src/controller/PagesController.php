@@ -284,7 +284,7 @@ class PagesController extends Controller {
   }
 
   private function getThemeId($date) {
-    return $this->themaDAO->selectCurrent($date);
+    return $this->themaDAO->selectCurrent($date)['id'];
   }
 
   private function _resizeAndCrop($src, $dst, $thumb_width, $thumb_height) {

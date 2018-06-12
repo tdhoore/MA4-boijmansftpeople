@@ -18,9 +18,9 @@ class ThemaDAO extends DAO {
   }
 
   public function selectCurrent($date) {
-    $sql = "SELECT * FROM `themas` WHERE `timestamp` >= :startDate ORDER BY `timestamp`";
+    $sql = "SELECT * FROM `themas` WHERE (`startDate` <= '$date' AND `endDate` > '$date') ORDER BY `startDate`";
     $stmt = $this->pdo->prepare($sql);
-    $stmt->bindValue(':startDate', $date);
+    //$stmt->bindValue(':themaDate', $date, PDO::PARAM_STR);
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC);
   }

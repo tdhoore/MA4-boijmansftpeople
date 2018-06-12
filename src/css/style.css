@@ -470,10 +470,6 @@ body {
   align-items: center;
 }
 
-/* .customDropDown ul li {
-  max-height: 0;
-} */
-
 .customDropDownOpen {
   display: flex;
   justify-content: space-around;

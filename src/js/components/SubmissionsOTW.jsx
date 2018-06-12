@@ -53,7 +53,7 @@ class SubmissionsOTW extends Component {
   handleResponce(responce) {
     if (responce) {
       //set lastId
-      this.lastId = responce[responce.length - 1].id - 1;
+      this.lastId = responce[responce.length - 1].id;
 
       this.onChangeChannel(`submissionData`, responce);
     }

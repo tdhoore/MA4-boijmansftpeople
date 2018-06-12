@@ -26,21 +26,22 @@ class PagesController extends Controller {
     } else {
       //render content
       $this->set('currentPage', 'index');
+      $this->set('artSubs', $this->genArtSubs());
     }
-
-    //$themas = $this->themaDAO->selectAll();
-    //$this->set('themas', $themas);
   }
 
   public function party() {
     $this->set('currentPage', 'party');
 
-    $popups = $this->popupDAO->selectAll();
+    $popups = $this->genPopups();
     $this->set('popups', $popups);
 }
 
   public function subs() {
     $this->set('currentPage', 'subs');
+
+    $userArt = $this->userartDAO->selectAll("LIMIT 12");
+    $this->set('userArt', $userArt);
   }
 
   public function submit() {
@@ -59,6 +60,48 @@ class PagesController extends Controller {
     }
 
     $this->set('currentPage', 'submit');
+  }
+
+  private function genPopups() {
+    $result = [];
+    $popUps = $this->popupDAO->selectAll();
+
+    foreach ($popUps as $value) {
+      $date = new DateTime($value['openingDate']);
+      $obj['data'] = $value;
+
+      $obj['day'] = $date->format('d');
+      $obj['month'] = $date->format('m');
+
+      array_push($result, $obj);
+    }
+
+    return $result;
+  }
+
+  private function genArtSubs() {
+    $monday = date( 'Y-m-d H:i:s', strtotime('monday this week'));
+    $friday = date( 'Y-m-d H:i:s', strtotime('sunday this week'));
+
+    $subsTable = $this->userartDAO->selectSOFTW($monday, $friday);
+    $subs = [];
+    $limit = 3;
+
+    for($i = 0; $i < $limit; $i++) {
+      $sub = '<article className="submissionItem" data-id="' . $i . '">
+                  <header>
+                    <h3>' . $subsTable[$i]['artTitle'] . '</h3>
+                    <p>
+                      <span>BY</span>
+                      ' . $subsTable[$i]['artistName'] . '</p>
+                  </header>
+                  <img src="' . $subsTable[$i]['image'] . '" alt="' . $subsTable[$i]['artTitle'] . '"/>
+                </article>';
+
+      array_push($subs, $sub);
+    }
+
+    return $subs;
   }
 
   private function handleAjaxRequest() {
@@ -248,7 +291,7 @@ class PagesController extends Controller {
     if (empty($errors)) {
       // controleer de afmetingen van het bestand
       $size = getimagesize($_FILES['artwork']['tmp_name']);
-      if ($size[0] < 612 || $size[1] < 612) {
+      if ($size[0] < 2 || $size[1] < 2) {
         $errors['artwork'] = 'De afbeelding moet minimum 612x612 pixels groot zijn';
       }
     }
@@ -263,13 +306,15 @@ class PagesController extends Controller {
       $this->_resizeAndCrop(
         $_FILES['artwork']['tmp_name'],
         $targetFileName,
-        612, 612
+        $size[0], $size[1]
       );
       $relativeFileName = substr($targetFileName, 1 + strlen($projectFolder));
       $data['image'] = $relativeFileName;
+      $data['timestamp'] = date("Y-m-d H:i:s");
+      $data['themeId'] = $this->getThemeId($data['timestamp']);
 
       //editen
-      //$insertedImage = $this->imageDAO->insert($data);
+      $insertedImage = $this->userartDAO->insert($data);
     }
 
     if (!empty($errors)) {
@@ -278,7 +323,11 @@ class PagesController extends Controller {
 
     $this->set('_errors', $errors);
 
-    return $_FILES;
+    return $insertedImage;
+  }
+
+  private function getThemeId($date) {
+    return $this->themaDAO->selectCurrent($date)['id'];
   }
 
   private function _resizeAndCrop($src, $dst, $thumb_width, $thumb_height) {

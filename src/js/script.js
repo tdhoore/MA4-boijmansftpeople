@@ -11,7 +11,7 @@ const customSelect = new CustomSelect({selector: `select`, customClass: `customD
 
 const filter = new SearchSuggestion({selector: `.suggestion`, customClass: `filterSuggestions`, customOpenClass: `filterSuggestionsOpen`, tagsHolderClass: `filterTags`});
 
-const submissions = new Submissions({selector: `.submissions`});
+const submissions = new Submissions({selector: `.submissions`, customClass: `submissionItem`});
 
 const infiniteScroll = new InfiniteScroll({selector: `.infinite`, customClass: ``, filterSelector: `.submissionFilter`, emmitter: eventEmitter});
 

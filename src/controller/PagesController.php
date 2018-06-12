@@ -248,7 +248,7 @@ class PagesController extends Controller {
     if (empty($errors)) {
       // controleer de afmetingen van het bestand
       $size = getimagesize($_FILES['artwork']['tmp_name']);
-      if ($size[0] < 612 || $size[1] < 612) {
+      if ($size[0] < 2 || $size[1] < 2) {
         $errors['artwork'] = 'De afbeelding moet minimum 612x612 pixels groot zijn';
       }
     }
@@ -263,13 +263,15 @@ class PagesController extends Controller {
       $this->_resizeAndCrop(
         $_FILES['artwork']['tmp_name'],
         $targetFileName,
-        612, 612
+        $size[0], $size[1]
       );
       $relativeFileName = substr($targetFileName, 1 + strlen($projectFolder));
       $data['image'] = $relativeFileName;
+      $data['timestamp'] = date("Y-m-d H:i:s");
+      $data['themeId'] = $this->getThemeId($data['timestamp']);
 
       //editen
-      //$insertedImage = $this->imageDAO->insert($data);
+      $insertedImage = $this->userartDAO->insert($data);
     }
 
     if (!empty($errors)) {
@@ -278,7 +280,11 @@ class PagesController extends Controller {
 
     $this->set('_errors', $errors);
 
-    return $_FILES;
+    return $insertedImage;
+  }
+
+  private function getThemeId($date) {
+    return $this->themaDAO->selectCurrent($date);
   }
 
   private function _resizeAndCrop($src, $dst, $thumb_width, $thumb_height) {

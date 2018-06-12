@@ -166,7 +166,8 @@ body {
 }
 
 .index-tagline {
-  background-image: url(../assets/img/tagline.png);
+  background-image: url(../assets/img/tagline.svg);
+  background-size: 35rem;
   height: 5rem;
   width: 100%;
   grid-area: tagline;

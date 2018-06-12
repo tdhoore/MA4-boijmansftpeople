@@ -34,8 +34,6 @@ class UserartDAO extends DAO {
     //$stmt->bindValue(':limitSql', $limit);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    //return $sql;
   }
 
   public function getHintsByArtistName($title) {
@@ -52,5 +50,41 @@ class UserartDAO extends DAO {
     $stmt->bindValue(':title', $title);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  public function insert($data) {
+    $errors = $this->getValidationErrors($data);
+    if(empty($errors)) {
+      $sql = "INSERT INTO `userArt` (`artistName`, `artTitle`, `email`, `image`, `timeStamp`, `themeId`) VALUES (:artistName, :artTitle, :email, :image, :timeStamper, :themeId)";
+      $stmt = $this->pdo->prepare($sql);
+      $stmt->bindValue(':artistName', $data['artistname']);
+      $stmt->bindValue(':artTitle', $data['title']);
+      $stmt->bindValue(':email', $data['email']);
+      $stmt->bindValue(':image', $data['image']);
+      $stmt->bindValue(':timeStamper', $data['timestamp']);
+      $stmt->bindValue(':themeId', $data['themeId']);
+      if($stmt->execute()) {
+        $insertedId = $this->pdo->lastInsertId();
+        return $this->selectById($insertedId);
+      }
+    }
+    return $errors;
+  }
+
+  public function getValidationErrors($data) {
+    $errors = array();
+    if(!isset($data['artistname'])) {
+      $errors['artistname'] = "Please fill in a artist name";
+    }
+    if(!isset($data['title'])) {
+      $errors['title'] = "Please fill in a title";
+    }
+    if(!isset($data['email'])) {
+      $errors['email'] = "Please fill in an email adress";
+    }
+    if(!isset($data['themeId'])) {
+      $errors['themeId'] = "Please fill in a themeId";
+    }
+    return $errors;
   }
 }

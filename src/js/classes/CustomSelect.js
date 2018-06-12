@@ -29,17 +29,22 @@ export default class CustomSelect extends CustomDropDown {
   }
 
   createFakeSelect($select) {
+    const $result = document.createElement(`div`);
+
     const optionContent = $select.querySelector(`option`).textContent;
-    const $result = this.createEmptyLink(optionContent);
+    const $a = this.createEmptyLink(optionContent);
+
+    $result.classList.add(`date-btn`);
 
     //set default selected
     this.selectedOption = optionContent;
 
     //add class
-    $result.classList.add(`fakeSelect`);
+    $a.classList.add(`fakeSelect`);
 
     //add listener to fake select
-    $result.addEventListener(`click`, this.clickFakeSelectListener);
+    $a.addEventListener(`click`, this.clickFakeSelectListener);
+    $result.append($a);
 
     return $result;
   }
@@ -64,7 +69,7 @@ export default class CustomSelect extends CustomDropDown {
     e.preventDefault();
 
     //open or close dropdown
-    this.toggleOpenDropDown(e.currentTarget.parentElement.querySelector(`ul`));
+    this.toggleOpenDropDown(e.currentTarget.parentElement.parentElement.querySelector(`ul`));
   }
 
   handleClickOption(e) {

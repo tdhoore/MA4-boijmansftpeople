@@ -63,6 +63,13 @@ body {
   height: 3.4rem;
 }
 
+.subs-btn-active {
+  background-image: url(../assets/img/nav-subs-icon-active.svg);
+  background-repeat: no-repeat;
+  width: 3.4rem;
+  height: 3.4rem;
+}
+
 .nav-li {
   color: var(--blue);
   font-style: oblique;
@@ -81,16 +88,20 @@ body {
   height: 3.4rem;
 }
 
-/* .b {
-  background-image: url(../assets/img/nav-party-icon.svg);
+.party-btn-active {
+  background-image: url(../assets/img/nav-party-icon-active.svg);
   background-repeat: no-repeat;
-  width: 5.4rem;
-  height: 5.4rem;
-} */
+  width: 3.4rem;
+  height: 3.4rem;
+}
 
-/* .menuitem--active {
+.sub-li {
+  order: -1;
+}
 
-} */
+.b {
+  margin-right: -4rem;
+}
 
 /* FOOTER */
 
@@ -110,6 +121,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  height: 25rem;
 }
 
 .address-footer {
@@ -415,6 +427,89 @@ body {
   z-index: 1;
 }
 
+/* SUBS */
+
+.subs-section1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subs-s1h1 {
+  @apply --repeat-h1;
+  margin-bottom: 5rem;
+}
+
+.subs-s1h1::after {
+  @apply --repeat-h1-after;
+}
+
+.subs-s1h1::before {
+  @apply --repeat-h1-before;
+}
+
+.suggestion {
+  color: var(--blue);
+  background-color: var(--bg-color);
+  width: 30rem;
+  height: 4.5rem;
+  border: .2rem solid var(--blue);
+  margin-bottom: 1rem;
+}
+
+.suggestion:focus {
+  outline: none;
+}
+
+.menuitem--active {
+  font-style: oblique;
+  font-weight: bold;
+}
+
+.fakeSelect {
+  color: var(--blue);
+  font-family: lemonmilk;
+  text-decoration: none;
+  font-size: 1.8rem;
+  width: 5rem;
+  text-align: center;
+}
+
+.date-btn {
+  width: 6rem;
+  height: 8.5rem;
+  border: .2rem solid var(--blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customDropDown ul li {
+  opacity: 0;
+  max-height: 0;
+}
+
+.customDropDownOpen {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  height: 5rem;
+  width: 6rem;
+  overflow: scroll;
+}
+
+.customDropDownOpen li {
+  height: 5rem;
+  opacity: 1;
+}
+
+.customDropDownOpen a {
+  color: var(--blue);
+  font-family: lemonmilk;
+  text-decoration: none;
+}
+
 @media only screen and (min-width: 768px) {
 
   .index-section1 {
@@ -547,6 +642,15 @@ body {
     & .party-section3 {
       grid-area: missed;
     }
+  }
+
+  .footer {
+    height: 16rem;
+  }
+
+  .footerfooter {
+    flex-direction: row;
+    max-width: 90rem;
   }
 }
 
@@ -726,15 +830,6 @@ body {
   .about-bg {
     height: 12rem;
     /* border: .2rem solid var(--pink); */
-  }
-
-  .footer {
-    height: 16rem;
-  }
-
-  .footerfooter {
-    flex-direction: row;
-    max-width: 90rem;
   }
 }
 

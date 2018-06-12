@@ -1,381 +1,41 @@
-<section>
-  <h1>submissions</h1>
+<section class="subs-section1">
+  <h1 data-content="submissions" class="subs-s1h1">submissions</h1>
 
   <form class="submissionFilter" action="index.php" method="post" autocomplete="off">
+
     <input type="hidden" name="action" value="filter" />
+
     <label for="search">
-      <span>Ik zoek</span>
+      <span class="hide">Ik zoek</span>
       <span class="textInput">
-        <input type="text" name="search" id="search" placeholder="Naam, tag, ..." class="suggestion" value=""/>
+        <input type="text" name="search" id="search" placeholder="SEARCH" class="suggestion" value=""/>
       </span>
     </label>
+
     <div class="locAndDate">
-      <label for="location">
-        <span>in</span>
-        <span class="textInput">
-        <input type="text" name="location" id="location" placeholder="Stad of postcode" class="suggestion" value=""/>
-      </span>
-      </label>
       <label for="date">
-        <span>op</span>
+        <span class="hide">op</span>
         <select class="" name="date" id="date">
-          <option value="0">Alles</option>
-          <option value="09-09-2018">09/09</option>
-          <option value="16-09-2018">16/09</option>
-          <option value="17-09-2018">17/09</option>
-          <option value="18-09-2018">18/09</option>
-          <option value="22-09-2018">22/09</option>
+          <option value="0">Show All</option>
+          <option value="09-09-2018">06/18</option>
+          <option value="16-09-2018">05/18</option>
+          <option value="17-09-2018">04/18</option>
+          <option value="18-09-2018">03/18</option>
+          <option value="22-09-2018">02/18</option>
         </select>
       </label>
     </div>
     <input type="submit" name="submit" value="search" class="btn" />
   </form>
-
-  <div class="submissions"></div>
-
   <div class="infinite">
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
-    <article>
-      <header>
-        <h3>test</h3>
-        <p>tester</p>
-      </header>
-      <img src="" alt="" />
-    </article>
+    <?php foreach ($userArt as $value) { ?>
+      <article>
+        <header>
+          <h3><?php echo $value['artTitle']; ?></h3>
+          <p><span>BY</span><?php echo $value['artistName']; ?></p>
+        </header>
+        <img src="<?php echo $value['imgage']; ?>" alt="<?php echo $value['artTitle']; ?>" />
+      </article>
+    <?php }?>
   </div>
 </section>

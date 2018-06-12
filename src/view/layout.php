@@ -48,16 +48,16 @@
               <img class="bvb" src="assets/img/mbvb-logo.svg" alt="i.s.m. museum BVB" width="200" height="55">
             </a>
           </li>
-          <li class="">
+          <li class="sub-li">
             <a href="index.php?page=subs" class="nav-li">
-              <p>Submissions</p>
-              <div class="subs-btn <?php if($currentPage == 'subs') echo 'menuitem--active';?>"></div>
+              <p class="<?php if($currentPage == 'subs') echo 'menuitem--active';?>">Submissions</p>
+              <div class="subs-btn <?php if($currentPage == 'subs') echo 'subs-btn-active';?>"></div>
             </a>
           </li>
           <li class="">
             <a href="index.php?page=party" class="nav-li">
-              <p>Arty Parties</p>
-              <div class="party-btn"></div>
+              <p class="<?php if($currentPage == 'subs') echo 'menuitem--active';?>">Arty Parties</p>
+              <div class="party-btn <?php if($currentPage == 'party') echo 'party-btn-active';?>"></div>
             </a>
           </li>
           <li class="submit-btn">

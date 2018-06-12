@@ -2556,6 +2556,10 @@ dom-converter@~0.1:
   dependencies:
     utila "~0.3"
 
+dom-helpers@^3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-3.3.1.tgz#fc1a4e15ffdf60ddde03a480a9c0fece821dd4a6"
+
 dom-serializer@0, dom-serializer@0.1.0, dom-serializer@~0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/dom-serializer/-/dom-serializer-0.1.0.tgz#073c697546ce0780ce23be4a28e293e40bc30c82"
@@ -3426,34 +3430,6 @@ filenamify@^2.0.0:
     filename-reserved-regex "^2.0.0"
     strip-outer "^1.0.0"
     trim-repeated "^1.0.0"
-
-filepond-plugin-file-encode@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/filepond-plugin-file-encode/-/filepond-plugin-file-encode-1.0.4.tgz#954e979d12c1d9a8ea96c990b1f1b1fcc51cd7b4"
-
-filepond-plugin-file-validate-type@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/filepond-plugin-file-validate-type/-/filepond-plugin-file-validate-type-1.1.0.tgz#ee1cef9174f02c360ca8f1f8839389e8cc2640f5"
-
-filepond-plugin-image-crop@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/filepond-plugin-image-crop/-/filepond-plugin-image-crop-1.0.1.tgz#1c3132cc72a2e0b0d3eecb4da63283b1b9f3ca2d"
-
-filepond-plugin-image-preview@^1.0.9:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/filepond-plugin-image-preview/-/filepond-plugin-image-preview-1.0.9.tgz#e82032eac45be1c56efbe5bac19d137c5df908f3"
-
-filepond-plugin-image-resize@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/filepond-plugin-image-resize/-/filepond-plugin-image-resize-1.1.0.tgz#680e89b1fea65b9e271d480de53f814554936f07"
-
-filepond-plugin-image-transform@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/filepond-plugin-image-transform/-/filepond-plugin-image-transform-1.1.0.tgz#7e91deb506c3f57ab63e098a8b02a3a6bcd3a3c0"
-
-filepond@^1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/filepond/-/filepond-1.7.1.tgz#d1eece01e42dd2518e10447695de9bcd3379b169"
 
 filesize@3.5.5:
   version "3.5.5"
@@ -7159,7 +7135,7 @@ progress@^2.0.0:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.6.0:
+prop-types@^15.6.0, prop-types@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
   dependencies:
@@ -7298,6 +7274,14 @@ react-dom@^16.2.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.0"
+
+react-transition-group@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.3.1.tgz#31d611b33e143a5e0f2d94c348e026a0f3b474b6"
+  dependencies:
+    dom-helpers "^3.3.1"
+    loose-envify "^1.3.1"
+    prop-types "^15.6.1"
 
 react@^16.2.0:
   version "16.4.0"

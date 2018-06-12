@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Submission from '../components/Submission.jsx';
+import {TransitionGroup, CSSTransition} from "react-transition-group";
 
 class SubmissionsOTW extends Component {
   constructor(props) {
@@ -60,15 +61,17 @@ class SubmissionsOTW extends Component {
   }
 
   render() {
-    return (<div>
+    return (<TransitionGroup>
       <button data-dir="prev" onClick={this.handleClickBtn}>prev</button>
       {
         this.state.submissionData.map(submission => {
-          return <Submission key={`weeklySubmission${submission.id}`} data={submission} customClass={this.customClass}/>
+          return (<CSSTransition timeout={1000} classNames="trans" key={`weeklySubmission${submission.id}`}>
+            <Submission key={`weeklySubmission${submission.id}`} data={submission} customClass={this.customClass}/>
+          </CSSTransition>)
         })
       }
       <button data-dir="next" onClick={this.handleClickBtn}>next</button>
-    </div>);
+    </TransitionGroup>);
   }
 }
 

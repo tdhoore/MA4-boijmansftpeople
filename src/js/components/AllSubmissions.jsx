@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Submission from './Submission.jsx';
 import AddListenersToFilter from '../classes/AddListenersToFilter';
+import {TransitionGroup, CSSTransition} from "react-transition-group";
 
 class AllSubmissions extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class AllSubmissions extends Component {
     this.submissions = this.props.submissions;
 
     this.canTrigger = true;
-    this.bottomDist = 200;
+    this.bottomDist = 100;
 
     this.filter = this.props.filter;
     this.url = this.filter.getAttribute(`action`);
@@ -99,13 +100,19 @@ class AllSubmissions extends Component {
   }
 
   render() {
-    return (<div>
-      {
-        this.state.submissions.map((submission, index) => {
-          return <Submission key={`submission_${index}`} data={submission} customClass="test"/>
-        })
-      }
-    </div>);
+    if (this.state.submissions.length > 0) {
+      return (<TransitionGroup>
+        {
+          this.state.submissions.map((submission, index) => {
+            return (<CSSTransition timeout={1000} classNames="trans" key={`submission_${index}`}>
+              <Submission data={submission} customClass="test"/>
+            </CSSTransition>)
+          })
+        }
+      </TransitionGroup>);
+    } else {
+      return (<div></div>);
+    }
   }
 }
 

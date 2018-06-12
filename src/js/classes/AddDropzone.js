@@ -50,12 +50,10 @@ export default class AddDropzone {
     const reader = new FileReader();
 
     reader.onload = () => {
-      console.log(this.hasImage(this.zone));
       if (this.hasImage(this.zone)) {
         this.addImage(this.zone);
       }
       this.getImageElem(this.zone).src = reader.result;
-      console.log(this.getImageElem(this.zone));
     };
 
     reader.readAsDataURL(img);

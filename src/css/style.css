@@ -51,6 +51,7 @@ body {
   display: flex;
   flex-direction: row;
   width: 100vw;
+  /* max-width: 70rem; */
   justify-content: space-around;
   align-items: center;
 }
@@ -98,6 +99,13 @@ body {
   height: 30rem;
   background-color: var(--blue);
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerfooter {
+  width: 90vw;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -161,12 +169,6 @@ body {
   justify-content: center;
   align-items: center;
   max-width: 50rem;
-  height: 40rem;
-}
-
-.a2-container {
-  width: 45rem;
-  max-height: 35rem;
 }
 
 .h2-article2 {
@@ -217,32 +219,23 @@ body {
 
 .last-winner {
   border: .2rem solid var(--blue);
+  grid-column: 1 / 3;
+  grid-row: 2 / 4;
 }
 
-/* MORGENOCHTEND */
-
-.winner-div {
-  width: 100%;
-}
-
-.winner-div::after {
-  content: '';
+.winner {
   background-image: url(../assets/img/last-winner-typo.svg);
   background-repeat: no-repeat;
-  width: 12rem;
-  height: 12rem;
-  /* align-self: flex-end;
-  margin-bottom: -5rem; */
-  /* z-index: 1; */
+  margin-bottom: -3rem;
+  grid-column: 2 / 4;
+  grid-row: 1 / 3;
 }
-
-/* --- */
 
 .index-article3 {
   height: 40rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 19rem 5rem 5rem;
+  grid-template-rows: 5rem 5rem 20rem;
 }
 
 .index-section2 {
@@ -276,10 +269,11 @@ body {
 .s3-h2 {
   background-image: url(../assets/img/arty-parties-typo-home.svg);
   background-repeat: no-repeat;
-  width: 30rem;
-  height: 9.1rem;
+  background-size: 100%;
+  width: 60vw;
+  height: 20vw;
   margin: 0 auto;
-  margin-top: -.5rem;
+  margin-top: -.8vw;
 }
 
 .s3-btn {
@@ -393,7 +387,7 @@ body {
 .about-bg {
   background-color: var(--lightgrey);
   width: 100vw;
-  max-width: 70rem;
+  max-width: 50rem;
   height: 20rem;
   display: flex;
   justify-content: center;
@@ -411,20 +405,28 @@ body {
 
   .index-article2 {
     border: .2rem solid var(--blue);
+    background-color: var(--lightgrey);
+    height: 45rem;
   }
 
   .btn-article2 {
-    margin-bottom: -10rem;
+    margin-bottom: -5rem;
     margin-right: -.2rem;
   }
 
   .div-article2 {
-    height: 25rem;
+    height: 32rem;
+    padding-bottom: 5rem;
   }
 
   .index-tagline {
     background-repeat: repeat;
     height: 10rem;
+  }
+
+  .a2-container {
+    height: 40rem;
+    padding-top: 3rem;
   }
 
   .party-section1 {
@@ -559,7 +561,83 @@ body {
     grid-template-columns: 1fr 5rem .5fr 5rem 3fr 5rem 1fr;
     grid-template-areas: '. fb . tt . maps .';
   }
+}
 
+@media only screen and (min-width: 1024px) {
+
+  .logo {
+    width: 50rem;
+    height: 30rem;
+    align-self: flex-start;
+  }
+
+  .header {
+    flex-direction: column-reverse;
+    width: 90vw;
+    margin: 0 auto;
+  }
+
+  .submit-btn {
+    @apply --button-cut;
+    width: 28rem;
+    background-color: var(--blue);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .submit-btn::after {
+    @apply --button-cut-after;
+    background-color: var(--blue);
+  }
+
+  .nav-li {
+    flex-direction: row-reverse;
+  }
+
+  .bvb {
+    display: block;
+  }
+
+  .nav-list {
+    width: 90vw;
+  }
+
+  .s3-container {
+    display: flex;
+    width: 90vw;
+    height: 28rem;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .s3-btn {
+    align-self: flex-end;
+  }
+
+  .aboutimg {
+    width: 20vw;
+    height: 20vw;
+    margin-bottom: 8.4rem;
+  }
+
+  .index-section4 {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .about-bg {
+    height: 12rem;
+    /* border: .2rem solid var(--pink); */
+  }
+
+  .footer {
+    height: 16rem;
+  }
+
+  .footerfooter {
+    flex-direction: row;
+    max-width: 90rem;
+  }
 }
 
 /* ARTY PARTIES */

@@ -41,12 +41,23 @@ class PagesController extends Controller {
 
   public function subs() {
     $this->set('currentPage', 'subs');
-
-    $popups = $this->popupDAO->selectAll();
-    $this->set('popups', $popups);
   }
 
   public function submit() {
+    if($this->isAjax) {
+      //is submit
+      $this->handleAjaxRequest();
+    }
+
+    if (!empty($_POST)){
+      if($_POST['action'] === 'submitArt') {
+        header('Content-Type: application/json');
+        $result = $this->handleUpload($_POST);
+        echo json_encode($result);
+        exit();
+      }
+    }
+
     $this->set('currentPage', 'submit');
   }
 
@@ -62,7 +73,7 @@ class PagesController extends Controller {
       if($_POST['action'] === 'HOTW') {
         $result = $this->getSliderResults($_POST);
 
-      } else if ($_POST['action'] === 'submissions') {
+      } else if($_POST['action'] === 'submissions') {
         //get submissions with the filter
         //$_POST['search']
         //$_POST['month']
@@ -74,10 +85,13 @@ class PagesController extends Controller {
         $result = $this->getFilterdResults($_POST);
 
 
-      } else if ($_POST['action'] === 'searchHint') {
+      } else if($_POST['action'] === 'searchHint') {
         //get search hints
         //$_POST['search']
         $result = $this->getSearchHint($_POST);
+      } else if($_POST['action'] === 'submitArt') {
+        //get post results
+        $result = $this->handleUpload($_POST);
       }
     }
 
@@ -213,4 +227,115 @@ class PagesController extends Controller {
 
     return $filterResult;
   }
+
+  private function handleUpload($data) {
+    $errors = array();
+    $data = array_merge($data, array('image'=>'later-toe-voegen'));
+
+    if (empty($_FILES['artwork']) || !empty($_FILES['artwork']['error'])) {
+      $errors['artwork'] = 'Gelieve een bestand te selecteren';
+    }
+
+    if (empty($errors)){
+      // controleer of het een afbeelding is
+      $fileinfo = finfo_open(FILEINFO_MIME_TYPE);
+      $whitelist_type = array('image/jpeg', 'image/png','image/gif');
+      if (!in_array(finfo_file($fileinfo, $_FILES['artwork']['tmp_name']), $whitelist_type)) {
+        $errors['artwork'] = 'Gelieve een jpeg, png of gif te selecteren';
+      }
+    }
+
+    if (empty($errors)) {
+      // controleer de afmetingen van het bestand
+      $size = getimagesize($_FILES['artwork']['tmp_name']);
+      if ($size[0] < 612 || $size[1] < 612) {
+        $errors['artwork'] = 'De afbeelding moet minimum 612x612 pixels groot zijn';
+      }
+    }
+
+    if (empty($errors)) {
+      $projectFolder = realpath(__DIR__ . '/..');
+      $targetFolder = $projectFolder . '/assets/img';
+      $targetFolder = tempnam($targetFolder, '');
+      unlink($targetFolder);
+      mkdir($targetFolder, 0777, true);
+      $targetFileName = $targetFolder . '/' . $_FILES['artwork']['name'];
+      $this->_resizeAndCrop(
+        $_FILES['artwork']['tmp_name'],
+        $targetFileName,
+        612, 612
+      );
+      $relativeFileName = substr($targetFileName, 1 + strlen($projectFolder));
+      $data['image'] = $relativeFileName;
+
+      //editen
+      //$insertedImage = $this->imageDAO->insert($data);
+    }
+
+    if (!empty($errors)) {
+      $_SESSION['error'] = 'De image kon niet toegevoegd worden!';
+    }
+
+    $this->set('_errors', $errors);
+
+    return $_FILES;
+  }
+
+  private function _resizeAndCrop($src, $dst, $thumb_width, $thumb_height) {
+      $type = exif_imagetype($src);
+      $allowedTypes = array(
+        1,  // [] gif
+        2,  // [] jpg
+        3,  // [] png
+        6   // [] bmp
+      );
+      if (!in_array($type, $allowedTypes)) {
+        return false;
+      }
+      switch ($type) {
+        case 1 :
+          $image = imagecreatefromgif($src);
+          break;
+        case 2 :
+          $image = imagecreatefromjpeg($src);
+          break;
+        case 3 :
+          $image = imagecreatefrompng($src);
+          break;
+        case 6 :
+          $image = imagecreatefrombmp($src);
+          break;
+      }
+
+      $filename = $dst;
+
+      $width = imagesx($image);
+      $height = imagesy($image);
+
+      $original_aspect = $width / $height;
+      $thumb_aspect = $thumb_width / $thumb_height;
+
+      if ( $original_aspect >= $thumb_aspect ) {
+         // If image is wider than thumbnail (in aspect ratio sense)
+         $new_height = $thumb_height;
+         $new_width = $width / ($height / $thumb_height);
+      } else {
+         // If the thumbnail is wider than the image
+         $new_width = $thumb_width;
+         $new_height = $height / ($width / $thumb_width);
+      }
+
+      $thumb = imagecreatetruecolor( $thumb_width, $thumb_height );
+
+      // Resize and crop
+      imagecopyresampled($thumb,
+                         $image,
+                         0 - ($new_width - $thumb_width) / 2, // Center the image horizontally
+                         0 - ($new_height - $thumb_height) / 2, // Center the image vertically
+                         0, 0,
+                         $new_width, $new_height,
+                         $width, $height);
+      imagejpeg($thumb, $filename, 80);
+      return true;
+    }
 }

@@ -1,7 +1,5 @@
 <section class="party-section1">
-    <header>
-      <h1 class="header-h1" data-content="arty parties" >Arty Parties</h1>
-    </header>
+    <h1 class="header-h1" data-content="arty parties" >Arty Parties</h1>
     <section class="next-party-section">
       <header>
         <h2 class="next-party-title">Next Arty Party:</h2>
@@ -35,63 +33,64 @@
     </nav>
 </section>
 
-<section class="party-section2">
-  <header>
+<section class="party-sections">
+  <section class="party-section2">
     <h2 class="party-section2-title">Upcoming Arty Parties:</h2>
-  </header>
-  <article class="upcoming-party-article">
-    <div class="next-party-date">
-      <p class="next-party-day">27</p>
-      <p class="next-party-month">07</p>
-    </div>
-    <p class="upcoming-location-name">
-      working site
-      museum Boijmans
-      van beuningen
-    </p>
-    <address class="upcoming-address">
-      Museumpark 18 </br>
-      3015 CX Rotterdam
-    </address>
-  </article>
-  <article class="upcoming-party-article">
-    <div class="next-party-date">
-      <p class="next-party-day">31</p>
-      <p class="next-party-month">08</p>
-    </div>
-    <p class="upcoming-location-name">Weena</p>
-    <address class="upcoming-address">
-      Weena 202 <br/>
-      3012 NJ Rotterdam
-    </address>
-  </article>
-  <article class="upcoming-party-article">
-    <div class="next-party-date">
-      <p class="next-party-day">28</p>
-      <p class="next-party-month">09</p>
-    </div>
-    <p class="upcoming-location-name">Ayla</p>
-    <address class="upcoming-address">
-      Kruisplein 153 <br/>
-      3014 DD Rotterdam
-    </address>
-  </article>
-  <article class="upcoming-party-article">
-    <div class="next-party-date">
-      <p class="next-party-day">26</p>
-      <p class="next-party-month">10</p>
-    </div>
-    <p class="upcoming-location-name">Markthal</p>
-    <address class="upcoming-address">
-      Ds. Jan Scharpstraat 298 <br/>
-      3011 GZ Rotterdam
-    </address>
-  </article>
-</section>
+    <article class="upcoming-party-article">
+      <div class="next-party-date">
+        <p class="next-party-day">27</p>
+        <p class="next-party-month">07</p>
+      </div>
+      <p class="upcoming-location-name">
+        working site
+        museum Boijmans
+        van beuningen
+      </p>
+      <address class="upcoming-address">
+        Museumpark 18 </br>
+        3015 CX Rotterdam
+      </address>
+    </article>
+    <article class="upcoming-party-article">
+      <div class="next-party-date">
+        <p class="next-party-day">31</p>
+        <p class="next-party-month">08</p>
+      </div>
+      <p class="upcoming-location-name">Weena</p>
+      <address class="upcoming-address">
+        Weena 202 <br/>
+        3012 NJ Rotterdam
+      </address>
+    </article>
+    <article class="upcoming-party-article">
+      <div class="next-party-date">
+        <p class="next-party-day">28</p>
+        <p class="next-party-month">09</p>
+      </div>
+      <p class="upcoming-location-name">Ayla</p>
+      <address class="upcoming-address">
+        Kruisplein 153 <br/>
+        3014 DD Rotterdam
+      </address>
+    </article>
+    <article class="upcoming-party-article">
+      <div class="next-party-date">
+        <p class="next-party-day">26</p>
+        <p class="next-party-month">10</p>
+      </div>
+      <p class="upcoming-location-name">Markthal</p>
+      <address class="upcoming-address">
+        Ds. Jan Scharpstraat 298 <br/>
+        3011 GZ Rotterdam
+      </address>
+    </article>
+  </section>
 
-<section class="party-section3">
-  <header>
+  <section class="party-section3">
     <h2 class="party-section3-title">We missed you here:</h2>
-  </header>
-  <img src="#" alt="Arty Party Mei">
+    <img class="party1-img" height="207" width="253" src="assets/img/parties/party1-253.jpg" alt="Arty Party May">
+    <img class="party2-img" height="207" width="253" src="assets/img/parties/party2-253.jpg" alt="Arty Party April">
+    <img class="party3-img" height="207" width="253" src="assets/img/parties/party3-253.jpg" alt="Arty Party March">
+    <img class="party4-img" height="207" width="253" src="assets/img/parties/party4-253.jpg" alt="Arty Party February">
+  </section>
 </section>

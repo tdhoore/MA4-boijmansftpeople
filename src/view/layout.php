@@ -35,19 +35,23 @@
 <body>
 
     <header class="header">
-      <h1 class="<?php if($currentPage == 'index') echo 'logo';?>"></h1>
-      <img class="bvb" src="#" alt="i.s.m. museum BVB">
+      <h1 class="hide">Boijmans for the people</h1>
       <nav>
         <ul class="nav-list">
+          <li class="b">
+            <a href="index.php">
+              <img src="assets/img/logo-b-mobile-nav.svg" alt="bftp logo" width="54" height="54">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.boijmans.nl/">
+              <img class="bvb" src="assets/img/mbvb-logo.svg" alt="i.s.m. museum BVB" width="200" height="55">
+            </a>
+          </li>
           <li class="">
             <a href="index.php?page=subs" class="nav-li">
               <p>Submissions</p>
               <div class="subs-btn <?php if($currentPage == 'subs') echo 'menuitem--active';?>"></div>
-            </a>
-          </li>
-          <li class="b">
-            <a href="index.php">
-              <img src="assets/img/logo-b-mobile-nav.svg" alt="bftp logo" width="54" height="54">
             </a>
           </li>
           <li class="">
@@ -56,7 +60,9 @@
               <div class="party-btn"></div>
             </a>
           </li>
-          <li class="submit-btn"><a>Submit your work</a></li>
+          <li class="submit-btn">
+            <a>Submit your work</a>
+          </li>
        </ul>
       </nav>
     </header>
@@ -68,16 +74,18 @@
   </main>
 
   <footer class="footer">
-      <address class="address-footer">
-      Museumpark 18-20 <br/>
-      3015 CX Rotterdam <br/>
-      010 44 19 400 <br/>
-      info@boijmans.nl
-      </address>
-      <img src="assets/img/mbvb-logo-footer.svg" alt="Museum Boijmans Van Beuningen" width="275" height="47">
-      <div class="links-footer">
-      <a class="a-footer" href="https://www.boijmans.nl/">https://www.boijmans.nl/</a>
-      <a class="a-footer" href="http://collectie.boijmans.nl/nl">http://collectie.boijmans.nl/nl</a>
+      <div class="footerfooter">
+        <address class="address-footer">
+        Museumpark 18-20 <br/>
+        3015 CX Rotterdam <br/>
+        010 44 19 400 <br/>
+        info@boijmans.nl
+        </address>
+        <img src="assets/img/mbvb-logo-footer.svg" alt="Museum Boijmans Van Beuningen" width="275" height="47">
+        <div class="links-footer">
+        <a class="a-footer" href="https://www.boijmans.nl/">https://www.boijmans.nl/</a>
+        <a class="a-footer" href="http://collectie.boijmans.nl/nl">http://collectie.boijmans.nl/nl</a>
+        </div>
       </div>
   </footer>
   <?php echo $js; ?>

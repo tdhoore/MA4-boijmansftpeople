@@ -103,6 +103,10 @@ body {
   margin-right: -4rem;
 }
 
+.boijmans {
+  display: none;
+}
+
 /* FOOTER */
 
 .footer {
@@ -1211,16 +1215,31 @@ body {
     background-color: var(--blue);
   }
 
-  .nav-li {
-    flex-direction: row-reverse;
-  }
-
   .bvb {
     display: block;
   }
 
   .nav-list {
     width: 90vw;
+    justify-content: space-between;
+  }
+
+  .boijmans {
+    display: block;
+    flex: 2;
+  }
+
+  .sub-li {
+    display: block;
+    margin-right: 2rem;
+  }
+
+  .sub-li:nth-last-of-type(2), .sub-li:nth-last-of-type(3) {
+    margin-right: 4rem;
+  }
+
+  .sub-li:last-of-type {
+    margin-right: 0;
   }
 
   .s3-container {

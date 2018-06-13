@@ -11,20 +11,16 @@
         <input type="text" name="search" id="search" placeholder="SEARCH" class="suggestion" value=""/>
       </span>
     </label>
-
-    <div class="locAndDate">
-      <label for="date">
-        <span class="hide">op</span>
-        <select class="" name="date" id="date">
-          <option value="0">Show All</option>
-          <option value="09-09-2018">06/18</option>
-          <option value="16-09-2018">05/18</option>
-          <option value="17-09-2018">04/18</option>
-          <option value="18-09-2018">03/18</option>
-          <option value="22-09-2018">02/18</option>
+      <label for="month">
+        <span class="hide">date</span>
+        <select name="date" id="date">
+          <option value="2018-01-00" selected>06/2018</option>
+          <option value="2018-02-00">07/2018</option>
+          <option value="2018-03-00">08/2018</option>
+          <option value="2018-04-00">09/2018</option>
+          <option value="2018-05-00">10/2018</option>
         </select>
       </label>
-    </div>
     <input type="submit" name="submit" value="search" class="btn" />
   </form>
   <div class="infinite">

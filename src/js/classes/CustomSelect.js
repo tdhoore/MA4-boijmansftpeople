@@ -31,7 +31,7 @@ export default class CustomSelect extends CustomDropDown {
   createFakeSelect($select) {
     const $result = document.createElement(`div`);
 
-    const optionContent = $select.querySelector(`option`).textContent;
+    const optionContent = this.createDate($select.querySelector(`option`).textContent);
     const $a = this.createEmptyLink(optionContent);
 
     $result.classList.add(`date-btn`);
@@ -41,6 +41,11 @@ export default class CustomSelect extends CustomDropDown {
 
     //add class
     $a.classList.add(`fakeSelect`);
+
+    //if date add extra class
+    if ($select.name === `date`) {
+      //$a.classList.add(`next-party-date`);
+    }
 
     //add listener to fake select
     $a.addEventListener(`click`, this.clickFakeSelectListener);
@@ -63,6 +68,13 @@ export default class CustomSelect extends CustomDropDown {
 
     //add customselect to the select parent
     this.addElemToElem($customSelect, $select.parentElement);
+
+    //set first elem to selected
+    this.setInitialSelected();
+  }
+
+  setInitialSelected() {
+    document.querySelector(`.${this.customClass} ul li:first-of-type a`).classList.add(this.customSelectedClass);
   }
 
   handleClickFakeSelect(e) {
@@ -84,6 +96,9 @@ export default class CustomSelect extends CustomDropDown {
     const $fakeSelect = $customDropdown.querySelector(`a`);
     const options = [...$customDropdown.parentElement.querySelectorAll(`option`)];
 
+    //remove dropdown
+    $customDropdown.classList.remove(this.customOpenClass);
+
     customOptions.forEach(($customOption, index) => {
       //set the selected option in the select options
       this.addOrRemoveSelected(options[index].value === $selectedOption.dataset.value, options[index]);
@@ -95,11 +110,26 @@ export default class CustomSelect extends CustomDropDown {
         //set the fake select textContent
         this.setContentToContent($fakeSelect, $customOption);
 
+        //if selected has class
+        if ($fakeSelect.classList.contains(`next-party-date`)) {
+          console.log($customOption);
+          $fakeSelect.innerHTML = this.createDate($customOption.textContent);
+        }
+
         this.selectedOption = $customOption.textContent;
       } else {
         $customOption.classList.remove(this.customSelectedClass);
       }
     });
+  }
+
+  createDate(content) {
+    const month = content.substr(0, 3);
+    const year = content.substr(3, 4);
+
+    const result = `<span>${month}</span><span>${year}</span>`;
+
+    return result;
   }
 
   addOrRemoveSelected(condition, $option) {

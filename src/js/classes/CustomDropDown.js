@@ -3,7 +3,7 @@ export default class CustomDropDown {
     selector: ``,
     customClass: ``,
     customOpenClass: ``,
-    customSelectedClass: ``,
+    customSelectedClass: ``
   }) {
     this.inputs = [...document.querySelectorAll(param.selector)];
     this.customClass = param.customClass;
@@ -52,7 +52,7 @@ export default class CustomDropDown {
 
     $a.setAttribute(`href`, `#`);
 
-    $a.textContent = textContent;
+    $a.innerHTML = textContent;
 
     return $a;
   }

@@ -8,8 +8,10 @@
   <article class="s1a1">
       <h2 class="hide">Upload</h2>
       <picture class="s1-img">
-        <source srcset="assets/img/shirley-temple-small.jpg" media="(max-width: 1023px)">
-        <source srcset="assets/img/shirley-temple-big.jpg" media="(min-width: 1024px)">
+        <source srcset="assets/img/shirley-temple-small.webp" type="image/webp" />
+        <source srcset="assets/img/shirley-temple-small.jpg" media="(max-width: 1023px)" type="image/png">
+          <source srcset="assets/img/shirley-temple-big.webp" type="image/webp" />
+        <source srcset="assets/img/shirley-temple-big.jpg" media="(min-width: 1024px)" type="image/png">
         <img class="s1-img" src="assets/img/shirley-temple-small.jpg" alt="art of the month template"
         sizes="(max-width: 1023px) 100vw,
                 (min-width: 1024px) 44vw">
@@ -58,13 +60,13 @@
             <span class="validator"></span>
           </label>
 
-          <label for="tags">
-            <span class="titleAccent upload-lbl">tags</span>
-            <div class="textInput">
-              <textarea name="tags" id="tags" class="textarea" placeholder="seperate tags with comma’s"></textarea>
-            </div>
-            <span class="validator"></span>
-          </label>
+          <label for="concept">
+             <span class="titleAccent upload-lbl">concept</span>
+             <div class="textInput">
+               <textarea name="concept" id="concept" class="textarea" placeholder="What is the idea behind your work"></textarea>
+             </div>
+             <span class="validator"></span>
+           </label>
         </div>
 
        <div class="fuckingshit">

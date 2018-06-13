@@ -53,9 +53,25 @@
 
   <section class="party-section3">
     <h2 class="party-section3-title">We missed you here:</h2>
-    <img class="party1-img" height="207" width="253" src="assets/img/parties/party1-253.jpg" alt="Arty Party May">
-    <img class="party2-img" height="207" width="253" src="assets/img/parties/party2-253.jpg" alt="Arty Party April">
-    <img class="party3-img" height="207" width="253" src="assets/img/parties/party3-253.jpg" alt="Arty Party March">
-    <img class="party4-img" height="207" width="253" src="assets/img/parties/party4-253.jpg" alt="Arty Party February">
+    <picture>
+      <source srcset="assets/img/parties/party1-253.webp" type="image/webp" />
+      <source srcset="assets/img/parties/party1-253.png" type="image/png" />
+      <img class="party1-img" height="207" width="253" src="assets/img/parties/party1-253.jpg" alt="Arty Party May">
+    </picture>
+    <picture>
+      <source srcset="assets/img/parties/party2-253.webp" type="image/webp" />
+      <source srcset="assets/img/parties/party2-253.png" type="image/png" />
+      <img class="party2-img" height="207" width="253" src="assets/img/parties/party2-253.jpg" alt="Arty Party May">
+    </picture>
+    <picture>
+      <source srcset="assets/img/parties/party3-253.webp" type="image/webp" />
+      <source srcset="assets/img/parties/party3-253.png" type="image/png" />
+      <img class="party3-img" height="207" width="253" src="assets/img/parties/party3-253.jpg" alt="Arty Party May">
+    </picture>
+    <picture>
+      <source srcset="assets/img/parties/party4-253.webp" type="image/webp" />
+      <source srcset="assets/img/parties/party4-253.png" type="image/png" />
+      <img class="party4-img" height="207" width="253" src="assets/img/parties/party4-253.jpg" alt="Arty Party May">
+    </picture>
   </section>
 </section>

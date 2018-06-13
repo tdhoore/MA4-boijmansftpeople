@@ -10,6 +10,7 @@ export default class AddDropzone {
     this.listeners = [`dragover`, `dragenter`, `dragleave`, `dragend`, `drop`];
 
     this.handledragDrop = e => this.dragDropControll(e);
+    this.handleUploadImage = e => this.changeImage(e);
   }
 
   toggleVisibility($elem) {
@@ -81,11 +82,18 @@ export default class AddDropzone {
     return $elem.querySelector(`img`);
   }
 
+  changeImage(e) {
+    this.displayImage(e.currentTarget.files[0]);
+  }
+
   init() {
     //set zone style
     this.zone.classList.add(`dropStyle`);
 
     //add drop event
     this.addListeners(this.zone);
+
+    //add change event to input
+    this.input.addEventListener(`change`, this.handleUploadImage);
   }
 }

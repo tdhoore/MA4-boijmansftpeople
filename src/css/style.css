@@ -1121,8 +1121,8 @@ body {
 
   .logo {
     width: 22rem;
-    height: 19rem;
-    background-position: center;
+    height: 17rem;
+    background-position: top;
   }
 
   .shirl-div {
@@ -1193,6 +1193,12 @@ body {
 }
 
 @media only screen and (max-width: 1023px) {
+
+  .nav-bftp {
+    bottom: 0;
+    position: fixed;
+    background-color: var(--lightgrey);
+  }
 
   .index-section1 {
     margin-top: 2rem;
@@ -1330,6 +1336,26 @@ body {
 
   .textarea {
     width: 45rem;
+  }
+
+  .s1a1 {
+    height: 100%;
+  }
+
+  .s1-img {
+    margin-bottom: 0;
+  }
+
+  .submit-s1h1 {
+    font-size: 4vw;
+  }
+
+  .submit-s1h2 {
+    font-size: 4vw;
+  }
+
+  .s1-div {
+    width: 44vw;
   }
 }
 

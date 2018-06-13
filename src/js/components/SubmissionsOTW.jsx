@@ -61,17 +61,19 @@ class SubmissionsOTW extends Component {
   }
 
   render() {
-    return (<TransitionGroup>
+    return (<div>
       <button data-dir="prev" onClick={this.handleClickBtn}>prev</button>
-      {
-        this.state.submissionData.map(submission => {
-          return (<CSSTransition timeout={1000} classNames="trans" key={`weeklySubmission${submission.id}`}>
-            <Submission key={`weeklySubmission${submission.id}`} data={submission} customClass={this.customClass}/>
-          </CSSTransition>)
-        })
-      }
+      <TransitionGroup>
+        {
+          this.state.submissionData.map(submission => {
+            return (<CSSTransition timeout={1000} classNames="trans" key={`weeklySubmission${submission.id}`}>
+              <Submission key={`weeklySubmission${submission.id}`} data={submission} customClass={this.customClass}/>
+            </CSSTransition>)
+          })
+        }
+      </TransitionGroup>
       <button data-dir="next" onClick={this.handleClickBtn}>next</button>
-    </TransitionGroup>);
+    </div>);
   }
 }
 

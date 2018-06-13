@@ -53,7 +53,7 @@
 
     <header class="header">
       <h1 class="hide">Boijmans for the people</h1>
-      <nav>
+      <nav class="nav-bftp">
         <ul class="nav-list">
           <li class="b sub-li">
             <a href="index.php">

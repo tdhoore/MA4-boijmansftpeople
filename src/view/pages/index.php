@@ -87,7 +87,7 @@
     <article class="index-section3">
       <h3 class="hide">Concept</h3>
       <p class="p-article">
-        Every last friday of the month, we throw an <strong>afterwork party</strong> to close off the theme of the month. We’ll announce <strong>who’s work will be displayed</strong> in Museum Boijmans Van Beuningen when it re-opens, and <strong>announce next month’s theme and painting</strong>. You can sit back and relax, look at everybody’s submission from the last few weeks, or you can do a <strong>collaborative remake</strong> of the new painting.
+        Every last friday of the month, we throw an <strong>after-work party</strong> to close off the theme of the month. We’ll announce <strong>who’s work will be displayed</strong> in Museum Boijmans Van Beuningen when it re-opens, and <strong>announce next month’s theme and painting</strong>. You can sit back and relax, look at everybody’s submission from the last few weeks, or you can do a <strong>collaborative remake</strong> of the new painting.
       </p>
       <a href="index.php?page=party" class="s3-btn">More about this</a>
     </article>

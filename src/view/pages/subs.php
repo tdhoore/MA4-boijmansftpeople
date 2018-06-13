@@ -43,6 +43,11 @@
           </label>
         </div>
       </div>
+      <label for="remix" class="remix date-btn">
+        <span class="hide">remix</span>
+        <input type="checkbox" name="remix" id="remix" />
+        <span class="checkmark"></span>
+      </label>
     </div>
     <input type="submit" name="submit" value="search" class="btn" />
   </form>

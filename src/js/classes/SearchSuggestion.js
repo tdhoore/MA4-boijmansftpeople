@@ -20,14 +20,10 @@ export default class SearchSuggestion extends CustomDropDown {
 
   init() {
     if (this.inputs.length > 0) {
-
       //add addEventListeners to inputs
       this.inputs.forEach($input => {
         $input.addEventListener(`input`, this.inputListener);
       });
-
-      // add listener to window
-      window.addEventListener(`click`, this.clickWindow);
     }
   }
 
@@ -166,14 +162,5 @@ export default class SearchSuggestion extends CustomDropDown {
 
     //add customselect to the select parent
     this.addElemToElem($customSuggestion, $input.parentElement);
-  }
-
-  handleClickWindow() {
-    this.inputs.forEach($input => {
-      const $customDropDown = $input.parentElement.querySelector(`ul`);
-      if ($customDropDown) {
-        this.wipeElement($customDropDown);
-      }
-    });
   }
 }

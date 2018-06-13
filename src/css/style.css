@@ -486,13 +486,15 @@ body {
   display: block;
 }
 
-.date-btn {
+.date-btn, .submitBtn input {
   width: 6rem;
   height: 8.5rem;
   border: .2rem solid var(--blue);
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  background: none;
 }
 
 .customDropDown {
@@ -577,6 +579,14 @@ body {
 
 .themeCheckBoxes label input:checked ~ .checkmark {
   background-color: blue;
+}
+
+.submitBtn input {
+  color: transparent;
+}
+
+.submitBtn input:focus {
+  outline: none;
 }
 
 /* SUBMIT */

@@ -48,8 +48,10 @@
         <input type="checkbox" name="remix" id="remix" />
         <span class="checkmark"></span>
       </label>
+      <div class="submitBtn">
+        <input type="submit" name="submit" value="search" class="btn" />
+      </div>
     </div>
-    <input type="submit" name="submit" value="search" class="btn" />
   </form>
   <div class="infinite">
     <?php foreach ($userArt as $value) { ?>

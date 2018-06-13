@@ -44,7 +44,7 @@ export default class CustomSelect extends CustomDropDown {
 
     //if date add extra class
     if ($select.name === `date`) {
-      //$a.classList.add(`next-party-date`);
+      $a.classList.add(`isDate`);
     }
 
     //add listener to fake select
@@ -111,8 +111,7 @@ export default class CustomSelect extends CustomDropDown {
         this.setContentToContent($fakeSelect, $customOption);
 
         //if selected has class
-        if ($fakeSelect.classList.contains(`next-party-date`)) {
-          console.log($customOption);
+        if ($fakeSelect.classList.contains(`isDate`)) {
           $fakeSelect.innerHTML = this.createDate($customOption.textContent);
         }
 
@@ -127,9 +126,7 @@ export default class CustomSelect extends CustomDropDown {
     const month = content.substr(0, 3);
     const year = content.substr(3, 4);
 
-    const result = `<span>${month}</span><span>${year}</span>`;
-
-    return result;
+    return `<span>${month}</span><span>${year}</span>`;
   }
 
   addOrRemoveSelected(condition, $option) {

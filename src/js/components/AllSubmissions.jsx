@@ -3,7 +3,7 @@ import Submission from './Submission.jsx';
 import AddListenersToFilter from '../classes/AddListenersToFilter';
 import {TransitionGroup, CSSTransition} from "react-transition-group";
 
-class AllSubmissions extends Component {
+export default class AllSubmissions extends Component {
   constructor(props) {
     super(props);
     this.container = this.props.container;
@@ -116,5 +116,3 @@ class AllSubmissions extends Component {
     }
   }
 }
-
-export default AllSubmissions;

@@ -4,6 +4,7 @@ import Submissions from './classes/Submissions';
 import InfiniteScroll from './classes/InfiniteScroll';
 import Validator from './classes/Validator';
 import Emitter from 'event-emitter';
+import ClearFilterBtn from './classes/ClearFilterBtn'
 
 const eventEmitter = Emitter();
 
@@ -17,6 +18,8 @@ const infiniteScroll = new InfiniteScroll({selector: `.infinite`, customClass: `
 
 const submitValidator = new Validator({formSelector: `.submitForm`});
 
+const clearFilterBtn = new ClearFilterBtn({selector: `.submitBtn`, formSelector: `.submissionFilter`});
+
 const init = () => {
   filter.init();
 
@@ -25,6 +28,8 @@ const init = () => {
   submissions.init();
 
   infiniteScroll.init();
+
+  clearFilterBtn.init();
 
   if (submitValidator.init()) {
     submitValidator.addValidationToInput(`input[type="email"]`, [

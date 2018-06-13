@@ -541,6 +541,14 @@ body {
 .s1a1 {
   height: 55rem;
   background-color: var(--lightgrey);
+  width: 100vw;
+  max-width: 130rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.s1a1-div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -550,7 +558,8 @@ body {
   color: var(--blue);
   font-family: lemonmilk;
   font-size: 2.4rem;
-  width: 90vw;
+  width: 25rem;
+  max-width: 40rem;
   border-bottom: .2rem solid var(--blue);
   line-height: 3rem;
 }
@@ -621,11 +630,20 @@ body {
 }
 
 .submitForm {
-  height: 70rem;
+  height: 55rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+}
+
+.subform-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 20rem;
+  margin-bottom: -2rem;
 }
 
 .submit-input {
@@ -640,6 +658,138 @@ body {
 
 .submitForm input:focus {
   outline: none;
+}
+
+.dragAndDrop {
+  border: .2rem solid var(--blue);
+  width: 30rem;
+  height: 22rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.textarea {
+  border: .2rem solid var(--blue);
+  background-color: transparent;
+  width: 30rem;
+  height: 10rem;
+  color: var(--blue);
+  font-family: lemonmilk;
+  font-size: 1.4rem;
+}
+
+.textarea:focus {
+  outline: none;
+}
+
+.agree {
+  color: var(--blue);
+  font-weight: 100;
+  font-style: italic;
+}
+
+.terms-div {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 25rem;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.checkbox {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.submitSubmit {
+  @apply --button-cut;
+  width: 28rem;
+  background-color: var(--blue);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.submitSubmit::after {
+  @apply --button-cut-after;
+  background-color: var(--blue);
+}
+
+.drop-div {
+  overflow: hidden;
+  position: relative;
+}
+
+.input-file-styling {
+  display: block;
+  cursor: inherit;
+  opacity: 0;
+  position: absolute;
+  color: var(--blue);
+  font-family: lemonmilk;
+  width: 20rem;
+  height: 3.5rem;
+}
+
+.input-file-js-on {
+  background-color: var(--blue);
+  font-size: 2.2rem;
+  font-family: lemonmilk;
+  color: white;
+  width: 20rem;
+  height: 4.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: var(--pink);
+  }
+}
+
+.file-check {
+  color: var(--blue);
+  font-family: lemonmilk;
+  font-size: 1.4rem;
+}
+
+.input-file-js-on strong {
+  height: 3.5rem;
+  width: 19rem;
+  text-align: center;
+  border: .2rem solid white;
+  padding-top: .5rem;
+}
+
+.align-input-file {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  height: 10rem;
+}
+
+.drop-lbl {
+  color: var(--blue);
+  font-family: lemonmilk;
+  font-size: 1.8rem;
+}
+
+.fuckingshit {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nameTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 20rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -783,6 +933,67 @@ body {
   .footerfooter {
     flex-direction: row;
     max-width: 90rem;
+    height: auto;
+  }
+
+  .s1a1 {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 5rem;
+    max-height: 43rem;
+  }
+
+  .s1-img {
+    width: 49.6rem;
+    align-self: flex-start;
+  }
+
+  .s1-div {
+    display: flex;
+    justify-content: space-between;
+    width: 40rem;
+  }
+
+  .s1a1-div {
+    height: 35rem;
+    justify-content: space-around;
+  }
+
+  .s1-p {
+    width: 28vw;
+    font-size: 2.5vw;
+  }
+
+  .s1a2-h2 {
+    font-size: 2.2vw;
+  }
+
+  .submit-s1h2 {
+    @apply --repeat-h1;
+    margin-bottom: 3rem;
+  }
+
+  .submit-s1h2::after {
+    @apply --repeat-h1-after;
+  }
+
+  .submit-s1h2::before {
+    @apply --repeat-h1-before;
+  }
+
+  .submitForm {
+    width: 90rem;
+    flex-direction: row;
+  }
+
+  .fuckingshit {
+    height: 40rem;
+    align-self: flex-end;
+  }
+
+  .subform-div {
+    height: 45rem;
   }
 }
 

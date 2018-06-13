@@ -201,6 +201,7 @@ body {
   color: var(--pink);
   font-size: 3rem;
   align-self: flex-start;
+  margin: 0 1.6rem 4rem;
 }
 
 .div-article2 {
@@ -262,14 +263,13 @@ body {
 }
 
 .index-section2 {
-  height: 55rem;
   background-color: var(--lightgrey);
+  padding: 4rem 0 6rem;
 }
 
 .s2-article1 {
   width: 90vw;
   margin: 0 auto;
-  height: 50rem;
 
   display: flex;
   flex-direction: column;
@@ -281,6 +281,7 @@ body {
   @apply --button-cut;
   width: 28rem;
   background-color: var(--blue);
+  margin: 5rem auto 0;
 }
 
 .btn-article4::after {
@@ -583,6 +584,92 @@ body {
 
 .submitBtn input:focus {
   outline: none;
+}
+
+.submissions {
+  width: 100vw;
+  overflow: hidden;
+
+  & div:first-of-type {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  & button {
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    left: 0;
+    height: 3rem;
+    width: 3rem;
+    display: block;
+    background: none;
+    border: none;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    color: transparent;
+    transform: translateY(-50%) rotate(180deg);
+    background-image: url(../assets/img/arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50%;
+    background-color: var(--pink);
+  }
+
+  & button:last-of-type {
+    left: auto;
+    right: 0;
+    transform: translateY(-50%);
+
+  }
+}
+
+.submissionItem {
+  margin-right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+
+  & img {
+    display: block;
+    width: 100%;
+    height: auto;
+    order: -1;
+  }
+
+  &:first-of-type {
+    margin-left: 1.5rem;
+  }
+
+  & h3 {
+    font-family: lemonmilk, impact, sans-serif;
+    color: var(--blue);
+    font-size: 1.4rem;
+    font-weight: lighter;
+    margin-top: 2rem;
+  }
+
+  & p {
+    position: relative;
+    font-family: lemonmilk, impact, sans-serif;
+    color: var(--darkgrey);
+    font-weight: lighter;
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-left: 1.6rem;
+  }
+
+  & p::before {
+    content: '';
+    position: absolute;
+    top: calc(50% - .1rem);
+    left: -1.6rem;
+    display: block;
+    background-color: var(--darkgrey);
+    width: 1.2rem;
+    height: .2rem;
+  }
 }
 
 /* SUBMIT */
@@ -953,7 +1040,7 @@ body {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-around;
-    padding-top: 1rem;
+    padding: 1rem 2rem 0;
   }
 
   .party-section1 {
@@ -1301,9 +1388,9 @@ body {
   }
 
   .aboutimg {
+    margin: 0;
     width: 20vw;
     height: 20vw;
-    margin-bottom: 8.4rem;
   }
 
   .index-section4 {
@@ -1357,6 +1444,23 @@ body {
 
   .s1-div {
     width: 44vw;
+  }
+
+  .h3-article2 {
+    font-size: 4rem;
+  }
+
+  .submissionItem {
+    margin-right: 7rem;
+    margin-left: 0;
+
+    & h3 {
+      font-size: 2.5rem;
+    }
+
+    & p {
+      font-size: 1.6rem;
+    }
   }
 }
 

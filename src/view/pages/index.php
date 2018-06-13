@@ -44,13 +44,11 @@
 </section>
 
 <section class="index-section2">
-  <article class="s2-article1">
-    <h2 class="h3-article2">submissions of the week</h2>
-    <div class="submissions">
-      <?php echo implode($artSubs, " "); ?>
-    </div>
-    <a href="index.php?page=subs" class="btn-article4">More submissions</a>
-  </article>
+  <h2 class="h3-article2">submissions of the week</h2>
+  <div class="submissions">
+    <?php echo implode($artSubs, " "); ?>
+  </div>
+  <a href="index.php?page=subs" class="btn-article4">More submissions</a>
 </section>
 
 <section class="index-section3">

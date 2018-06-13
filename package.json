@@ -5,8 +5,10 @@
   "license": "MIT",
   "scripts": {
     "development": "NODE_ENV=development  webpack-dev-server",
-    "production": "rm -rf dist/ && npm run copydist && NODE_ENV=production webpack -p",
-    "copydist": "ditto ./src/assets/ ./dist/assets/"
+    "production": "npm run clean && npm run copydist && NODE_ENV=production webpack -p",
+    "clean": "rm -rf ./dist/",
+    "copydist": "ditto ./src/ ./dist/ && rm -rf ./dist/css && rm -rf ./dist/js",
+    "serve": "http-server ./dist -p 8080"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -22,7 +24,7 @@
     "eslint-config-devine": "^1.8.1",
     "eslint-loader": "^2.0.0",
     "exports-loader": "^0.7.0",
-    "extract-text-webpack-plugin": "^3.0.1",
+    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
     "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.30.1",

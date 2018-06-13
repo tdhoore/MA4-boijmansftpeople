@@ -3,11 +3,11 @@
     <h2 class="index-tagline"><span class="hide">4 years - your art on our walls</span></h2>
     <div class="shirl-div">
       <picture class="shirley">
-        <source srcset="assets/img/shirley-temple-small.webp" type="image/webp" />
-        <source srcset="assets/img/shirley-temple-small.jpg" media="(max-width: 768px)" type="image/png">
-          <source srcset="assets/img/shirley-temple-big.webp" type="image/webp" />
-        <source srcset="assets/img/shirley-temple-big.jpg" media="(min-width: 769px)" type="image/png">
-        <img class="shirley" src="assets/img/shirley-temple-small.jpg" alt="Artwork of the month"
+        <source srcset="assets/img/shirley-temple-small.webp" media="(max-width: 768px)" type="image/webp" />
+        <source srcset="assets/img/shirley-temple-small.jpg" media="(max-width: 768px)" type="image/png" />
+          <source srcset="assets/img/shirley-temple-big.webp" media="(min-width: 769px)" type="image/webp" />
+        <source srcset="assets/img/shirley-temple-big.jpg" media="(min-width: 769px)" type="image/png" />
+        <img class="shirley" src="assets/img/shirley-temple-big.jpg" alt="Artwork of the month"
         sizes="(max-width: 768px) 100vw,
                 (min-width: 769px) 44vw">
       </picture>
@@ -32,11 +32,11 @@
   <article class="index-article index-article3">
     <h2 class="winner"><span class="hide">last month's winner</span></h2>
     <picture class="winner-box">
-      <source srcset="assets/img/last-winner-small.webp" type="image/webp" />
-      <source srcset="assets/img/last-winner-small.jpg" media="(max-width: 768px)" type="image/png">
-      <source srcset="assets/img/last-winner-big.webp" type="image/webp" />
-      <source srcset="assets/img/last-winner-big.jpg" media="(min-width: 769px)" type="image/png">
-      <img class="last-winner" src="assets/img/last-winner-small.jpg" alt="last month's winner"
+      <source srcset="assets/img/last-winner-small.webp" media="(max-width: 768px)" type="image/webp" />
+      <source srcset="assets/img/last-winner-small.jpg" media="(max-width: 768px)" type="image/png" />
+      <source srcset="assets/img/last-winner-big.webp" media="(min-width: 769px)" type="image/webp" />
+      <source srcset="assets/img/last-winner-big.jpg" media="(min-width: 769px)" type="image/png" />
+      <img class="last-winner" src="assets/img/last-winner-big.jpg" alt="last month's winner"
       sizes="(max-width: 768px) 80vw,
               (min-width: 769px) 25vw">
     </picture>

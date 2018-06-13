@@ -591,6 +591,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 3rem;
 }
 
 .submit-s1h1 {
@@ -611,7 +612,6 @@ body {
 }
 
 .s1a1 {
-  height: 55rem;
   background-color: var(--lightgrey);
   width: 100vw;
   max-width: 130rem;
@@ -624,6 +624,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 2rem;
 }
 
 .s1-p {
@@ -678,7 +679,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin-top: 3rem;
+  margin-top: 5rem;
 }
 
 .s1a2-h2 {
@@ -686,12 +687,11 @@ body {
   color: var(--pink);
   font-size: 2.2rem;
   letter-spacing: .1rem;
-  align-self: flex-start;
 }
 
 .s1a2-p {
   color: var(--blue);
-  align-self: flex-start;
+  font-size: 1.6rem;
 }
 
 .upload-lbl {
@@ -702,7 +702,6 @@ body {
 }
 
 .submitForm {
-  height: 55rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -714,8 +713,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  height: 20rem;
-  margin-bottom: -2rem;
+  height: 45rem;
 }
 
 .submit-input {
@@ -750,6 +748,7 @@ body {
   color: var(--blue);
   font-family: lemonmilk;
   font-size: 1.4rem;
+  resize: none;
 }
 
 .textarea:focus {
@@ -760,19 +759,64 @@ body {
   color: var(--blue);
   font-weight: 100;
   font-style: italic;
+  margin-bottom: -2.5rem;
 }
 
 .terms-div {
   display: flex;
   flex-direction: row-reverse;
-  width: 25rem;
+  width: 30rem;
   justify-content: space-around;
   align-items: center;
 }
 
+.textInput {
+  position: relative;
+}
+
 .checkbox {
-  width: 1.5rem;
-  height: 1.5rem;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.checkmark2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: var(--blue);
+}
+
+.textInput:hover input ~ .checkmark2 {
+  background-color: var(--pink);
+}
+
+.textInput input:checked ~ .checkmark2 {
+  background-color: var(--pink);
+}
+
+.textInput input:checked ~ .checkmark2::after {
+  display: block;
+}
+
+.textInput .checkmark2::after {
+  left: .8rem;
+  top: .35rem;
+  width: .8rem;
+  height: 1.6rem;
+  border: solid white;
+  border-width: 0 .3rem .3rem 0;
+  transform: rotate(45deg);
+}
+
+.checkmark2::after {
+  content: '';
+  position: absolute;
+  display: none;
 }
 
 .submitSubmit {
@@ -854,6 +898,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  height: 40rem;
 }
 
 .nameTitle {
@@ -1013,12 +1058,7 @@ body {
     align-items: center;
     justify-content: space-around;
     margin-top: 5rem;
-    max-height: 43rem;
-  }
-
-  .s1-img {
-    width: 49.6rem;
-    align-self: flex-start;
+    height: 40rem;
   }
 
   .s1-div {
@@ -1028,17 +1068,18 @@ body {
   }
 
   .s1a1-div {
-    height: 35rem;
+    height: 30rem;
     justify-content: space-around;
   }
 
   .s1-p {
     width: 28vw;
     font-size: 2.5vw;
+    line-height: 3vw;
   }
 
   .s1a2-h2 {
-    font-size: 2.2vw;
+    font-size: 3vw;
   }
 
   .submit-s1h2 {
@@ -1055,17 +1096,19 @@ body {
   }
 
   .submitForm {
+    height: 55rem;
     width: 90rem;
     flex-direction: row;
+    margin-top: -3rem;
   }
 
   .fuckingshit {
     height: 40rem;
-    align-self: flex-end;
+    margin-bottom: -8rem;
   }
 
   .subform-div {
-    height: 45rem;
+    margin-bottom: -2rem;
   }
 }
 
@@ -1265,6 +1308,29 @@ body {
   .about-bg {
     height: 12rem;
     /* border: .2rem solid var(--pink); */
+  }
+
+  .nameTitle {
+    flex-direction: row;
+    width: 45rem;
+    justify-content: space-between;
+    height: 10rem;
+  }
+
+  .submit-input {
+    width: 20rem;
+  }
+
+  .subform-div {
+    width: 45rem;
+  }
+
+  .input1024 {
+    width: 45rem;
+  }
+
+  .textarea {
+    width: 45rem;
   }
 }
 

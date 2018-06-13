@@ -24,9 +24,9 @@
     </div>
     <nav class="social-link-nav">
       <ul class="social-link-ul">
-        <li class="social-link-maps"><a class="social-a" href="https://www.google.com/maps/search/?api=1&query=<?php echo str_replace('<br/>', '%20', $popups[0]['data']['adress']); ?>" target="_blank"><div class="social-icon"></div><span class="social-link-cta">Open in Maps</span></a></li>
-        <li class="social-link-fb"><a class="social-a" href="#"><div class="social-icon"></div><span class="social-link-cta">I'm interested!</span></a></li>
-        <li class="social-link-tt"><a class="social-a" href="#"><div class="social-icon"></div><span class="social-link-cta">Tweet it!</span></a></li>
+        <li class="social-link-maps"><a class="social-a" target="_blank" href="https://www.google.com/maps/search/?api=1&query=<?php echo str_replace('<br/>', '%20', $popups[0]['data']['adress']); ?>" target="_blank"><div class="social-icon"></div><span class="social-link-cta">Open in Maps</span></a></li>
+        <li class="social-link-fb"><a class="social-a" target="_blank" href="https://www.facebook.com/events/614815452244683/"><div class="social-icon"></div><span class="social-link-cta">I'm interested!</span></a></li>
+        <li class="social-link-tt"><a class="social-a" target="_blank" href="https://twitter.com/intent/tweet?text=This%20party%20looks%20like%20fun!%20https://www.facebook.com/events/614815452244683/"><div class="social-icon"></div><span class="social-link-cta">Tweet it!</span></a></li>
       </ul>
     </nav>
 </section>

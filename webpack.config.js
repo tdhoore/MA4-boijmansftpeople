@@ -15,12 +15,12 @@ const PATHS = {
 
 const commonConfig = {
   entry: [
-    // path.join(PATHS.src, `js/script.js`),
+    path.join(PATHS.src, `js/script.js`),
     path.join(PATHS.src, `css/style.css`)
   ],
   output: {
     path: PATHS.dist,
-    filename: `js/script.[hash].js`
+    filename: `js/script.js`
   },
   module: {
     rules: [
@@ -101,12 +101,7 @@ const productionConfig = merge([
         test: /\.(jpe?g)$/i,
         plugins: [imageminJpegRecompress({})]
       })
-      // new CriticalPlugin({
-      //   src: 'view/index.php',
-      //   inline: true,
-      //   minify: true,
-      //   dest: 'view/index.php'
-      // })
+      // new CriticalPlugin({src: 'view/layout.php', inline: true, minify: true, dest: 'view/layout.php'})
     ]
   }
 ]);

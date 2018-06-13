@@ -23,9 +23,9 @@ class Controller {
     $this->set('js', '<script src="http://localhost:8080/js/script.js"></script>');
     if($this->env == 'production') {
       //link to the css file in production mode instead of no-css
-      $this->set('css', '<link async rel="stylesheet" href="css/style.8342c63834061d13f4b8.css">');
+      $this->set('css', '<link rel="stylesheet" href="css/style.css">');
       //link to the generated javascript file in production mode
-      $this->set('js', '<script src="js/script.8342c63834061d13f4b8.js"></script>');
+      $this->set('js', '<script src="js/script.js"></script>');
     }
     //call the correct function in the controller
     call_user_func(array($this, $this->route['action']));
@@ -72,5 +72,4 @@ class Controller {
     unset($_SESSION['info']);
     unset($_SESSION['error']);
   }
-
 }

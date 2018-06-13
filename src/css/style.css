@@ -21,6 +21,11 @@ body {
   font-weight: 100;
 }
 
+button:focus {
+  outline: none;
+  cursor: pointer;
+}
+
 /* HEADER */
 
 .header {
@@ -593,7 +598,7 @@ body {
   & div:first-of-type {
     position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
   }
 
   & button {
@@ -601,8 +606,8 @@ body {
     z-index: 100;
     top: 50%;
     left: 0;
-    height: 3rem;
-    width: 3rem;
+    height: 7rem;
+    width: 7rem;
     display: block;
     background: none;
     border: none;
@@ -615,7 +620,6 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 50%;
-    background-color: var(--pink);
   }
 
   & button:last-of-type {
@@ -1452,7 +1456,14 @@ body {
 
   .submissionItem {
     margin-right: 7rem;
-    margin-left: 0;
+
+    &:first-of-type {
+      margin-left: 2rem;
+    }
+
+    &:last-of-type {
+      margin-right: 2rem;
+    }
 
     & h3 {
       font-size: 2.5rem;
@@ -1460,6 +1471,19 @@ body {
 
     & p {
       font-size: 1.6rem;
+    }
+  }
+
+  .submissions {
+
+    & div:first-of-type {
+      align-items: center;
+    }
+
+    & button {
+      position: relative;
+      width: 7rem;
+      height: 7rem;
     }
   }
 }

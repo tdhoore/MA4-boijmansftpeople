@@ -66,7 +66,7 @@ class SubmissionsOTW extends Component {
       <TransitionGroup>
         {
           this.state.submissionData.map(submission => {
-            return (<CSSTransition timeout={1000} classNames="trans" key={`weeklySubmission${submission.id}`}>
+            return (<CSSTransition timeout={300} classNames="submissionTransition" key={`weeklySubmission${submission.id}`}>
               <Submission key={`weeklySubmission${submission.id}`} data={submission} customClass={this.customClass}/>
             </CSSTransition>)
           })

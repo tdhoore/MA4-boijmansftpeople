@@ -77,7 +77,7 @@
               <div class="party-btn <?php if($currentPage == 'party') echo 'party-btn-active';?>"></div>
             </a>
           </li>
-          <li class="sub-li">
+          <li class="sub-li submitYourWork">
             <a href="index.php?page=submit" class="submit-btn">Submit your work</a>
           </li>
        </ul>

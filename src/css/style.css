@@ -38,11 +38,7 @@ body {
   grid-area: boij;
 }
 
-.bvb {
-  display: none;
-}
-
-.submit-btn {
+.submit-btn,.bvb {
   display: none;
 }
 
@@ -95,15 +91,11 @@ body {
   height: 3.4rem;
 }
 
-.sub-li {
+.sub-li:nth-of-type(3) {
   order: -1;
 }
 
-.b {
-  margin-right: -4rem;
-}
-
-.boijmans {
+.boijmans,.submitYourWork {
   display: none;
 }
 
@@ -1229,9 +1221,14 @@ body {
     flex: 2;
   }
 
+  .submitYourWork {
+    display: block;
+  }
+
   .sub-li {
     display: block;
     margin-right: 2rem;
+    order: -1;
   }
 
   .sub-li:nth-last-of-type(2), .sub-li:nth-last-of-type(3) {

@@ -4,7 +4,7 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
-  font-family: helvetica;
+  font-family: helvetica, Arial, sans-serif;
 }
 
 *, *:before, *:after {/* stylelint-disable-line */
@@ -746,7 +746,6 @@ body {
   width: 30rem;
   height: 10rem;
   color: var(--blue);
-  font-family: lemonmilk;
   font-size: 1.4rem;
   resize: none;
 }
@@ -1331,6 +1330,26 @@ body {
 
   .textarea {
     width: 45rem;
+  }
+
+  .s1a1 {
+    height: 100%;
+  }
+
+  .s1-img {
+    margin-bottom: 0;
+  }
+
+  .submit-s1h1 {
+    font-size: 4vw;
+  }
+
+  .submit-s1h2 {
+    font-size: 4vw;
+  }
+
+  .s1-div {
+    width: 44vw;
   }
 }
 

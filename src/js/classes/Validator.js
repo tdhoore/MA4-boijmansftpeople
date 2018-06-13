@@ -130,7 +130,11 @@ export default class Validator {
   }
 
   displayMessage($elem, message, type = true) {
-    const $errorElem = $elem.parentElement.parentElement.parentElement.querySelector(`.validator`);
+    let $errorElem = $elem.parentElement.parentElement.querySelector(`.validator`);
+
+    if ($errorElem === null) {
+      $errorElem = $elem.parentElement.parentElement.parentElement.querySelector(`.validator`);
+    }
 
     //add error class and remove oke class
     this.changeMessageClass($errorElem, type);

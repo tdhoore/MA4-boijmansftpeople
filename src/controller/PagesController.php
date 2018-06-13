@@ -275,6 +275,10 @@ class PagesController extends Controller {
     $errors = array();
     $data = array_merge($data, array('image'=>'later-toe-voegen'));
 
+    if(!isset($data['concept'])){
+      $data['concept'] = '';
+    }
+
     if (empty($_FILES['artwork']) || !empty($_FILES['artwork']['error'])) {
       $errors['artwork'] = 'Gelieve een bestand te selecteren';
     }

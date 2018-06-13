@@ -55,12 +55,13 @@ class UserartDAO extends DAO {
   public function insert($data) {
     $errors = $this->getValidationErrors($data);
     if(empty($errors)) {
-      $sql = "INSERT INTO `userArt` (`artistName`, `artTitle`, `email`, `image`, `timeStamp`, `themeId`) VALUES (:artistName, :artTitle, :email, :image, :timeStamper, :themeId)";
+      $sql = "INSERT INTO `userArt` (`artistName`, `artTitle`, `email`, `image`, `timeStamp`, `themeId`,`userconcept`) VALUES (:artistName, :artTitle, :email, :image, :timeStamper, :themeId, :concept)";
       $stmt = $this->pdo->prepare($sql);
       $stmt->bindValue(':artistName', $data['artistname']);
       $stmt->bindValue(':artTitle', $data['title']);
       $stmt->bindValue(':email', $data['email']);
       $stmt->bindValue(':image', $data['image']);
+      $stmt->bindValue(':concept', $data['concept']);
       $stmt->bindValue(':timeStamper', $data['timestamp']);
       $stmt->bindValue(':themeId', $data['themeId']);
       if($stmt->execute()) {

@@ -60,13 +60,13 @@
             <span class="validator"></span>
           </label>
 
-          <label for="tags">
-            <span class="titleAccent upload-lbl">tags</span>
-            <div class="textInput">
-              <textarea name="tags" id="tags" class="textarea" placeholder="seperate tags with comma’s"></textarea>
-            </div>
-            <span class="validator"></span>
-          </label>
+          <label for="concept">
+             <span class="titleAccent upload-lbl">concept</span>
+             <div class="textInput">
+               <textarea name="concept" id="concept" class="textarea" placeholder="What is the idea behind your work"></textarea>
+             </div>
+             <span class="validator"></span>
+           </label>
         </div>
 
        <div class="fuckingshit">

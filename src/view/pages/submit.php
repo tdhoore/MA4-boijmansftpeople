@@ -50,21 +50,21 @@
             </label>
           </div>
 
-                <label for="email">
-          <span class="titleAccent upload-lbl">Email address</span>
-          <div class="textInput">
-            <input type="email" name="email" id="email" placeholder="salvadordali04@gmail.com" required class="submit-input"/>
-          </div>
-          <span class="validator"></span>
-                </label>
+          <label for="email">
+            <span class="titleAccent upload-lbl">Email address</span>
+            <div class="textInput">
+              <input type="email" name="email" id="email" placeholder="salvadordali04@gmail.com" required class="submit-input input1024"/>
+            </div>
+            <span class="validator"></span>
+          </label>
 
-                 <label for="tags">
-           <span class="titleAccent upload-lbl">tags</span>
-           <div class="textInput">
-             <textarea name="tags" id="tags" class="textarea" placeholder="seperate tags with comma’s"></textarea>
-           </div>
-           <span class="validator"></span>
-                 </label>
+          <label for="tags">
+            <span class="titleAccent upload-lbl">tags</span>
+            <div class="textInput">
+              <textarea name="tags" id="tags" class="textarea" placeholder="seperate tags with comma’s"></textarea>
+            </div>
+            <span class="validator"></span>
+          </label>
         </div>
 
        <div class="fuckingshit">
@@ -84,6 +84,7 @@
               <span class="titleAccent agree">I agree with the terms and conditions</span>
               <div class="textInput">
                 <input class="checkbox" type="checkbox" name="terms" id="terms" required>
+                <span class="checkmark2"></span>
               </div>
             </div>
             <span class="validator"></span>

@@ -1121,8 +1121,8 @@ body {
 
   .logo {
     width: 22rem;
-    height: 19rem;
-    background-position: center;
+    height: 17rem;
+    background-position: top;
   }
 
   .shirl-div {
@@ -1193,6 +1193,13 @@ body {
 }
 
 @media only screen and (max-width: 1023px) {
+
+  .nav-bftp {
+    bottom: 0;
+    position: fixed;
+    z-index: 999;
+    background-color: var(--lightgrey);
+  }
 
   .index-section1 {
     margin-top: 2rem;

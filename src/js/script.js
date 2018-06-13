@@ -107,7 +107,7 @@ const init = () => {
       }
     ]);
 
-    submitValidator.addValidationToInput(`input[type="checkbox"]`, [
+    submitValidator.addValidationToInput(`input[name="terms"]`, [
       {
         name: `valueMissing`,
         messages: {

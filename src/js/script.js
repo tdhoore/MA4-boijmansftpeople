@@ -22,7 +22,7 @@ const infiniteScroll = new InfiniteScroll({selector: `.infinite`, customClass: `
 
 const submitValidator = new Validator({formSelector: `.submitForm`});
 
-const clearFilterBtn = new ClearFilterBtn({selector: `.submitBtn`, formSelector: `.submissionFilter`});
+const clearFilterBtn = new ClearFilterBtn({selector: `.submitBtn`, formSelector: `.submissionFilter`, emmitter: eventEmitter});
 
 const onFileChange = e => {
   interval = setInterval(changeInput, 1000);
@@ -107,7 +107,7 @@ const init = () => {
       }
     ]);
 
-    submitValidator.addValidationToInput(`input[type="checkbox"]`, [
+    submitValidator.addValidationToInput(`input[name="terms"]`, [
       {
         name: `valueMissing`,
         messages: {

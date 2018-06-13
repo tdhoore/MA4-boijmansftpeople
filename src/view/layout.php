@@ -55,12 +55,12 @@
       <h1 class="hide">Boijmans for the people</h1>
       <nav>
         <ul class="nav-list">
-          <li class="b">
+          <li class="b sub-li">
             <a href="index.php">
               <img src="assets/img/logo-b-mobile-nav.svg" alt="bftp logo" width="54" height="54">
             </a>
           </li>
-          <li>
+          <li class="sub-li boijmans">
             <a href="https://www.boijmans.nl/" target="_blank">
               <img class="bvb" src="assets/img/mbvb-logo.svg" alt="i.s.m. museum BVB" width="200" height="55">
             </a>
@@ -71,13 +71,13 @@
               <div class="subs-btn <?php if($currentPage == 'subs') echo 'subs-btn-active';?>"></div>
             </a>
           </li>
-          <li class="">
+          <li class="sub-li">
             <a href="index.php?page=party" class="nav-li">
               <p class="<?php if($currentPage == 'subs') echo 'menuitem--active';?>">Arty Parties</p>
               <div class="party-btn <?php if($currentPage == 'party') echo 'party-btn-active';?>"></div>
             </a>
           </li>
-          <li class="">
+          <li class="sub-li submitYourWork">
             <a href="index.php?page=submit" class="submit-btn">Submit your work</a>
           </li>
        </ul>

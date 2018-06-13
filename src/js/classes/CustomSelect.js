@@ -15,12 +15,36 @@ export default class CustomSelect extends CustomDropDown {
     this.selectedOption = `Default`;
 
     this.emitter = param.emmitter;
+    this.emitter.on(`resetDropdown`, () => {
+      this.resetDropdowns();
+    });
   }
 
   init() {
     this.inputs.forEach($select => {
       $select.classList.add(`hide`);
       this.createCustomDropDown($select);
+    });
+
+    window.addEventListener(`click`, this.clickWindow);
+  }
+
+  resetDropdowns() {
+    const dropdowns = document.querySelectorAll(`.${this.customClass}`);
+
+    dropdowns.forEach($dropdown => {
+      const options = [...$dropdown.querySelectorAll(`ul li a`)];
+      const $fakeSelect = $dropdown.querySelector(`.fakeSelect`);
+
+      $fakeSelect.innerHTML = this.createDate(options[0].textContent);
+
+      options.forEach(($option, index) => {
+        if (index === 0) {
+          $option.classList.add(this.customSelectedClass);
+        } else {
+          $option.classList.remove(this.customSelectedClass);
+        }
+      });
     });
   }
 

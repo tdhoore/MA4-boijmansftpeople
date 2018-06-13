@@ -38,11 +38,7 @@ body {
   grid-area: boij;
 }
 
-.bvb {
-  display: none;
-}
-
-.submit-btn {
+.submit-btn,.bvb {
   display: none;
 }
 
@@ -95,12 +91,12 @@ body {
   height: 3.4rem;
 }
 
-.sub-li {
+.sub-li:nth-of-type(3) {
   order: -1;
 }
 
-.b {
-  margin-right: -4rem;
+.boijmans,.submitYourWork {
+  display: none;
 }
 
 /* FOOTER */
@@ -1254,16 +1250,36 @@ body {
     background-color: var(--blue);
   }
 
-  .nav-li {
-    flex-direction: row-reverse;
-  }
-
   .bvb {
     display: block;
   }
 
   .nav-list {
     width: 90vw;
+    justify-content: space-between;
+  }
+
+  .boijmans {
+    display: block;
+    flex: 2;
+  }
+
+  .submitYourWork {
+    display: block;
+  }
+
+  .sub-li {
+    display: block;
+    margin-right: 2rem;
+    order: -1;
+  }
+
+  .sub-li:nth-last-of-type(2), .sub-li:nth-last-of-type(3) {
+    margin-right: 4rem;
+  }
+
+  .sub-li:last-of-type {
+    margin-right: 0;
   }
 
   .s3-container {

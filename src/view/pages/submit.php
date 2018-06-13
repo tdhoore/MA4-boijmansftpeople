@@ -17,7 +17,7 @@
 
       <div class="s1a1-div">
         <p class="s1-p">you're working on <strong class="s1-p-strong">Shirley Temple</strong> by Salvador Dali</p>
-        <a class="download-btn" href="#">Download</a>
+        <a class="download-btn" href="/assets/img/shirley-temple-big.jpg" download="shirley-temple.jpg">Download</a>
         <p class="or">or</p>
         <a href="#" class="upload-btn">Upload your artwork</a>
       </div>

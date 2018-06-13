@@ -12,7 +12,6 @@ export default class CustomDropDown {
 
     //listeners
     this.clickOptionListener = e => this.handleClickOption(e);
-    this.clickWindow = e => this.handleClickWindow(e);
   }
 
   createOptionsList($input) {

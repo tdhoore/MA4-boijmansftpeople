@@ -384,7 +384,7 @@ class PagesController extends Controller {
                          0, 0,
                          $new_width, $new_height,
                          $width, $height);
-      imagejpeg($thumb, $filename, 80);
+      imagejpeg($thumb, $filename . ".jpg", 80);
       return true;
     }
 }

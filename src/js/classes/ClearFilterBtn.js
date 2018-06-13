@@ -1,12 +1,14 @@
 export default class ClearFilterBtn {
   constructor(vars = {
     selector: ``,
-    formSelector: ``
+    formSelector: ``,
+    emmitter: false
   }) {
     this.holder = document.querySelector(vars.selector);
     this.formSelector = vars.formSelector;
     this.btn = false;
     this.form = false;
+    this.emitter = vars.emmitter;
 
     this.handleClick = e => this.clearFilters(e);
   }
@@ -50,5 +52,8 @@ export default class ClearFilterBtn {
         }
       });
     });
+
+    this.emitter.emit(`changeFilter`);
+    this.emitter.emit(`resetDropdown`);
   }
 }

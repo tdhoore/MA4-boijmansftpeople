@@ -84,6 +84,7 @@ class AllSubmissions extends Component {
   }
 
   handleResponce(r) {
+    console.log(r);
     if (r.length > 0) {
       let tempSubmissions = this.state.submissions;
       r.forEach(result => {

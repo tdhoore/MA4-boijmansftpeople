@@ -215,10 +215,10 @@ class PagesController extends Controller {
       array_push($conditions, "(`artistName` LIKE '" . $data['search'] . "%' OR `artTitle` LIKE '" . $data['search'] . "%')");
     }
 
-    if(!empty($data['month']) && !empty($data['year'])) {
+    if(!empty($data['date'])) {
       //there is a date
 
-      $timestamp = date('Y-m-d G:i:s', mktime(0, 0, 0, 0, $data['month'], $data['year']));
+      $timestamp = date('Y-m-d G:i:s', strtotime($data['date']));
 
       array_push($conditions,  "'$timestamp' <= `timeStamp`");
 
@@ -230,13 +230,13 @@ class PagesController extends Controller {
 
       foreach($data['theme'] as $value) {
         if($themeSql === '') {
-          $themeSql = '(' . $value . '== `themeId`';
+          $themeSql = '(' . $value . ' = `themeId`';
         } else {
-          $themeSql += 'OR ' . $value . '== `themeId`';
+          $themeSql .= ' OR ' . $value . ' = `themeId`';
         }
       }
 
-      $themeSql += ')';
+      $themeSql .= ')';
 
       array_push($conditions, $themeSql);
     }
@@ -244,7 +244,7 @@ class PagesController extends Controller {
     if(isset($data['remix'])) {
       //remix is set
       if($data['remix']) {
-        array_push($conditions, '1 == reboundId');
+        array_push($conditions, '1 = reboundId');
       }
     }
 

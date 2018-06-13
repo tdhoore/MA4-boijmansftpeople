@@ -11,6 +11,7 @@
         <input type="text" name="search" id="search" placeholder="SEARCH" class="suggestion" value=""/>
       </span>
     </label>
+    <div class="extraFilters">
       <label for="month">
         <span class="hide">date</span>
         <select name="date" id="date">
@@ -21,6 +22,28 @@
           <option value="2018-05-00">10/2018</option>
         </select>
       </label>
+      <div class="themeSearch">
+        <div class="date-btn"></div>
+        <div class="themeCheckBoxes">
+          <label class="container">
+            <input type="checkbox" name="theme[]" value="1" />
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">
+            <input type="checkbox" name="theme[]" value="2" />
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">
+            <input type="checkbox" name="theme[]" value="3" />
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">
+            <input type="checkbox" name="theme[]" value="4" />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
+    </div>
     <input type="submit" name="submit" value="search" class="btn" />
   </form>
   <div class="infinite">

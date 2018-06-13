@@ -467,6 +467,10 @@ body {
   font-weight: bold;
 }
 
+.extraFilters {
+  display: flex;
+}
+
 .fakeSelect {
   display: block;
   height: 100%;
@@ -525,6 +529,46 @@ body {
 
 .customSelectedItem {
   background-color: red;
+}
+
+.themeSearch {
+  position: relative;
+}
+
+.themeCheckBoxes {
+  position: absolute;
+  max-height: 0;
+  overflow: hidden;
+  background-color: red;
+  width: 100%;
+}
+
+.themeCheckBoxes input {
+  display: none;
+}
+
+.themeCheckBoxes label {
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  padding: .5rem;
+}
+
+.checkmark {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.themeSearch:hover .themeCheckBoxes {
+  max-height: 10rem;
+  overflow: scroll;
+}
+
+.themeCheckBoxes label input:checked ~ .checkmark {
+  background-color: blue;
 }
 
 /* SUBMIT */

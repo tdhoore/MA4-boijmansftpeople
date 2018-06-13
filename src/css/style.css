@@ -1197,6 +1197,7 @@ body {
   .nav-bftp {
     bottom: 0;
     position: fixed;
+    z-index: 999;
     background-color: var(--lightgrey);
   }
 

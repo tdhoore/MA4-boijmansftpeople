@@ -59,9 +59,7 @@ export default class Validator {
 
   checkInputs() {
     this.inputs.forEach(input => {
-      input.checks.forEach(check => {
-        this.checkValidityByName(input.inputElem, check);
-      });
+      this.doChecks(input.inputElem, input.checks);
     });
   }
 
@@ -85,7 +83,7 @@ export default class Validator {
         credentials: `same-origin`,
         method: this.method,
         body: formData
-      }).then(responce => responce.text()).then(this.handleAjaxResult);
+      }).then(responce => responce.json()).then(this.handleAjaxResult);
     }
   }
 

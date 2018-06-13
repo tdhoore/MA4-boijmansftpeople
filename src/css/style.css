@@ -4,7 +4,7 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
-  font-family: helvetica;
+  font-family: helvetica, Arial, sans-serif;
 }
 
 *, *:before, *:after {/* stylelint-disable-line */
@@ -748,7 +748,6 @@ body {
   width: 30rem;
   height: 10rem;
   color: var(--blue);
-  font-family: lemonmilk;
   font-size: 1.4rem;
 }
 

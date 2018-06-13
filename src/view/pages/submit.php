@@ -59,9 +59,9 @@
                 </label>
 
                  <label for="tags">
-           <span class="titleAccent upload-lbl">tags</span>
+           <span class="titleAccent upload-lbl">concept</span>
            <div class="textInput">
-             <textarea name="tags" id="tags" class="textarea" placeholder="seperate tags with comma’s"></textarea>
+             <textarea name="tags" id="tags" class="textarea" placeholder="What is the idea behind your work"></textarea>
            </div>
            <span class="validator"></span>
                  </label>

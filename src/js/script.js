@@ -97,7 +97,17 @@ const init = () => {
       }
     ]);
 
-    submitValidator.addValidationToInput(`input[type="text"]`, [
+    submitValidator.addValidationToInput(`input[name="artistname"]`, [
+      {
+        name: `valueMissing`,
+        messages: {
+          error: `Sorry, leaving it anonymous isn’t an option`,
+          okey: `What a beautiful name!`
+        }
+      }
+    ]);
+
+    submitValidator.addValidationToInput(`input[name="title"]`, [
       {
         name: `valueMissing`,
         messages: {

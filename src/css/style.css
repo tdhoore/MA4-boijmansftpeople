@@ -917,22 +917,22 @@ a {
   }
 }
 
-.submissionItemTrans-enter {
+.submissionItemTrans-enter, .allSubsTrans-enter {
   opacity: .01;
 }
 
-.submissionItemTrans-enter.submissionItemTrans-enter-active {
+.submissionItemTrans-enter.submissionItemTrans-enter-active,.allSubsTrans-enter.allSubsTrans-enter-active {
   opacity: 1;
   transition: opacity 500ms ease-in;
 }
 
-.submissionItemTrans-exit {
+.submissionItemTrans-exit, .allSubsTrans-exit {
   opacity: 1;
-  transition: opacity 300ms ease-in;
 }
 
-.submissionItemTrans-exit.submissionItemTrans-exit-active {
+.submissionItemTrans-exit.submissionItemTrans-exit-active, .allSubsTrans-exit.allSubsTrans-exit-active {
   opacity: .01;
+  transition: opacity 300ms ease-in;
 }
 
 /* SUBMIT */

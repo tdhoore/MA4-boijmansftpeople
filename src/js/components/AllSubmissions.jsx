@@ -84,11 +84,12 @@ export default class AllSubmissions extends Component {
   }
 
   handleResponce(r) {
-    console.log(r);
     if (r.length > 0) {
       let tempSubmissions = this.state.submissions;
-      r.forEach(result => {
-        tempSubmissions.push(result);
+      r.forEach((result, index) => {
+        if (this.state.submissions[index] !== result) {
+          tempSubmissions.push(result);
+        }
       });
 
       this.onChangeChannel(`submissions`, tempSubmissions);
@@ -105,7 +106,10 @@ export default class AllSubmissions extends Component {
       return (<TransitionGroup>
         {
           this.state.submissions.map((submission, index) => {
-            return (<CSSTransition timeout={1000} classNames="trans" key={`submission_${index}`}>
+            return (<CSSTransition timeout={{
+                enter: 500,
+                exit: 300
+              }} classNames="allSubsTrans" key={`submission_${index}`}>
               <Submission data={submission} customClass="subsItem"/>
             </CSSTransition>)
           })

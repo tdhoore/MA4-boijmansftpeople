@@ -815,6 +815,19 @@ a {
     transform: translateY(-50%);
 
   }
+
+  & button:hover {
+    background-image: url(../assets/img/arrow2.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50%;
+    cursor: pointer;
+    transition: background-image 200ms ease-in;
+  }
+
+  & button:last-of-type:hover {
+    transform: translateY(-50%);
+  }
 }
 
 .submissionItem, .subsItem {

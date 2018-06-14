@@ -73,7 +73,7 @@
           </li>
           <li class="sub-li">
             <a href="index.php?page=party" class="nav-li">
-              <p class="<?php if($currentPage == 'subs') echo 'menuitem--active';?>">Arty Parties</p>
+              <p class="<?php if($currentPage == 'party') echo 'menuitem--active';?>">Arty Parties</p>
               <div class="party-btn <?php if($currentPage == 'party') echo 'party-btn-active';?>"></div>
             </a>
           </li>

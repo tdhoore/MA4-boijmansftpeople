@@ -207,6 +207,7 @@ button:focus {
   font-size: 3rem;
   align-self: flex-start;
   margin: 0 1.6rem 4rem;
+  margin-left: 6%;
 }
 
 .div-article2 {
@@ -642,6 +643,7 @@ button:focus {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 50%;
+    cursor: pointer;
   }
 
   & button:last-of-type {
@@ -662,6 +664,7 @@ button:focus {
     width: 100%;
     height: auto;
     order: -1;
+    border: solid .2rem var(--blue);
   }
 
   &:first-of-type {
@@ -696,6 +699,23 @@ button:focus {
     width: 1.2rem;
     height: .2rem;
   }
+}
+
+.submissionItemTrans-enter {
+  opacity: .01;
+}
+
+.submissionItemTrans-enter.submissionItemTrans-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.submissionItemTrans-exit {
+  opacity: 1;
+}
+
+.submissionItemTrans-exit.submissionItemTrans-exit-active {
+  opacity: .01;
 }
 
 /* SUBMIT */

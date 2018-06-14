@@ -76,9 +76,8 @@
              <div class="drop-div">
                <input type="file"
                 name="artwork"
-                accept="image/png, image/jpeg, image/gif" class="submit-drop"/>
+                accept="image/png, image/jpeg, image/gif" class="submit-drop" width="200" height="173" />
              </div>
-             <span class="validator upload-validate"></span>
           </div>
 
           <label for="terms">

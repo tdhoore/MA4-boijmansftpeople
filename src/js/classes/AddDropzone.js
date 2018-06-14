@@ -73,6 +73,9 @@ export default class AddDropzone {
   addImage($elem) {
     const $img = document.createElement(`img`);
 
+    $img.height = 69;
+    $img.width = 80;
+
     $img.src = ``;
 
     $elem.appendChild($img);

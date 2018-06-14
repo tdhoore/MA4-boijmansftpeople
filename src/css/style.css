@@ -612,7 +612,6 @@ button:focus {
 
 .upload-validate {
   margin-top: 12rem;
-  margin-left: -8.7rem;
 }
 
 .submissions {
@@ -873,6 +872,11 @@ button:focus {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+.submit-drop {
+  width: 20rem;
+  height: 17.3rem;
 }
 
 .textarea {

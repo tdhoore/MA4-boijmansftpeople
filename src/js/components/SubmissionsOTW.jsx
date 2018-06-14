@@ -61,7 +61,7 @@ class SubmissionsOTW extends Component {
 
   render() {
     return (<div>
-      <button data-dir="prev" onClick={this.handleClickBtn}>prev</button>
+      <button data-dir="prev" onClick={this.handleClickBtn} className="prev-btn">prev</button>
       <TransitionGroup>
         {
           this.state.submissionData.map(submission => {

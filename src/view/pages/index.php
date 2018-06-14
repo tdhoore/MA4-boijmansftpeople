@@ -75,7 +75,7 @@
             </div>
         </div>
 
-          <a href="https://www.facebook.com/events/614815452244683/" class="fb-btn">
+          <a href="https://www.facebook.com/events/614815452244683/" class="fb-btn" target="_blank">
             <img src="assets/img/interested-button.svg" alt="facebook event" width="50" height="50" class="fb-btn-img">
           </a>
 

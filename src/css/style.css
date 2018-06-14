@@ -146,13 +146,13 @@ a {
 /* FOOTER */
 
 .footer {
-  width: 100vw;
   height: 30rem;
   background-color: var(--blue);
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10rem;
 }
 
 .footerfooter {
@@ -1060,14 +1060,20 @@ a {
   height: 17.3rem;
 }
 
+.oliebol {
+  display: flex;
+  flex-direction: column;
+}
+
 .textarea {
   border: .2rem solid var(--blue);
   background-color: transparent;
   width: 30rem;
   height: 10rem;
   color: var(--blue);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   resize: none;
+  font-family: helvetica;
 }
 
 .textarea:focus {
@@ -1419,7 +1425,8 @@ a {
 
   .submitForm {
     height: 55rem;
-    width: 90rem;
+    width: 90vw;
+    max-width: 90rem;
     flex-direction: row;
     margin-top: -3rem;
   }
@@ -1564,6 +1571,10 @@ a {
     flex-direction: column-reverse;
     width: 90vw;
     margin: 0 auto;
+  }
+
+  .footer {
+    margin-bottom: 0;
   }
 
   .submit-btn {

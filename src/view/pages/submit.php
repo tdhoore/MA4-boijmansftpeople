@@ -53,7 +53,7 @@
             </label>
           </div>
 
-          <label for="email" class="oliebol">
+          <label for="email" class="oliebol emailInput">
             <span class="titleAccent upload-lbl">Email address</span>
             <span class="textInput">
               <input type="email" name="email" id="email" placeholder="salvadordali04@gmail.com" required class="submit-input input1024"/>

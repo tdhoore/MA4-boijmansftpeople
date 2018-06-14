@@ -192,6 +192,8 @@ class PagesController extends Controller {
         }
 
         array_push($results, $tempResults[$id]);
+
+        $results[$i]['id'] = $id;
       }
 
       if(!$data['dir']) {

@@ -34,7 +34,7 @@ class SubmissionsOTW extends Component {
     } else {
       this.dir = false;
     }
-
+    console.log(this.lastId);
     formData.append(`action`, `HOTW`);
     formData.append(`amount`, this.amount);
     formData.append(`lastId`, this.lastId);
@@ -52,6 +52,7 @@ class SubmissionsOTW extends Component {
   }
 
   handleResponce(responce) {
+    console.log(responce);
     if (responce) {
       //set lastId
       this.lastId = responce[responce.length - 1].id;

@@ -621,6 +621,7 @@ button:focus {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 50%;
+    cursor: pointer;
   }
 
   & button:last-of-type {

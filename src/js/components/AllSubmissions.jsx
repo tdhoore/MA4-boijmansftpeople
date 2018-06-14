@@ -106,7 +106,7 @@ export default class AllSubmissions extends Component {
         {
           this.state.submissions.map((submission, index) => {
             return (<CSSTransition timeout={1000} classNames="trans" key={`submission_${index}`}>
-              <Submission data={submission} customClass="test"/>
+              <Submission data={submission} customClass="subsItem"/>
             </CSSTransition>)
           })
         }

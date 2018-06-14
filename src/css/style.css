@@ -591,6 +591,28 @@ button:focus {
   outline: none;
 }
 
+.validator {
+  position: absolute;
+}
+
+.error {
+  color: var(--pink);
+}
+
+.okey {
+  color: var(--blue);
+}
+
+.agree-message {
+  margin-top: 2rem;
+  margin-left: 2.4rem;
+}
+
+.upload-validate {
+  margin-top: 12rem;
+  margin-left: -8.7rem;
+}
+
 .submissions {
   width: 100vw;
   overflow: hidden;
@@ -856,6 +878,7 @@ button:focus {
   display: flex;
   flex-direction: row-reverse;
   width: 30rem;
+  height: 2rem;
   justify-content: space-around;
   align-items: center;
 }

@@ -38,7 +38,7 @@
             if($key > 0) {?>
     <article class="upcoming-party-article">
       <div class="next-party-date">
-<?php echo $value['day']; ?></p>
+        <p class="next-party-day"><?php echo $value['day']; ?></p>
         <p class="next-party-month"><?php echo $value['month']; ?></p>
       </div>
       <p class="upcoming-location-name">

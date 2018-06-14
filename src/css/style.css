@@ -65,6 +65,13 @@ button:focus {
   height: 3.4rem;
 }
 
+.subs-btn:hover {
+  background-image: url(../assets/img/nav-subs-icon-active.svg);
+  background-repeat: no-repeat;
+  width: 3.4rem;
+  height: 3.4rem;
+}
+
 .subs-btn-active {
   background-image: url(../assets/img/nav-subs-icon-active.svg);
   background-repeat: no-repeat;
@@ -85,6 +92,13 @@ button:focus {
 
 .party-btn {
   background-image: url(../assets/img/nav-party-icon.svg);
+  background-repeat: no-repeat;
+  width: 3.4rem;
+  height: 3.4rem;
+}
+
+.party-btn:hover {
+  background-image: url(../assets/img/nav-party-icon-active.svg);
   background-repeat: no-repeat;
   width: 3.4rem;
   height: 3.4rem;
@@ -239,6 +253,10 @@ button:focus {
   @apply --button-cut-after;
 }
 
+.btn-article2:hover {
+  background-color: var(--pink);
+}
+
 .last-winner {
   border: .2rem solid var(--blue);
   width: 25vw;
@@ -297,6 +315,10 @@ button:focus {
   border-bottom: 2rem solid var(--lightgrey);
 }
 
+.btn-article4:hover {
+  background-color: var(--pink);
+}
+
 .s3-h2 {
   background-image: url(../assets/img/arty-parties-typo-home.svg);
   background-repeat: no-repeat;
@@ -320,8 +342,13 @@ button:focus {
   background-color: var(--pink);
 }
 
+.s3-btn:hover {
+  background-color: var(--blue);
+}
+
 .s3a1-h3 {
   font-size: 1.6rem;
+  text-decoration: underline;
 }
 
 .s3a1-title {
@@ -332,6 +359,10 @@ button:focus {
   grid-area: title;
 }
 
+.s3a1-title:hover {
+  color: var(--pink);
+}
+
 .s3a2-address {
   color: var(--pink);
   font-size: 1.6rem;
@@ -340,6 +371,26 @@ button:focus {
 
 .fb-btn {
   grid-area: fb;
+}
+
+.fb-btn-img {
+  animation: scale 3s infinite;
+  transform-origin: center center;
+}
+
+@keyframes scale {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .index-section3 {
@@ -380,10 +431,12 @@ button:focus {
 .p-dag {
   grid-area: dag;
   padding-top: .5rem;
+  padding-left: .2rem;
 }
 
 .p-maand {
   grid-area: maand;
+  padding-right: .2rem;
 }
 
 .div-place {
@@ -392,10 +445,10 @@ button:focus {
   flex-direction: column;
   justify-content: space-around;
   height: 7.3rem;
+  margin-left: 1rem;
 }
 
 .event {
-  /* border: .2rem solid var(--blue); */
   grid-area: event;
   display: flex;
   justify-content: center;
@@ -1098,6 +1151,8 @@ button:focus {
 
   .party-section1 {
     background-image: url(../assets/img/party-bg.png);
+    background-position: center;
+
     display: grid;
     grid-gap: 5rem;
     grid-template-columns: '15% 10% 25% 25% 10% 15%';
@@ -1108,6 +1163,27 @@ button:focus {
       '. social social social social .';
     padding-bottom: 8rem;
     padding-top: 4rem;
+
+    animation: move 3s infinite;
+    transform-origin: center center;
+  }
+
+  @keyframes move {
+
+    0% {
+      background-position: translateX(0);
+      background-position: translateY(0);
+    }
+
+    50% {
+      background-position: translateX(1.2rem);
+      background-position: translateY(1.2rem);
+    }
+
+    100% {
+      background-position: translateX(0);
+      background-position: translateY(0);
+    }
   }
 
   .header-h1 {
@@ -1396,6 +1472,10 @@ button:focus {
     background-color: var(--blue);
   }
 
+  .submit-btn:hover {
+    background-color: var(--pink);
+  }
+
   .bvb {
     display: block;
   }
@@ -1587,6 +1667,10 @@ button:focus {
   font-family: lemonmilk;
   font-weight: bold;
   color: #8485be;
+}
+
+.location-name:hover {
+  color: var(--pink);
 }
 
 .location-name::before {

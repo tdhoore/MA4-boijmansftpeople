@@ -57,7 +57,7 @@ export default class Validator {
 
       if (this.isThereAFile()) {
         //set message
-        this.addDropzone.zone.innerHTML += `<p>bla</p`;
+        this.addDropzone.zone.innerHTML += `<span class="validator error upload-validate">Simplicity's in style, but you need to upload a file</span>`;
       }
     }
   }

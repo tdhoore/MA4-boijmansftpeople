@@ -596,6 +596,7 @@ a {
 
 .submitBtn {
   position: relative;
+  cursor: pointer;
 }
 
 .date-btn, .submitBtn input {
@@ -688,14 +689,19 @@ a {
 
 .themeSearch {
   position: relative;
+  cursor: pointer;
 }
 
 .themeCheckBoxes {
   position: absolute;
+  bottom: 0;
   max-height: 0;
   overflow: hidden;
-  background-color: red;
-  width: 100%;
+  background-color: var(--lightgrey);
+  display: flex;
+  flex-wrap: wrap;
+  transform: translateY(100%);
+  width: 19.5rem;
 }
 
 .themeCheckBoxes input, .remix input {
@@ -706,7 +712,8 @@ a {
   display: block;
   width: 5rem;
   height: 5rem;
-  padding: .5rem;
+  margin: .5rem;
+  cursor: pointer;
 }
 
 .checkmark {
@@ -715,6 +722,11 @@ a {
   width: 100%;
   height: 100%;
   background-color: white;
+
+  & img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .remix {
@@ -726,12 +738,14 @@ a {
 }
 
 .themeSearch:hover .themeCheckBoxes {
-  max-height: 10rem;
+  max-height: 20rem;
   overflow: scroll;
+  border: solid .2rem var(--blue);
+  padding: .5rem;
 }
 
 .themeCheckBoxes label input:checked ~ .checkmark {
-  background-color: blue;
+  box-shadow: .4rem .4rem 0 var(--pink);
 }
 
 .submitBtn input {
@@ -817,12 +831,20 @@ a {
 }
 
 .submissionItem, .subsItem {
+  /*transition: all 1s, transform 0s;*/
   margin-right: 1.5rem;
   display: flex;
   flex-direction: column;
   width: 30%;
 
   & img {
+    display: block;
+    width: 100%;
+    height: auto;
+    order: -1;
+  }
+
+  & .imageHolder, & img {
     display: block;
     width: 100%;
     height: auto;
@@ -882,8 +904,20 @@ a {
     margin: 0 0 3rem;
   }
 
-  & img {
+  & .imageHolder {
     width: 100%;
+    border-right: none;
+  }
+
+  &:nth-of-type(3n) .imageHolder, &:last-of-type .imageHolder {
+    border-right: solid .2rem var(--blue);
+  }
+
+  & .imageHolder img {
+    grid-column: 1 / -1;
+    min-width: 100%;
+    min-height: 100%;
+    border: none;
   }
 
   & h3 {
@@ -907,6 +941,7 @@ a {
 
 .submissionItemTrans-exit {
   opacity: 1;
+  transition: opacity 300ms ease-in;
 }
 
 .submissionItemTrans-exit.submissionItemTrans-exit-active {
@@ -1250,6 +1285,10 @@ a {
 
 @media only screen and (min-width: 768px) {
 
+  .customDropDown ul {
+    width: 30rem;
+  }
+
   .index-section1 {
     margin-top: 2rem;
     display: grid;
@@ -1452,6 +1491,56 @@ a {
   .subform-div {
     margin-bottom: -2rem;
   }
+
+  .subs-section1 {
+    display: grid;
+    grid-template-columns: 1fr 30rem;
+    grid-template-rows: auto auto;
+    padding: 0 6%;
+  }
+
+  .subs-s1h1 {
+    margin: 0 auto 5rem;
+  }
+
+  .submissionFilter {
+    padding: 0;
+  }
+
+  .infinite {
+    grid-column: 1 / -1;
+
+    & div:first-of-type {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .subsItem {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 2;
+
+    & .imageHolder {
+      height: 24.5rem;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    &:nth-of-type(3n) .imageHolder {
+      border-right: none;
+    }
+
+    &:nth-of-type(4n) .imageHolder, &:last-of-type .imageHolder {
+      border-right: solid .2rem var(--blue);
+    }
+
+    & header {
+      flex: 3;
+    }
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -1575,6 +1664,10 @@ a {
 
 @media only screen and (min-width: 1024px) {
 
+  .infinite div:first-child {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   .logo {
     width: 45.5vw;
     background-position: top;
@@ -1612,7 +1705,7 @@ a {
   }
 
   .nav-list {
-    width: 90vw;
+    width: 88vw;
     justify-content: space-between;
   }
 

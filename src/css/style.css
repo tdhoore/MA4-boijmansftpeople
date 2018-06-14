@@ -837,24 +837,26 @@ a {
 }
 
 .submissionItem, .subsItem {
-  /*transition: all 1s, transform 0s;*/
   margin-right: 1.5rem;
   display: flex;
   flex-direction: column;
   width: 30%;
 
-  & img {
+  & .imageHolder, & img {
     display: block;
-    width: 100%;
-    height: auto;
+    width: 10rem;
+    height: 10rem;
     order: -1;
   }
 
-  & .imageHolder, & img {
+  & img {
     display: block;
-    width: 100%;
-    height: auto;
+    width: calc(10rem - .4rem);
+    height: calc(10rem - .4rem);
     order: -1;
+  }
+
+  & .imageHolder {
     border: solid .2rem var(--blue);
   }
 
@@ -913,6 +915,7 @@ a {
   & .imageHolder {
     width: 100%;
     border-right: none;
+    height: 10rem;
   }
 
   &:nth-of-type(3n) .imageHolder, &:last-of-type .imageHolder {
@@ -1690,6 +1693,11 @@ a {
 }
 
 @media only screen and (min-width: 1024px) {
+
+  .submissionItem .imageHolder, .imageHolder img {
+    height: auto;
+    width: 100%;
+  }
 
   .infinite div:first-child {
     grid-template-columns: repeat(4, 1fr);

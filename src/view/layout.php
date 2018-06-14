@@ -21,8 +21,6 @@
         })(document);
      </script>
 
-    <!-- <link rel="icon" href="assets/img/favicon.png"> -->
-
     <meta name="author" content="Annabel De Pourcq, Tim D'hoore, Billie Vanderhaeghen" />
     <meta name="description" content="Boijmans for the People" />
     <meta name="keywords" content="Boijmans for the People" />

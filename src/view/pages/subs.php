@@ -12,7 +12,7 @@
       </span>
     </label>
     <div class="extraFilters">
-      <label for="month">
+      <label for="date">
         <span class="filterName">date</span>
         <select name="date" id="date">
           <option value="2018-01-00" selected>06/2018</option>

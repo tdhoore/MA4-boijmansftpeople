@@ -1,6 +1,6 @@
 <section class="index-section1">
-  <h1 class="<?php if($currentPage == 'index') echo 'logo';?>"></h1>
-    <h2 class="index-tagline"><span class="hide">4 years - your art on our walls</span></h2>
+  <h2 class="<?php if($currentPage == 'index') echo 'logo';?>"><span class="hide">logo BFTP</span></h2>
+    <h3 class="index-tagline"><span class="hide">4 years - your art on our walls</span></h3>
     <div class="shirl-div">
       <picture class="shirley">
         <source srcset="assets/img/shirley-temple-small.webp" media="(max-width: 768px)" type="image/webp" />
@@ -75,8 +75,8 @@
             </div>
         </div>
 
-          <a href="#" class="fb-btn">
-            <img src="assets/img/interested-button.svg" alt="facebook event" width="50" height="50">
+          <a href="https://www.facebook.com/events/614815452244683/" class="fb-btn" target="_blank">
+            <img src="assets/img/interested-button.svg" alt="facebook event" width="50" height="50" class="fb-btn-img">
           </a>
 
         </div>

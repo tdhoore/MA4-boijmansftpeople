@@ -1,6 +1,21 @@
 @import 'reset';
 @import 'vars';
 
+@keyframes move {
+
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 21.9rem 6.2rem;
+  }
+}
+
+.party-section1 {
+  animation: move 2s ease-in-out infinite;
+}
+
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -74,6 +89,13 @@ a {
   height: 3.4rem;
 }
 
+.subs-btn:hover {
+  background-image: url(../assets/img/nav-subs-icon-active.svg);
+  background-repeat: no-repeat;
+  width: 3.4rem;
+  height: 3.4rem;
+}
+
 .subs-btn-active {
   background-image: url(../assets/img/nav-subs-icon-active.svg);
   background-repeat: no-repeat;
@@ -99,6 +121,13 @@ a {
   height: 3.4rem;
 }
 
+.party-btn:hover {
+  background-image: url(../assets/img/nav-party-icon-active.svg);
+  background-repeat: no-repeat;
+  width: 3.4rem;
+  height: 3.4rem;
+}
+
 .party-btn-active {
   background-image: url(../assets/img/nav-party-icon-active.svg);
   background-repeat: no-repeat;
@@ -117,13 +146,13 @@ a {
 /* FOOTER */
 
 .footer {
-  width: 100vw;
   height: 30rem;
   background-color: var(--blue);
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10rem;
 }
 
 .footerfooter {
@@ -248,6 +277,10 @@ a {
   @apply --button-cut-after;
 }
 
+.btn-article2:hover {
+  background-color: var(--pink);
+}
+
 .last-winner {
   border: .2rem solid var(--blue);
   width: 25vw;
@@ -306,6 +339,10 @@ a {
   border-bottom: 2rem solid var(--lightgrey);
 }
 
+.btn-article4:hover {
+  background-color: var(--pink);
+}
+
 .s3-h2 {
   background-image: url(../assets/img/arty-parties-typo-home.svg);
   background-repeat: no-repeat;
@@ -329,8 +366,13 @@ a {
   background-color: var(--pink);
 }
 
+.s3-btn:hover {
+  background-color: var(--blue);
+}
+
 .s3a1-h3 {
   font-size: 1.6rem;
+  text-decoration: underline;
 }
 
 .s3a1-title {
@@ -341,6 +383,10 @@ a {
   grid-area: title;
 }
 
+.s3a1-title:hover {
+  color: var(--pink);
+}
+
 .s3a2-address {
   color: var(--pink);
   font-size: 1.6rem;
@@ -349,6 +395,26 @@ a {
 
 .fb-btn {
   grid-area: fb;
+}
+
+.fb-btn-img {
+  animation: scale 3s infinite;
+  transform-origin: center center;
+}
+
+@keyframes scale {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .index-section3 {
@@ -389,10 +455,12 @@ a {
 .p-dag {
   grid-area: dag;
   padding-top: .5rem;
+  padding-left: .2rem;
 }
 
 .p-maand {
   grid-area: maand;
+  padding-right: .2rem;
 }
 
 .div-place {
@@ -401,10 +469,10 @@ a {
   flex-direction: column;
   justify-content: space-around;
   height: 7.3rem;
+  margin-left: 1rem;
 }
 
 .event {
-  /* border: .2rem solid var(--blue); */
   grid-area: event;
   display: flex;
   justify-content: center;
@@ -1027,14 +1095,20 @@ a {
   height: 17.3rem;
 }
 
+.oliebol {
+  display: flex;
+  flex-direction: column;
+}
+
 .textarea {
   border: .2rem solid var(--blue);
   background-color: transparent;
   width: 30rem;
   height: 10rem;
   color: var(--blue);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   resize: none;
+  font-family: helvetica;
 }
 
 .textarea:focus {
@@ -1250,6 +1324,8 @@ a {
 
   .party-section1 {
     background-image: url(../assets/img/party-bg.png);
+    background-position: center;
+
     display: grid;
     grid-gap: 5rem;
     grid-template-columns: '15% 10% 25% 25% 10% 15%';
@@ -1388,7 +1464,8 @@ a {
 
   .submitForm {
     height: 55rem;
-    width: 90rem;
+    width: 90vw;
+    max-width: 90rem;
     flex-direction: row;
     margin-top: -3rem;
   }
@@ -1589,6 +1666,10 @@ a {
     margin: 0 auto;
   }
 
+  .footer {
+    margin-bottom: 0;
+  }
+
   .submit-btn {
     @apply --button-cut;
     width: 28rem;
@@ -1600,6 +1681,10 @@ a {
   .submit-btn::after {
     @apply --button-cut-after;
     background-color: var(--blue);
+  }
+
+  .submit-btn:hover {
+    background-color: var(--pink);
   }
 
   .bvb {
@@ -1793,6 +1878,10 @@ a {
   font-family: lemonmilk;
   font-weight: bold;
   color: #8485be;
+}
+
+.location-name:hover {
+  color: var(--pink);
 }
 
 .location-name::before {

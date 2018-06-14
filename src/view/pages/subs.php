@@ -60,7 +60,7 @@
       <article class="subsItem">
         <header>
           <h3><?php echo $value['artTitle']; ?></h3>
-          <p><span>BY</span><?php echo $value['artistName']; ?></p>
+          <p><span>BY</span><span><?php echo $value['artistName']; ?></span></p>
         </header>
         <div class="imageHolder">
           <img src="<?php echo $value['image']; ?>" alt="<?php echo $value['artTitle']; ?>" />

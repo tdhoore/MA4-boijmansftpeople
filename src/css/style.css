@@ -920,6 +920,11 @@ a {
   margin: 0 0 3rem;
   padding: 0 1.5rem;
 
+  & img {
+    width: 100%;
+    height: auto;
+  }
+
   &:first-of-type {
     margin: 0 0 3rem;
   }
@@ -927,7 +932,7 @@ a {
   & .imageHolder {
     width: 100%;
     border-right: none;
-    height: 10rem;
+    height: auto;
   }
 
   &:nth-of-type(3n) .imageHolder, &:last-of-type .imageHolder {

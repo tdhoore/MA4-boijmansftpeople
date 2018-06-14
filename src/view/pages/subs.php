@@ -28,7 +28,7 @@
         <div class="themeCheckBoxes">
           <label class="container">
             <input type="checkbox" name="theme[]" value="1" />
-            <span class="checkmark"></span>
+            <span class="checkmark"><img src="assets/img/shirley-temple-small.jpg" alt="theme1"/></span>
           </label>
           <label class="container">
             <input type="checkbox" name="theme[]" value="2" />
@@ -62,7 +62,9 @@
           <h3><?php echo $value['artTitle']; ?></h3>
           <p><span>BY</span><?php echo $value['artistName']; ?></p>
         </header>
-        <img src="<?php echo $value['image']; ?>" alt="<?php echo $value['artTitle']; ?>" />
+        <div class="imageHolder">
+          <img src="<?php echo $value['image']; ?>" alt="<?php echo $value['artTitle']; ?>" />
+        </div>
       </article>
     <?php }?>
   </div>

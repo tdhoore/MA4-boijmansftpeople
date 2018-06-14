@@ -11,7 +11,9 @@ const Submission = ({data, customClass}) => {
         <span>{data.artistName}</span>
       </p>
     </header>
-    <img src={data.image} alt={data.artTitle}/>
+    <div className="imageHolder">
+      <img src={data.image} alt={data.artTitle}/>
+    </div>
   </article>);
 };
 

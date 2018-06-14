@@ -35,7 +35,7 @@ class Submissions {
   }
 
   init() {
-    if(this.holder) {
+    if (this.holder) {
       this.currentContentToReact();
       ReactDOM.render(<SubmissionsOTW data={this.currentContentToReact()} customClass={this.customClass} amount={this.amount}/>, this.holder);
     }

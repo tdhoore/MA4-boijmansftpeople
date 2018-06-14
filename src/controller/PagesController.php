@@ -92,8 +92,8 @@ class PagesController extends Controller {
                   <header>
                     <h3>' . $subsTable[$i]['artTitle'] . '</h3>
                     <p>
-                      <span>BY</span>
-                      ' . $subsTable[$i]['artistName'] . '</p>
+                      <span>BY</span> <span>
+                      ' . $subsTable[$i]['artistName'] . '<span></p>
                   </header>
                   <img src="' . $subsTable[$i]['image'] . '" alt="' . $subsTable[$i]['artTitle'] . '"/>
                 </article>';

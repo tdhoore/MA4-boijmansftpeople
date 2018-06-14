@@ -207,6 +207,7 @@ button:focus {
   font-size: 3rem;
   align-self: flex-start;
   margin: 0 1.6rem 4rem;
+  margin-left: 6%;
 }
 
 .div-article2 {
@@ -640,6 +641,7 @@ button:focus {
     width: 100%;
     height: auto;
     order: -1;
+    border: solid .2rem var(--blue);
   }
 
   &:first-of-type {

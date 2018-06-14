@@ -12,6 +12,17 @@
   }
 }
 
+@keyframes moveTag {
+
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 35rem 4.9rem;
+  }
+}
+
 .party-section1 {
   animation: move 2s ease-in-out infinite;
 }
@@ -211,6 +222,7 @@ a {
   height: 5rem;
   width: 100%;
   grid-area: tagline;
+  animation: moveTag 3s ease-in-out infinite;
 }
 
 .index-article {

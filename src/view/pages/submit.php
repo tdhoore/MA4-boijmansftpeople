@@ -78,7 +78,7 @@
                 name="artwork"
                 accept="image/png, image/jpeg, image/gif" class="submit-drop"/>
              </div>
-
+             <span class="validator upload-validate"></span>
           </div>
 
           <label for="terms">
@@ -89,7 +89,7 @@
                 <span class="checkmark2"></span>
               </div>
             </div>
-            <span class="validator"></span>
+            <span class="validator agree-message"></span>
           </label>
 
                <div class="submitSubmit">

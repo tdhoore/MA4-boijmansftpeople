@@ -13,7 +13,7 @@
     </label>
     <div class="extraFilters">
       <label for="month">
-        <span class="hide">date</span>
+        <span class="filterName">date</span>
         <select name="date" id="date">
           <option value="2018-01-00" selected>06/2018</option>
           <option value="2018-02-00">07/2018</option>
@@ -23,6 +23,7 @@
         </select>
       </label>
       <div class="themeSearch">
+        <div class="filterName">thema</div>
         <div class="date-btn"></div>
         <div class="themeCheckBoxes">
           <label class="container">
@@ -44,23 +45,24 @@
         </div>
       </div>
       <label for="remix" class="remix date-btn">
-        <span class="hide">remix</span>
+        <span class="filterName">remix</span>
         <input type="checkbox" name="remix" id="remix" />
         <span class="checkmark"></span>
       </label>
       <div class="submitBtn">
+        <span class="filterName">clear</span>
         <input type="submit" name="submit" value="search" class="btn" />
       </div>
     </div>
   </form>
   <div class="infinite">
     <?php foreach ($userArt as $value) { ?>
-      <article>
+      <article class="subsItem">
         <header>
           <h3><?php echo $value['artTitle']; ?></h3>
           <p><span>BY</span><?php echo $value['artistName']; ?></p>
         </header>
-        <img src="<?php echo $value['imgage']; ?>" alt="<?php echo $value['artTitle']; ?>" />
+        <img src="<?php echo $value['image']; ?>" alt="<?php echo $value['artTitle']; ?>" />
       </article>
     <?php }?>
   </div>

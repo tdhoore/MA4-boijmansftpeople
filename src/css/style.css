@@ -5,6 +5,7 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
   font-family: helvetica, Arial, sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 *, *:before, *:after {/* stylelint-disable-line */
@@ -25,6 +26,14 @@ body {
 button:focus {
   outline: none;
   cursor: pointer;
+}
+
+button,
+input,
+select,
+textarea,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 /* HEADER */
@@ -453,10 +462,15 @@ button:focus {
   @apply --repeat-h1-before;
 }
 
+.submissionFilter {
+  width: 100%;
+  padding: 0 1.5rem;
+}
+
 .suggestion {
   color: var(--blue);
   background-color: var(--bg-color);
-  width: 30rem;
+  width: 100%;
   height: 4.5rem;
   border: .2rem solid var(--blue);
   margin-bottom: 1rem;
@@ -473,6 +487,23 @@ button:focus {
 
 .extraFilters {
   display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+
+  & label {
+    position: relative;
+  }
+}
+
+.filterName {
+  position: absolute;
+  bottom: 1.5rem;
+  font-family: lemonmilk;
+  font-size: 1rem;
+  color: var(--blue);
+  display: block;
+  width: 100%;
+  text-align: center;
 }
 
 .fakeSelect {
@@ -490,6 +521,15 @@ button:focus {
   display: block;
 }
 
+.isDate {
+  padding-top: 1rem;
+  font-size: 2rem;
+}
+
+.submitBtn {
+  position: relative;
+}
+
 .date-btn, .submitBtn input {
   width: 6rem;
   height: 8.5rem;
@@ -503,6 +543,7 @@ button:focus {
 
 .customDropDown {
   position: relative;
+
 }
 
 .customDropDown ul {
@@ -510,31 +551,71 @@ button:focus {
   bottom: 0;
   z-index: 20;
   max-height: 0;
-  width: 100%;
+  width: calc(100vw - 3rem);
   overflow: hidden;
   background-color: var(--bg-color);
 }
 
 .customDropDownOpen ul {
-  bottom: -9rem;
-  max-height: 8rem;
+  bottom: -15rem;
+  max-height: 14rem;
   overflow: scroll;
   border: solid var(--blue) .2rem;
 }
 
-.customDropDown a {
-  color: var(--blue);
-  font-family: lemonmilk;
-  text-decoration: none;
-}
-
 .customDropDown ul li a {
   display: block;
-  padding: 1rem;
+  padding: 2rem;
+  font-size: 1.6rem;
+  font-family: lemonmilk;
+  text-decoration: none;
+  color: var(--blue);
 }
 
-.customSelectedItem {
-  background-color: red;
+.customSelectedItem, .customDropDown ul li a:hover {
+  background-color: var(--pink);
+  color: white;
+}
+
+.filterName::before {
+  content: '';
+  position: absolute;
+  top: -5rem;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 3.8rem;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.isDate .filterName::before {
+  display: none;
+}
+
+.themeSearch .filterName::before {
+  background-image: url(../assets/img/theme.svg);
+}
+
+.remix .filterName {
+  bottom: 1.3rem;
+}
+
+.submitBtn .filterName {
+  bottom: 1.4rem;
+}
+
+.remix .filterName::before {
+  background-image: url(../assets/img/remix.svg);
+  background-size: 60%;
+  background-position: center 1rem;
+}
+
+.submitBtn .filterName::before {
+  background-image: url(../assets/img/clear.svg);
+  background-size: 50%;
+  background-position: center .5rem;
 }
 
 .themeSearch {
@@ -654,7 +735,7 @@ button:focus {
   }
 }
 
-.submissionItem {
+.submissionItem, .subsItem {
   margin-right: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -699,6 +780,38 @@ button:focus {
     background-color: var(--darkgrey);
     width: 1.2rem;
     height: .2rem;
+  }
+}
+
+.infinite {
+
+  & div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.subsItem {
+  width: 100%;
+  margin: 0 0 3rem;
+  padding: 0 1.5rem;
+
+  &:first-of-type {
+    margin: 0 0 3rem;
+  }
+
+  & img {
+    width: 100%;
+  }
+
+  & h3 {
+    margin-top: 1.5rem;
+    font-size: 2rem;
+  }
+
+  & p {
+    font-size: 1.6rem;
   }
 }
 

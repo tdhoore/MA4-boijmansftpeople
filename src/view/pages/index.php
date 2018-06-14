@@ -1,6 +1,6 @@
 <section class="index-section1">
-  <h1 class="<?php if($currentPage == 'index') echo 'logo';?>"></h1>
-    <h2 class="index-tagline"><span class="hide">4 years - your art on our walls</span></h2>
+  <h2 class="<?php if($currentPage == 'index') echo 'logo';?>"><span class="hide">logo BFTP</span></h2>
+    <h3 class="index-tagline"><span class="hide">4 years - your art on our walls</span></h3>
     <div class="shirl-div">
       <picture class="shirley">
         <source srcset="assets/img/shirley-temple-small.webp" media="(max-width: 768px)" type="image/webp" />

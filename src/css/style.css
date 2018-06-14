@@ -19,6 +19,7 @@ body {
   background-color: var(--bg-color);
   font-size: 1.2rem;
   font-weight: 100;
+  font-display: optional;
 }
 
 button:focus {

@@ -1075,6 +1075,16 @@ a {
   font-size: 1.6rem;
 }
 
+.terms-div {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 30rem;
+  height: 2rem;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+
 .upload-lbl {
   color: var(--blue);
   font-family: lemonmilk;
@@ -1136,10 +1146,6 @@ a {
   flex-direction: column;
 }
 
-.terms-div {
-  position: relative;
-}
-
 .terms-div .validator {
   position: absolute;
   bottom: -3.5rem;
@@ -1166,15 +1172,6 @@ a {
   font-weight: 100;
   font-style: italic;
   margin-bottom: -2.5rem;
-}
-
-.terms-div {
-  display: flex;
-  flex-direction: row-reverse;
-  width: 30rem;
-  height: 2rem;
-  justify-content: space-around;
-  align-items: center;
 }
 
 .textInput {
@@ -1234,6 +1231,10 @@ a {
   margin-top: 3rem;
   margin-bottom: 3rem;
   cursor: pointer;
+}
+
+.submitSubmit:hover {
+  background-color: var(--pink);
 }
 
 .submitSubmit::after {

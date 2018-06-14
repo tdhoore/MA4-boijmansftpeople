@@ -679,6 +679,23 @@ button:focus {
   }
 }
 
+.submissionItemTrans-enter {
+  opacity: .01;
+}
+
+.submissionItemTrans-enter.submissionItemTrans-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.submissionItemTrans-exit {
+  opacity: 1;
+}
+
+.submissionItemTrans-exit.submissionItemTrans-exit-active {
+  opacity: .01;
+}
+
 /* SUBMIT */
 
 .submit-s1 {

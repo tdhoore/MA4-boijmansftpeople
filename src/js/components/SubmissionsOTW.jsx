@@ -34,7 +34,6 @@ class SubmissionsOTW extends Component {
     } else {
       this.dir = false;
     }
-    console.log(this.lastId);
     formData.append(`action`, `HOTW`);
     formData.append(`amount`, this.amount);
     formData.append(`lastId`, this.lastId);
@@ -52,7 +51,6 @@ class SubmissionsOTW extends Component {
   }
 
   handleResponce(responce) {
-    console.log(responce);
     if (responce) {
       //set lastId
       this.lastId = responce[responce.length - 1].id;
@@ -67,7 +65,10 @@ class SubmissionsOTW extends Component {
       <TransitionGroup>
         {
           this.state.submissionData.map(submission => {
-            return (<CSSTransition timeout={300} classNames="submissionTransition" key={`weeklySubmission${submission.id}`}>
+            return (<CSSTransition timeout={{
+                enter: 500,
+                exit: 0
+              }} classNames="submissionItemTrans" key={`weeklySubmission${submission.id}`}>
               <Submission key={`weeklySubmission${submission.id}`} data={submission} customClass={this.customClass}/>
             </CSSTransition>)
           })

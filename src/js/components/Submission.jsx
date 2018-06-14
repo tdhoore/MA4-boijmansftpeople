@@ -7,7 +7,9 @@ const Submission = ({data, customClass}) => {
       <h3>{data.artTitle}</h3>
       <p>
         <span>BY</span>
-        {data.artistName}</p>
+        &nbsp;
+        <span>{data.artistName}</span>
+      </p>
     </header>
     <img src={data.image} alt={data.artTitle}/>
   </article>);

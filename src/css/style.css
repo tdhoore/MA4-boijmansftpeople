@@ -1,6 +1,21 @@
 @import 'reset';
 @import 'vars';
 
+@keyframes move {
+
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 38.8% 12.4%;
+  }
+}
+
+.party-section1 {
+  animation: move 2s ease-in-out infinite;
+}
+
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -1276,27 +1291,6 @@ a {
       '. social social social social .';
     padding-bottom: 8rem;
     padding-top: 4rem;
-
-    animation: move 3s infinite;
-    transform-origin: center center;
-  }
-
-  @keyframes move {
-
-    0% {
-      background-position: translateX(0);
-      background-position: translateY(0);
-    }
-
-    50% {
-      background-position: translateX(1.2rem);
-      background-position: translateY(1.2rem);
-    }
-
-    100% {
-      background-position: translateX(0);
-      background-position: translateY(0);
-    }
   }
 
   .header-h1 {

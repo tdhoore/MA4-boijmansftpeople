@@ -1236,13 +1236,17 @@ a {
 
 .input-file-styling {
   display: block;
-  cursor: inherit;
   opacity: 0;
   position: absolute;
   color: var(--blue);
   font-family: lemonmilk;
   width: 20rem;
   height: 3.5rem;
+  cursor: pointer;
+
+  &:hover + .align-input-file .input-file-js-on {
+    background-color: var(--pink);
+  }
 }
 
 .input-file-js-on {

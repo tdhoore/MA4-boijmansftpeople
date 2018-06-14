@@ -54,6 +54,11 @@ export default class Validator {
     } else {
       //check all the inputs for mistakes
       this.checkInputs();
+
+      if (this.isThereAFile()) {
+        //set message
+        this.addDropzone.zone.innerHTML += `<p>bla</p`;
+      }
     }
   }
 
@@ -75,7 +80,7 @@ export default class Validator {
       //check if there is somthing in the input
       files = this.addDropzone.input.files[0];
     }
-
+    console.log(this.addDropzone.zone);
     //if file exists
     if (files) {
       return fetch(this.action, {
@@ -84,7 +89,23 @@ export default class Validator {
         method: this.method,
         body: formData
       }).then(responce => responce.json()).then(this.handleAjaxResult);
+    } else {
+      this.addDropzone.zone.innerHTML += `<p>bla</p`;
     }
+  }
+
+  isThereAFile() {
+    let files = this.addDropzone.droppedFile;
+
+    //get the file
+    if (!files) {
+      //check if there is somthing in the input
+      files = this.addDropzone.input.files[0];
+    }
+
+    return files !== 'undefined'
+      ? true
+      : false;
   }
 
   handleAjaxResult(result) {

@@ -3,7 +3,7 @@ require_once __DIR__ . '/DAO.php';
 class UserartDAO extends DAO {
 
   public function selectById($id) {
-    $sql = "SELECT * FROM `userArt` WHERE `id` = :id";
+    $sql = "SELECT * FROM `userart` WHERE `id` = :id";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':id', $id);
     $stmt->execute();
@@ -11,7 +11,7 @@ class UserartDAO extends DAO {
   }
 
   public function selectAll($limit = '') {
-    $sql = "SELECT * FROM `userArt` ORDER BY `timeStamp` $limit";
+    $sql = "SELECT * FROM `userart` ORDER BY `timeStamp` $limit";
     $stmt = $this->pdo->prepare($sql);
     //$stmt->bindValue(':limited', $limit);
     $stmt->execute();
@@ -19,7 +19,7 @@ class UserartDAO extends DAO {
   }
 
   public function selectSOFTW($startDate, $endDate) {
-    $sql = "SELECT * FROM `userArt` WHERE :startDate <= `timeStamp` AND :endDate >= `timeStamp` ORDER BY `timeStamp`";
+    $sql = "SELECT * FROM `userart` WHERE :startDate <= `timeStamp` AND :endDate >= `timeStamp` ORDER BY `timeStamp`";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':startDate', $startDate);
     $stmt->bindValue(':endDate', $endDate);
@@ -28,7 +28,7 @@ class UserartDAO extends DAO {
   }
 
   public function selectByFilter($filter, $limit) {
-    $sql = "SELECT * FROM `userArt` WHERE $filter ORDER BY `timeStamp` DESC $limit";
+    $sql = "SELECT * FROM `userart` WHERE $filter ORDER BY `timeStamp` $limit";
     $stmt = $this->pdo->prepare($sql);
     //$stmt->bindValue(':filterWorks', $filter);
     //$stmt->bindValue(':limitSql', $limit);
@@ -37,7 +37,7 @@ class UserartDAO extends DAO {
   }
 
   public function getHintsByArtistName($title) {
-    $sql = "SELECT `artistName` FROM `userArt` WHERE `artistName` LIKE :title";
+    $sql = "SELECT `artistName` FROM `userart` WHERE `artistName` LIKE :title";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':title', $title);
     $stmt->execute();
@@ -45,7 +45,7 @@ class UserartDAO extends DAO {
   }
 
   public function getHintsByWorkName($title) {
-    $sql = "SELECT `artTitle` FROM `userArt` WHERE `artTitle` LIKE :title";
+    $sql = "SELECT `artTitle` FROM `userart` WHERE `artTitle` LIKE :title";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':title', $title);
     $stmt->execute();
@@ -55,7 +55,7 @@ class UserartDAO extends DAO {
   public function insert($data) {
     $errors = $this->getValidationErrors($data);
     if(empty($errors)) {
-      $sql = "INSERT INTO `userArt` (`artistName`, `artTitle`, `email`, `image`, `timeStamp`, `themeId`,`userconcept`) VALUES (:artistName, :artTitle, :email, :image, :timeStamper, :themeId, :concept)";
+      $sql = "INSERT INTO `userart` (`artistName`, `artTitle`, `email`, `image`, `timeStamp`, `themeId`,`userconcept`) VALUES (:artistName, :artTitle, :email, :image, :timeStamper, :themeId, :concept)";
       $stmt = $this->pdo->prepare($sql);
       $stmt->bindValue(':artistName', $data['artistname']);
       $stmt->bindValue(':artTitle', $data['title']);

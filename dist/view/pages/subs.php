@@ -15,11 +15,11 @@
       <label for="date">
         <span class="filterName">date</span>
         <select name="date" id="date">
-          <option value="2018-07-00" selected>06/2018</option>
-          <option value="2018-06-00">05/2018</option>
-          <option value="2018-05-00">04/2018</option>
-          <option value="2018-04-00">03/2018</option>
-          <option value="2018-03-00">02/2018</option>
+          <option value="2018-01-00" selected>06/2018</option>
+          <option value="2018-02-00">07/2018</option>
+          <option value="2018-03-00">08/2018</option>
+          <option value="2018-04-00">09/2018</option>
+          <option value="2018-05-00">10/2018</option>
         </select>
       </label>
       <div class="themeSearch">

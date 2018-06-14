@@ -222,7 +222,7 @@ class PagesController extends Controller {
 
       $timestamp = date('Y-m-d G:i:s', strtotime($data['date']));
 
-      array_push($conditions,  "'$timestamp' >= `timeStamp`");
+      array_push($conditions,  "'$timestamp' <= `timeStamp`");
 
     }
 

@@ -2012,6 +2012,7 @@ a {
   background-size: 180%;
   width: 5rem;
   height: 5rem;
+  background-color: var(--blue);
 }
 
 .social-a {

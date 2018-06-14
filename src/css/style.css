@@ -636,6 +636,7 @@ button:focus {
   margin-right: 1.5rem;
   display: flex;
   flex-direction: column;
+  width: 30%;
 
   & img {
     display: block;

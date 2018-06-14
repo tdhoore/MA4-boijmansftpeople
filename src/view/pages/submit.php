@@ -35,7 +35,8 @@
 
       <div class="subform-div">
           <div class="nameTitle">
-            <label for="artistname">
+
+            <label for="artistname" class="oliebol">
               <span class="titleAccent upload-lbl">Artist name</span>
               <span class="textInput">
                 <input type="text" name="artistname" id="artistname" placeholder="Annabellini" required class="submit-input"/>
@@ -43,7 +44,7 @@
               <span class="validator"></span>
             </label>
 
-            <label for="title">
+            <label for="title" class="oliebol">
               <span class="titleAccent upload-lbl">Name your artwork</span>
               <span class="textInput">
                 <input type="text" name="title" id="title" placeholder="Shirley Temple" required class="submit-input"/>
@@ -52,7 +53,7 @@
             </label>
           </div>
 
-          <label for="email">
+          <label for="email" class="oliebol emailInput">
             <span class="titleAccent upload-lbl">Email address</span>
             <span class="textInput">
               <input type="email" name="email" id="email" placeholder="salvadordali04@gmail.com" required class="submit-input input1024"/>
@@ -60,7 +61,7 @@
             <span class="validator"></span>
           </label>
 
-          <label for="concept">
+          <label for="concept" class="oliebol">
              <span class="titleAccent upload-lbl">concept</span>
              <span class="textInput">
                <textarea name="concept" id="concept" class="textarea" placeholder="What is the idea behind your work"></textarea>
@@ -76,7 +77,7 @@
              <span class="drop-div">
                <input type="file"
                 name="artwork"
-                accept="image/png, image/jpeg, image/gif"/>
+                accept="image/png, image/jpeg, image/gif" class="submit-drop"/>
              </span>
           </div>
 
@@ -91,9 +92,9 @@
             <span class="validator agree-message"></span>
           </label>
 
-               <div class="submitSubmit">
-          <input type="submit" name="submit" value="Submit your work" class="submitSubmit">
-               </div>
+          <div class="submitSubmit">
+            <input type="submit" name="submit" value="Submit your work" class="submitSubmit">
+          </div>
        </div>
 
     </form>

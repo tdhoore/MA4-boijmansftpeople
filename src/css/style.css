@@ -157,13 +157,13 @@ a {
 /* FOOTER */
 
 .footer {
-  width: 100vw;
   height: 30rem;
   background-color: var(--blue);
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10rem;
 }
 
 .footerfooter {
@@ -608,6 +608,7 @@ a {
 
 .submitBtn {
   position: relative;
+  cursor: pointer;
 }
 
 .date-btn, .submitBtn input {
@@ -700,14 +701,19 @@ a {
 
 .themeSearch {
   position: relative;
+  cursor: pointer;
 }
 
 .themeCheckBoxes {
   position: absolute;
+  bottom: 0;
   max-height: 0;
   overflow: hidden;
-  background-color: red;
-  width: 100%;
+  background-color: var(--lightgrey);
+  display: flex;
+  flex-wrap: wrap;
+  transform: translateY(100%);
+  width: 19.5rem;
 }
 
 .themeCheckBoxes input, .remix input {
@@ -718,7 +724,8 @@ a {
   display: block;
   width: 5rem;
   height: 5rem;
-  padding: .5rem;
+  margin: .5rem;
+  cursor: pointer;
 }
 
 .checkmark {
@@ -727,6 +734,11 @@ a {
   width: 100%;
   height: 100%;
   background-color: white;
+
+  & img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .remix {
@@ -738,12 +750,14 @@ a {
 }
 
 .themeSearch:hover .themeCheckBoxes {
-  max-height: 10rem;
+  max-height: 20rem;
   overflow: scroll;
+  border: solid .2rem var(--blue);
+  padding: .5rem;
 }
 
 .themeCheckBoxes label input:checked ~ .checkmark {
-  background-color: blue;
+  box-shadow: .4rem .4rem 0 var(--pink);
 }
 
 .submitBtn input {
@@ -754,8 +768,13 @@ a {
   outline: none;
 }
 
-.validator {
+.oliebol .validator {
   position: absolute;
+  bottom: -3rem;
+}
+
+.emailInput .validator {
+  bottom: -2rem;
 }
 
 .error {
@@ -772,7 +791,8 @@ a {
 }
 
 .upload-validate {
-  margin-top: 12rem;
+  position: absolute;
+  bottom: -2rem;
 }
 
 .submissions {
@@ -813,15 +833,36 @@ a {
     transform: translateY(-50%);
 
   }
+
+  & button:hover {
+    background-image: url(../assets/img/arrow2.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50%;
+    cursor: pointer;
+    transition: background-image 200ms ease-in;
+  }
+
+  & button:last-of-type:hover {
+    transform: translateY(-50%);
+  }
 }
 
 .submissionItem, .subsItem {
+  /*transition: all 1s, transform 0s;*/
   margin-right: 1.5rem;
   display: flex;
   flex-direction: column;
   width: 30%;
 
   & img {
+    display: block;
+    width: 100%;
+    height: auto;
+    order: -1;
+  }
+
+  & .imageHolder, & img {
     display: block;
     width: 100%;
     height: auto;
@@ -881,8 +922,20 @@ a {
     margin: 0 0 3rem;
   }
 
-  & img {
+  & .imageHolder {
     width: 100%;
+    border-right: none;
+  }
+
+  &:nth-of-type(3n) .imageHolder, &:last-of-type .imageHolder {
+    border-right: solid .2rem var(--blue);
+  }
+
+  & .imageHolder img {
+    grid-column: 1 / -1;
+    min-width: 100%;
+    min-height: 100%;
+    border: none;
   }
 
   & h3 {
@@ -895,21 +948,22 @@ a {
   }
 }
 
-.submissionItemTrans-enter {
+.submissionItemTrans-enter, .allSubsTrans-enter {
   opacity: .01;
 }
 
-.submissionItemTrans-enter.submissionItemTrans-enter-active {
+.submissionItemTrans-enter.submissionItemTrans-enter-active,.allSubsTrans-enter.allSubsTrans-enter-active {
   opacity: 1;
   transition: opacity 500ms ease-in;
 }
 
-.submissionItemTrans-exit {
+.submissionItemTrans-exit, .allSubsTrans-exit {
   opacity: 1;
 }
 
-.submissionItemTrans-exit.submissionItemTrans-exit-active {
+.submissionItemTrans-exit.submissionItemTrans-exit-active, .allSubsTrans-exit.allSubsTrans-exit-active {
   opacity: .01;
+  transition: opacity 300ms ease-in;
 }
 
 /* SUBMIT */
@@ -1041,6 +1095,10 @@ a {
   align-items: center;
   justify-content: space-around;
   height: 45rem;
+
+  & label {
+    position: relative;
+  }
 }
 
 .submit-input {
@@ -1065,11 +1123,27 @@ a {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  position: relative;
 }
 
 .submit-drop {
   width: 20rem;
   height: 17.3rem;
+}
+
+.oliebol {
+  display: flex;
+  flex-direction: column;
+}
+
+.terms-div {
+  position: relative;
+}
+
+.terms-div .validator {
+  position: absolute;
+  bottom: -3.5rem;
+  left: 0;
 }
 
 .textarea {
@@ -1078,8 +1152,9 @@ a {
   width: 30rem;
   height: 10rem;
   color: var(--blue);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   resize: none;
+  font-family: helvetica;
 }
 
 .textarea:focus {
@@ -1121,6 +1196,7 @@ a {
   height: 25px;
   width: 25px;
   background-color: var(--blue);
+  cursor: pointer;
 }
 
 .textInput:hover input ~ .checkmark2 {
@@ -1157,6 +1233,7 @@ a {
   background-color: var(--blue);
   margin-top: 3rem;
   margin-bottom: 3rem;
+  cursor: pointer;
 }
 
 .submitSubmit::after {
@@ -1171,13 +1248,17 @@ a {
 
 .input-file-styling {
   display: block;
-  cursor: inherit;
   opacity: 0;
   position: absolute;
   color: var(--blue);
   font-family: lemonmilk;
   width: 20rem;
   height: 3.5rem;
+  cursor: pointer;
+
+  &:hover + .align-input-file .input-file-js-on {
+    background-color: var(--pink);
+  }
 }
 
 .input-file-js-on {
@@ -1242,6 +1323,10 @@ a {
 }
 
 @media only screen and (min-width: 768px) {
+
+  .customDropDown ul {
+    width: 30rem;
+  }
 
   .index-section1 {
     margin-top: 2rem;
@@ -1431,7 +1516,8 @@ a {
 
   .submitForm {
     height: 55rem;
-    width: 90rem;
+    width: 90vw;
+    max-width: 90rem;
     flex-direction: row;
     margin-top: -3rem;
   }
@@ -1443,6 +1529,56 @@ a {
 
   .subform-div {
     margin-bottom: -2rem;
+  }
+
+  .subs-section1 {
+    display: grid;
+    grid-template-columns: 1fr 30rem;
+    grid-template-rows: auto auto;
+    padding: 0 6%;
+  }
+
+  .subs-s1h1 {
+    margin: 0 auto 5rem;
+  }
+
+  .submissionFilter {
+    padding: 0;
+  }
+
+  .infinite {
+    grid-column: 1 / -1;
+
+    & div:first-of-type {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .subsItem {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 2;
+
+    & .imageHolder {
+      height: 24.5rem;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    &:nth-of-type(3n) .imageHolder {
+      border-right: none;
+    }
+
+    &:nth-of-type(4n) .imageHolder, &:last-of-type .imageHolder {
+      border-right: solid .2rem var(--blue);
+    }
+
+    & header {
+      flex: 3;
+    }
   }
 }
 
@@ -1567,6 +1703,10 @@ a {
 
 @media only screen and (min-width: 1024px) {
 
+  .infinite div:first-child {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   .logo {
     width: 45.5vw;
     background-position: top;
@@ -1576,6 +1716,10 @@ a {
     flex-direction: column-reverse;
     width: 90vw;
     margin: 0 auto;
+  }
+
+  .footer {
+    margin-bottom: 0;
   }
 
   .submit-btn {
@@ -1600,7 +1744,7 @@ a {
   }
 
   .nav-list {
-    width: 90vw;
+    width: 88vw;
     justify-content: space-between;
   }
 

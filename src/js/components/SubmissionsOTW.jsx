@@ -55,13 +55,17 @@ class SubmissionsOTW extends Component {
       //set lastId
       this.lastId = responce[responce.length - 1].id;
 
+      //this.onChangeChannel(`submissionData`, [this.state.submissionData[0]]);
+
+      this.onChangeChannel(`submissionData`, []);
+
       this.onChangeChannel(`submissionData`, responce);
     }
   }
 
   render() {
     return (<div>
-      <button data-dir="prev" onClick={this.handleClickBtn}>prev</button>
+      <button data-dir="prev" onClick={this.handleClickBtn} className="prev-btn">prev</button>
       <TransitionGroup>
         {
           this.state.submissionData.map(submission => {
